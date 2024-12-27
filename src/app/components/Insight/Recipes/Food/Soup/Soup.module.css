@@ -129,19 +129,22 @@
     z-index: 100;
     color: white;
   }
+  
   .friNavTitle {
     font-size: 24px;
     font-weight: bold;
   }
+  
   .friNavList {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping of items */
+    flex-wrap: nowrap; /* Prevent wrapping of items on desktop */
     justify-content: space-evenly; /* Distribute items evenly */
     align-items: center; /* Center items vertically */
   }
+  
   .friNavItem {
     margin: 0 10px; /* Space between items */
     padding: 10px 20px;
@@ -154,12 +157,37 @@
     transition: background-color 0.3s;
     white-space: nowrap; /* Prevent text wrapping inside the items */
   }
+  
   .friNavItem:hover {
     background-color: #04D939;
   }
+  
   .friNavItem:active {
     background-color: #04D939;
   }
+  
+  @media (max-width: 768px) {
+    .friNavList {
+      flex-wrap: wrap; /* Allow items to wrap onto new rows */
+      justify-content: space-between; /* Distribute items with space between them */
+      margin-top: 20px; /* Add top space for the navigation items */
+      margin-bottom: 20px; /* Add space between the rows */
+    }
+  
+    .friNavItem {
+     display: none;
+    }
+  
+    /* Add additional margin to create space between the top and bottom rows */
+    .friNavItem:nth-child(3) {
+      margin-top: 15px; /* Adds space between the first and second row */
+    }
+  
+    .friNavTitle {
+      display: none; /* Hide the title in mobile view */
+    }
+  }
+  
   /* Responsive Styling for Mobile View */
   @media (max-width: 768px) {
   

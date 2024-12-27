@@ -88,17 +88,7 @@
   
  
   
-  /* Sourcing Section */
-  .sourcingSection {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px; /* Increased padding for more space */
-    background-color: #F9F9F9; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    margin: 20px 0; /* Space above and below the section */
-  }
+  
   
   .sourcingContent {
     flex: 1;
@@ -106,28 +96,19 @@
     text-align: center; /* Center align text */
   }
   
-  /* Sourcing Section Styles */
   .sourcingSection {
-    background-color: #F9F9F9; /* Light background color */
-    padding: 40px; /* Padding for spacing */
-    margin-bottom: 30px; /* Space below the section */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    text-align: center; /* Center align text */
+    font-size: 2.5rem;
+    font-family: 'Outfit', sans-serif;
+    color: #6c4f32;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: justify;
+    animation: slideIn 1s ease-in-out;
   }
   
-  .sourcingSection h2 {
-    font-size: 2.5rem; /* Larger heading size */
-    margin-bottom: 15px; /* Space below the heading */
-    color: #5A3D1B; /* Dark brown color for headings */
-  }
   
-  .sourcingSection p {
-    font-size: 1.2rem; /* Readable font size */
-    color: #333; /* Standard text color */
-    max-width: 800px; /* Limit width for readability */
-    margin: 0 auto; /* Center the paragraph */
-  }
   
   
   /* Images Row Styles */
@@ -211,16 +192,7 @@
     color: #4a4a4a;
   }
   
-  .sourcingSection {
-    font-size: 2.5rem;
-    font-family: 'Outfit', sans-serif;
-    color: #6c4f32;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    animation: slideIn 1s ease-in-out;
-  }
+ 
   
   .recdesContent p {
     font-size: 1.1rem;
@@ -229,6 +201,7 @@
     font-family: 'Roboto', sans-serif;
     color: #555;
     opacity: 0;
+    text-align: justify;
     animation: fadeInText 1s ease-in-out forwards;
   }
   

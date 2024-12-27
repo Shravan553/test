@@ -66,6 +66,8 @@
     line-height: 1.6;
     color: #f1d0d0;
     margin: 1rem 0;
+    text-align: justify;
+
     animation: slideIn 1s ease;
   }
   

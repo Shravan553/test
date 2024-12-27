@@ -126,6 +126,8 @@
   color: #333; /* Standard text color */
   margin: 0 auto;
   max-width: 800px;
+  text-align: justify;
+
 }
 
 .supplyChainMeaning strong {

@@ -236,6 +236,7 @@
 
   .testimonialText {
     font-size: 1rem;
+    text-align: justify;
   }
 
   .testimonialButton {
@@ -480,3 +481,168 @@
       width: calc(50% - 10px); /* Adjust for smaller spacing */
   }
 }
+
+@media (max-width: 480px) {
+ 
+  .nutritionBox {
+    padding: 10px;
+    margin: 1rem auto;
+    max-width: 90%; /* Reduce box width for smaller screens */
+  }
+
+  .nutritionTitle {
+    font-size: 1.2rem; /* Smaller font size for titles */
+  }
+
+  .nutritionGrid {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+    gap: 10px; /* Reduce gaps */
+  }
+
+  .nutrientCard {
+    padding: 10px;
+  }
+
+  .nutrientText {
+    font-size: 0.8rem; /* Smaller font for nutrient text */
+    text-align: justify;
+  }
+
+  /* Health Benefits Section */
+  .floHealthBenefits {
+    padding: 15px 10px;
+    margin: 15px 0;
+  }
+
+  .floBenefitsContainer {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 10px;
+  }
+
+  .floBenefitCard {
+    width: 100%; /* Full-width cards */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .floBenefitText {
+    font-size: 0.9rem;
+    text-align: justify;
+
+  }
+
+  /* Product Info Section */
+  .floProductInfo {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    text-align: justify;
+
+  }
+
+  .floProductImage {
+    width: 100%; /* Full-width images */
+    margin-bottom: 15px;
+  }
+
+  .floProductDescription {
+    font-size: 0.9rem;
+    padding: 0 10px;
+    text-align: justify;
+  }
+
+  /* Drawbacks Section */
+  .floDrawbacks {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  .floDrawbacksText {
+    font-size: 0.8rem;
+  }
+
+  /* Usage Section */
+  .floUsageSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .floUsageText {
+    font-size: 0.8rem;
+    text-align: left;
+    padding: 0 10px;
+  }
+
+  /* Testimonials Section */
+  .testimonialContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .testimonialImage {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .testimonialContent {
+    padding: 0;
+  }
+
+  .testimonialTitle {
+    font-size: 1.2rem;
+  }
+
+  .testimonialText {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  .testimonialButton {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  /* Nutrition Info Section */
+  .floNutritionInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Stack cards with small spacing */
+  }
+
+  .floNutrientCard {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .floNutrientText {
+    font-size: 0.8rem;
+  }
+
+  /* Section Titles */
+  .floSectionTitle {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  /* Benefits List */
+  .floBenefitsList {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  /* Buttons */
+  .testimonialButton,
+  .floDrawbacksText {
+    font-size: 0.8rem;
+  }
+
+  .floProductDescription{
+    text-align: justify;
+  }
+}
+
+
+

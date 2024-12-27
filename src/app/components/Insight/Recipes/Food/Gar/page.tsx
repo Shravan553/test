@@ -6,6 +6,10 @@ import Image from 'next/image';
 import Head from 'next/head';
 import styles from './Garlic.module.css';
 import Link from 'next/link';
+import Scroll from "../../../../../Scroll/scroll";
+import Footer from "../../../../../Footer/Footer";
+import Nav from "../../../../../Navbar/NavbarTYP";
+
 
 const Garlic = () => {
   useEffect(() => {
@@ -39,6 +43,7 @@ const Garlic = () => {
         <meta name="twitter:image" content="/images/garlic1.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <Nav/>
       <section className={styles.friNav}>
       <div className={styles.friNavTitle}>Potato Recipes</div>
       <ul className={styles.friNavList}>
@@ -141,6 +146,8 @@ const Garlic = () => {
           <li>Stir in chopped parsley, season with salt to taste, and serve hot.</li>
         </motion.ol>
       </section>
+      <Scroll/>
+      <Footer/>
     </div>
   );
 };

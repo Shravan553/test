@@ -39,15 +39,13 @@ const Scroll: React.FC = () => {
     position: 'fixed',
     bottom: '90px', // Positioned above the Scroll button
     right: '30px',
-    backgroundColor: '#25D366',
+    backgroundColor: '#04D939',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
     padding: '10px 15px',
     cursor: 'pointer',
     boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
-    display: 'flex',
-    alignItems: 'center',
     transition: 'background-color 0.3s ease',
   };
 
@@ -77,13 +75,13 @@ const Scroll: React.FC = () => {
           <button
             style={whatsappButtonStyle}
             onMouseEnter={(e) =>
-              (e.target as HTMLButtonElement).style.backgroundColor = '#1DA855'
+              (e.target as HTMLButtonElement).style.backgroundColor = '#03C829'
             }
             onMouseLeave={(e) =>
-              (e.target as HTMLButtonElement).style.backgroundColor = '#25D366'
+              (e.target as HTMLButtonElement).style.backgroundColor = '#04D939'
             }
             onClick={() => {
-              window.open('https://wa.me/1234567890', '_blank'); // Replace with your WhatsApp number
+              window.open('https://wa.me/9591615099', '_blank'); // Replace with your WhatsApp number
             }}
           >
             <FaWhatsapp style={iconStyle} />

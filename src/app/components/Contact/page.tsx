@@ -209,7 +209,7 @@ const ContactForm = () => {
           <div className={styles.footerColumn}>
             <h3>Contact Info</h3>
             <p>Email: support@agpotato.com</p>
-            <p>Phone: +1 800 123 4567</p>
+            <p>Phone:+91 9591615099</p>
             <p>
               Address: World Trade Centre, Unit No 2217, 22nd Floor, Malleshwaram (W), Next Orion Mall, Bangalore, Karnataka
               560055, IN

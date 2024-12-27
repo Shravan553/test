@@ -8,6 +8,8 @@ import styles from './Fries.module.css';
 import Navbar from '../../../../../Navbar/NavbarTYP';
 import Link from 'next/link';
 import Image from 'next/image'; // Importing Image from Next.js
+import Scroll from "../../../../../Scroll/scroll";
+
 
 const Fries: React.FC = () => {
   useEffect(() => {
@@ -167,6 +169,7 @@ const Fries: React.FC = () => {
       </section>
 
       {/* Footer */}
+      <Scroll/>
       <Footer />
     </div>
   );

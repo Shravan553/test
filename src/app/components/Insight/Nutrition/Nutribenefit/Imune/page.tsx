@@ -5,6 +5,7 @@ import Image from 'next/image'; // For handling images in Next.js
 import styles from './imune.module.css'; // Assuming styles are in a CSS Module
 import Footer from '../../../../../Footer/Footer';
 import Navbar from '../../../../../Navbar/NavbarTYP';
+import Scroll from '../../../../../Scroll/scroll';
 // Define images directly from the public folder (the "assets" folder should be in the public folder in Next.js)
 const skin = '/assets/mentalhealth.png';
 const imune2 = '/assets/imune2.jpg';
@@ -124,11 +125,8 @@ const Imune = () => {
           </p>
         </div>
       </section>
-
-      {/* Scroll to Top Button */}
-      <button onClick={scrollToTop} className={styles.scrollToTop}>Scroll to Top</button>
-
-      {/* Footer */}
+<Scroll/>
+      
       <Footer />
     </div>
   );

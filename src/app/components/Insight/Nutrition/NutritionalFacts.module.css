@@ -387,8 +387,8 @@
 
 .nutritionImage {
   flex: 1;
-  max-width: 50%;
-  height: auto;
+  max-width: 32%;
+  height: 500px;
   border-radius: 10px; /* Optional: Adds rounded corners to the image */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a modern look */
 }
@@ -676,7 +676,7 @@
   }
 
   .nutritionBenefitsList li {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .heroTitle {

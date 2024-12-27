@@ -131,18 +131,27 @@ const NutritionalFacts = () => {
           <div className={styles.nutritionText}>
             <ul className={styles.nutritionBenefitsList}>
               <li><strong>Rich in Vitamins & Minerals:</strong> Potatoes are packed with vitamins C and B6, supporting immune function and metabolism.</li>
+              <br></br>
               <li><strong>High in Dietary Fiber:</strong> Promotes digestive health and helps in weight management.</li>
+              <br></br>
+
               <li><strong>Steady Energy Source:</strong> Complex carbohydrates provide a consistent energy source, ideal for active lifestyles.</li>
+              <br></br>
+
               <li><strong>Antioxidants:</strong> Potatoes help combat oxidative stress, supporting overall health and disease prevention.</li>
+              <br></br>
+
               <li><strong>Gluten-Free:</strong> Naturally gluten-free, suitable for people with gluten sensitivities or celiac disease.</li>
+              <br></br>
+
               <li><strong>Culinary Versatility:</strong> Can be boiled, baked, mashed, or fried, making potatoes a versatile ingredient in many dishes.</li>
+              <br></br>
+
             </ul>
           </div>
         </div>
       </section>
-      <button onClick={scrollToTop} className={styles.scrollToTop}>
-        Scroll to Top
-      </button>
+      
       <SC/>
       <Footer />
     </div>

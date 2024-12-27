@@ -68,6 +68,7 @@ const PotatoRecipes: React.FC = () => {
 
       {/* Explore Recipes Section */}
       <div className={styles.webrecSection}>
+        <br></br>
         <h2>Explore Our Delicious Potato Recipes!</h2>
       </div>
 

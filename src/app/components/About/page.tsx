@@ -187,10 +187,13 @@ const About: React.FC = () => {
               <div className={styles.teamMemberInfo}>
                 <h3>Anand JP</h3>
                 <h4>CEO</h4>
+                <br></br>
+
                 <p>
                   Anand JP, as the CEO, has steered AGPOTATO to new heights. His leadership and vision have been
                   pivotal in expanding the company&apos;s market reach and ensuring that AGPOTATO remains a leader in the
-                  potato industry.
+                  potato indust
+                  ry.
                 </p>
               </div>
             </div>
@@ -205,6 +208,8 @@ const About: React.FC = () => {
               <div className={styles.teamMemberInfo}>
                 <h3>Suhsma B</h3>
                 <h4>Director</h4>
+                <br></br>
+
                 <p>
                   Suhsma B has been a driving force behind AGPOTATO&apos;s growth and operations. With a passion for
                   excellence, Suhsma has led the company&apos;s strategic initiatives, ensuring growth, sustainability, and

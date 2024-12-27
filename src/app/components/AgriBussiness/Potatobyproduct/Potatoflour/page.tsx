@@ -7,6 +7,7 @@ import Footer from '../../../../Footer/Footer';
 import Nav from '../../../../Navbar/NavbarTYP';
 import Image from 'next/image';
 import Link from 'next/link';
+import Scroll from '../../../../Scroll/scroll';
 
 
 const Potatoflour: React.FC = () => {
@@ -150,6 +151,7 @@ POTATO BY PRODUCTS , like potato flour, have revolutionized my baking. It gives 
       </div>
 
       {/* Footer Section */}
+      <Scroll/>
       <Footer />
     </section>
   );

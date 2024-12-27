@@ -8,6 +8,8 @@ import styles from './mash.module.css';
 import Navbar from '../../../../../Navbar/NavbarTYP';
 import Footer from '../../../../../Footer/Footer';
 import Link from 'next/link';
+import Scroll from "../../../../../Scroll/scroll";
+
 const Garlic = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top when component mounts
@@ -106,7 +108,7 @@ const Garlic = () => {
         />
         <div className={styles.videoDescription2}>
           <h2>Watch How to Make It</h2>
-          <p>Follow this step-by-step video tutorial to create a delicious garlic chopped potato dish.</p>
+          <p>Follow this step-by-step video tutorial to create a delicious Mashed potato dish.</p>
         </div>
       </section>
 
@@ -135,7 +137,7 @@ const Garlic = () => {
       </section>
 
       <section className={styles.stepsSection2}>
-        <h2>Steps to Make Garlic Chopped Potato</h2>
+        <h2>Steps to Make Mashed Potato</h2>
         <motion.ol initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
           <li>Heat butter in a pot over medium heat.</li>
           <li>Add chopped garlic and sauté until fragrant.</li>
@@ -144,6 +146,7 @@ const Garlic = () => {
           <li>Stir in chopped parsley, season with salt to taste, and serve hot.</li>
         </motion.ol>
       </section>
+      <Scroll/>
       <Footer/>
     </div>
   );

@@ -1,4 +1,3 @@
-
 /* Section styling */
 .byprogrid {
   display: grid;
@@ -8,10 +7,10 @@
   justify-items: center;
 }
 
-.backcard{
-  background-color:  #001542;
-
+.backcard {
+  background-color: #001542;
 }
+
 /* Card styling */
 .byprocard {
   background-color: #ffffff;
@@ -55,7 +54,6 @@
   margin-bottom: 15px;
 }
 
-/* "Know More" link styling */
 /* "Know More" link styling (Button-like) */
 .byproknowmorelink {
   font-size: 1rem;
@@ -69,22 +67,13 @@
   transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* Hover effect for the "Know More" button */
 .byproknowmorelink:hover {
   color: #fff; /* White text on hover */
   background-color: #04D939; /* Green background on hover */
   text-decoration: none; /* Remove underline on hover */
 }
 
-
-/* Responsive styling for mobile view */
-@media (max-width: 768px) {
-  .byprogrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for mobile view */
-  }
-}
-
-
+/* Contact Button */
 .contactButton {
   position: absolute;
   bottom: 30%;
@@ -105,13 +94,15 @@
   background-color: #04D939;
   color: white;
 }
+
+/* Page Container */
 .pageContainer {
   padding: 20px;
   padding-left: 190px;
   padding-right: 190px;
-
 }
 
+/* Info Section */
 .infoSection {
   margin-top: 20px;
 }
@@ -135,30 +126,20 @@
   width: 45%; /* Half underline */
   border-bottom: 5px dotted brown;
   bottom: -9px;
-
   left: 0;
 }
 
 .description {
-  /*padding-top: 20px;
-font-size: 16px;
-color: black;
-margin-top: 10px;
-text-align: justify; */
-
-font-family: "Hanken Grotesk", sans-serif;
-color: #666666;
-margin: 15px 0px 25px;
-padding-top: 20px;
-font-size: 19px;
-text-align: justify;
-word-spacing: 5px;
-
-
+  font-family: "Hanken Grotesk", sans-serif;
+  color: #666666;
+  margin: 15px 0px 25px;
+  padding-top: 20px;
+  font-size: 19px;
+  text-align: justify;
+  word-spacing: 5px;
 }
 
-
-
+/* Why Choose Section */
 .whyChooseSection {
   background-color: #b0f5b0;
   padding: 50px 20px;
@@ -197,42 +178,17 @@ word-spacing: 5px;
   margin: 0 auto;
 }
 
-/* For mobile responsiveness */
-@media (max-width: 768px) {
-  .whyChooseTitle {
-    font-size: 2rem;
-  }
-
-  .whyChooseDescription {
-    font-size: 1rem;
-  }
-}
-
-
-
-/* General container for the page */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: #f9f9f9;
-}
-
 /* Hero Section */
 .heroSection {
   position: relative;
   width: 100%;
   height: 70vh;
-  /* overflow: hidden; */
   display: flex;
   justify-content: center;
   align-items: center;
   animation: fadeIn 2s ease-out;
- 
-    overflow: visible; /* Allows elements to extend outside the section */
-  }
-
+  overflow: visible;
+}
 
 .heroOverlay {
   position: absolute;
@@ -261,123 +217,140 @@ word-spacing: 5px;
   animation: slideUp 1s ease-out;
 }
 
-/* New text Section */
-.newText {
-  margin-top: 2rem;
-  text-align: center;
-  animation: slideUp 1s ease-out;
-}
-
-.discoverText {
-  font-size: 1.25rem;
-  color: #555;
-  line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto;
-  animation: slideUp 1s ease-out;
-}
-
-/* Content Section */
-.contentSection {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.contentTitle {
-  font-size: 2.5rem;
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  animation: fadeIn 1s ease-out;
-}
-
-.contentDescription {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 900px;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  animation: fadeIn 1.5s ease-out;
-}
-
-/* Product Gallery */
-.productsGallery {
-  display: flex;
-  justify-content: space-around;
-  gap: 2rem;
-  flex-wrap: wrap;
-  animation: fadeIn 2s ease-out;
-}
-
-.productCard {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.productCard:hover {
-  transform: scale(1.05);
-}
-
-.productTitle {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.productDescription {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Keyframe Animations */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 /* Mobile responsiveness */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+  .byprogrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for mobile view */
+    gap: 15px; /* Reduced gap for better spacing on mobile */
+  }
+
   .heroTitle {
-    font-size: 2rem;
+    font-size: 2rem; /* Smaller font size */
+    padding: 0 15px; /* Add padding for spacing */
   }
 
-  .contentTitle {
-    font-size: 2rem;
-  }
-
-  .contentDescription {
-    font-size: 1rem;
+  .heroSection {
+    height: 50vh; /* Adjust height for mobile */
+    padding: 20px;
   }
 
   .productsGallery {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .productCard {
-    width: 90%;
-    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 1rem;
   }
+
+  .contentTitle {
+    font-size: 1.8rem;
+    padding: 0 10px;
+  }
+
+  .contentDescription {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 10px 15px;
+    margin: 0;
+  }
+
+  .whyChooseTitle {
+    font-size: 1.8rem;
+  }
+
+  .whyChooseDescription {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+}
+/* Mobile view for smaller screens */
+@media (max-width: 480px) {
+
+  .title {
+    font-size: 28px;}
+  
+  .pageContainer {
+    padding: 20px;
+   
+  }
+  /* Adjust card content */
+  .byprotitle {
+    font-size: 1rem; /* Slightly smaller title */
+  }
+
+  .byprodescription {
+    font-size: 0.9rem; /* Smaller description text */
+  }
+
+  .byproknowmorelink {
+    font-size: 0.9rem; /* Reduce button font size */
+    padding: 8px 15px; /* Adjust button padding */
+  }
+
+  /* Hero section adjustments */
+  .heroSection {
+    height: 40vh; /* Smaller height for smaller screens */
+    padding: 10px;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem; /* Scale down the title */
+    line-height: 1.2; /* Adjust line height */
+  }
+
+  /* Content section adjustments */
+  .contentTitle {
+    font-size: 1.6rem; /* Smaller title font size */
+    padding: 0 10px; /* Add some padding for smaller screens */
+  }
+
+  .contentDescription {
+    font-size: 0.9rem; /* Adjust content font size */
+    line-height: 1.4; /* Better line spacing */
+    padding: 0 10px;
+  }
+
+  /* Why Choose Section */
+  .whyChooseTitle {
+    font-size: 1.6rem; /* Smaller title size */
+  }
+
+  .whyChooseDescription {
+    font-size: 0.9rem; /* Smaller text size */
+    padding: 0 10px; /* Add side padding for spacing */
+  }
+
+  /* General description */
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: justify;
+  }
+
+  /* Adjust buttons for small screens */
+  .contactButton {
+    font-size: 16px; /* Smaller button text */
+    padding: 10px 20px;
+    bottom: 20%; /* Adjust button position */
+  }
+
+  /* Hide large titles for smaller screens if necessary */
+  .largeTitle {
+    display: none; /* Optional: Hide larger titles */
+  }
+
+ 
+
+  
 }
