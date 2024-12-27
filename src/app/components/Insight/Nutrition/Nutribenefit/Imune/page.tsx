@@ -10,9 +10,7 @@ import Scroll from '../../../../../Scroll/scroll';
 const skin = '/assets/mentalhealth.png';
 const imune2 = '/assets/imune2.jpg';
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+
 
 const Imune = () => {
   useEffect(() => {

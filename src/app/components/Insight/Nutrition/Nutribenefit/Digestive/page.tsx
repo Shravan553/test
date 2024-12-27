@@ -7,10 +7,6 @@ import Footer from '../../../../../Footer/Footer';
 import Navbar from '../../../../../Navbar/NavbarTYP';
 import Scroll from '../../../../../Scroll/scroll';
 
-// Scroll to top function
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
 const Digestive = () => {
   useEffect(() => {

@@ -12,10 +12,7 @@ const Skin = () => {
     window.scrollTo(0, 0); // Scroll to top when component mounts
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+ 
   return (
     <div className={styles.skinPageContainer}>
       <Navbar />

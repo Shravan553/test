@@ -10,9 +10,6 @@ import Link from 'next/link';
 import Scroll from "../../../../../Scroll/scroll";
 
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
 const Soup = () => {
   useEffect(() => {

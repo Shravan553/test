@@ -40,9 +40,7 @@ const benefitsData: Benefit[] = [
   { title: 'Benefits to the Immune System', image: '/assets/im34.webp', link: '/components/Insight/Nutrition/Nutribenefit/Imune' },
   { title: 'Digestive Health', image: '/assets/di23.webp', link: '/components/Insight/Nutrition/Nutribenefit/Digestive' },
 ];
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
+
 const NutritionalFacts = () => {
   return (
     <div className={styles.nutriContainer}>
