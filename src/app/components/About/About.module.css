@@ -1,0 +1,760 @@
+.aboutUsContainer {
+  font-family: 'Roboto', sans-serif;
+}
+.aboutUsHero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+.aboutUsHeroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(130%);
+}
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.heroText {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.aboutUsAgpotato {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #fff; /* Optional, keep it plain */
+}
+.aboutUsAgpotatoContent {
+  /* max-width: 1000px; */
+  /* text-align: center; */
+  padding: 1px 0;
+  text-align: center;
+  line-height: 1.8;
+  /* margin-top: 20px; */
+}
+.aboutUsAgpotatoContent p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+  color: #555; /* Optional, for slightly lighter text */
+}
+.aboutUsAgpotatoContent h2 {
+  font-size: 2.5rem;
+  color: #5A3D1B; /* Dark brown heading */
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+  position: relative; /* Required for positioning the ::after element */
+  display: inline-block; /* Ensure the element's width wraps its content */
+}
+.aboutUsAgpotatoContent h2::after {
+  content: ''; /* Empty content to create the underline */
+  position: absolute;
+  bottom: 0; /* Align the underline with the bottom of the text */
+  left: 0; /* Start the underline from the beginning */
+  width: 40%; /* Cover half of the text */
+  height: 2px; /* Thickness of the underline */
+  border-bottom: 5px dotted brown; /* Dotted underline */
+}
+.aboutUsAgpotatoContent strong {
+  color: #D28F2C; /* Golden color for important text */
+}
+.aboutUsAgpotatoContent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+.missionAgpotato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+}
+.column {
+  flex: 0 1 400px;
+  display: flex;
+  justify-content: center;
+}
+.missionAgpotatoContent,
+.visionAgpotatoContent {
+  flex: 1; /* Equal width and size for both boxes */
+  text-align: justify;
+  background-color: #97f39b;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  min-height: 300px; /* Set a fixed minimum height */
+  box-sizing: border-box; /* Include padding in size calculations */
+}
+.missionAgpotatoContent:hover,
+.visionAgpotatoContent:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.missionAgpotatoContent h2,
+.visionAgpotatoContent h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5A3D1B; /* Dark brown heading */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.missionAgpotatoContent p,
+.visionAgpotatoContent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+.achievements {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 40px 0;
+  flex-wrap: wrap;
+}
+.achievementItem {
+  text-align: center;
+}
+.achievementItem h3 {
+  font-size: 3rem;
+  color: #189738;
+  font-weight: 700;
+}
+.achievementItem p {
+  font-size: 1.2rem;
+  color: #777;
+}
+.marketLeaders {
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+}
+.marketLeadersContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.textSection {
+  flex: 1;
+}
+.blockquote{
+  color: black;
+}
+.textSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color:#5A3D1B;
+}
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+.teamSection {
+  background-color: #f4f4f9;
+  padding: 60px 0;
+  text-align: center;
+}
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.teamMemberCard {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.teamMemberCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.teamMemberImage {
+  border-radius: 70%;
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #ff7f50;
+  transition: transform 0.3s ease-in-out;
+}
+.teamMemberCard:hover .teamMemberImage {
+  transform: scale(1.1);
+}
+/* Font imports - make sure to add these in your HTML head or import them in your CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+.teamMemberInfo h3 {
+  font-size: 22px;
+  font-weight: 600;
+  font-style: bold;
+  color: #030000;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+.teamMemberInfo h4 {
+  font-size: 22px;
+  font-weight: 600;
+  font-style: bold;
+}
+.teamMemberInfo p {
+  font-size: 16px;
+  font-style: bold;
+  color: #030000;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 15px;
+}
+.teamMemberInfo a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #ff7f50;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.teamMemberInfo a:hover {
+  color: #ff4500;
+  transform: translateY(-3px);
+}
+.teamcard {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  background-color: #b1d2b9;
+  border-radius: 12px;
+  display: flex;
+  height: 300px;
+  width: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.teamcard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.teamcard .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.teamcard .designation {
+  font-size: 0.9rem;
+  color: #a48650;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.teamcard .bio {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+/* Team Heading */
+.teamheading {
+  text-align: center;
+  padding-top: 30px;
+  text-decoration: underline;
+  text-decoration-color: #ff5733;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 15px;
+}
+.textSection p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+.imageSection {
+  flex: 1;
+}
+.marketLeadersImg {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.quoteSlider {
+  background-color: #5e5b5b;
+  padding: 60px 20px;
+  text-align: center;
+}
+.mapSection {
+  background-color: #f4f4f4; /* Light background for contrast */
+  padding: 40px 20px; /* Spacing around the section */
+  margin: 40px auto; /* Add space above and below the section */
+  text-align: center; /* Center-align text */
+}
+.mapHeading {
+  font-size: 2rem; /* Larger font for the heading */
+  font-weight: bold; /* Emphasize the heading */
+  color: #333; /* Dark color for visibility */
+  margin-bottom: 20px; /* Space below the heading */
+}
+.mapContainer {
+  display: flex;
+  justify-content: center; /* Center the map image */
+  align-items: center;
+  overflow: hidden; /* Ensure the map fits cleanly within the container */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 100vw; /* Use the full width of the viewport */
+  height: 140vh; /* Use the full height of the viewport */
+  margin: 0; /* Remove margin for full-width and full-height alignment */
+  background-color: rgb(255, 255, 255);
+}
+.mapImage {
+  width: 100%; /* Ensure the image stretches to fill the container's width */
+  height: 100%; /* Ensure the image stretches to fill the container's height */
+  object-fit:contain; /* Maintain aspect ratio while fitting the image within the container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+.mapImage:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+.quoteContainer {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #faf5f5;
+  width: 100%; /* Makes it full width of the parent container */
+  max-width: 1200px; /* You can increase this value for more width */
+  margin: 2px auto;
+  border: 2px solid #000; /* Adds a 2px solid black border */
+  padding: 20px; /* Optional: Adds padding inside the border for better spacing */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+.teamSection {
+  perspective: 1000px;
+}
+.teamcard {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  background-color: #b1d2b9;
+  border-radius: 12px;
+  display: flex;
+  height: 300px;
+  width: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center; /* Ensure all text is centered */
+}
+.name {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px; /* Add some space between name and bio */
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.bio {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px; /* Add space below bio */
+  padding: 0 10px;
+}
+.designation {
+  text-align: center;
+  color: #a48650;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.card {
+  width: 300px;
+  height: 450px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  transform-style: preserve-3d;
+}
+.card:hover {
+  transform: translateY(-15px) rotateX(10deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.teamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+.card:hover .teamImage {
+  transform: scale(1.1);
+}
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 0) 60%, 
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+.teamCardContent {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateZ(50px);
+}
+.bio {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+  padding: 0 10px;
+  text-align: center;
+}
+.name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+.card:hover .name {
+  color: #04D939;
+}
+.designation {
+  font-size: 1.1rem;
+  color: #f5feff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+.note {
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 90%;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.card:hover .note {
+  opacity: 1;
+}
+/* Social Links (Optional) */
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ecf0f1;
+}
+.socialLinks a {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+.socialLinks a:hover {
+  color: #04D939;
+}
+.quoteContainer span {
+  font-size: 3rem;
+  color: #ff9800;
+}
+.logoSliders {
+  background-color: #fff;
+  padding: 80px 50px;
+  text-align: center;
+}
+.logoSliders h2 {
+  margin-top: -150px; /* Moves the h2 upward */
+}
+.logoRows {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.logoTracks {
+  display: flex;
+  padding-top: 34px;
+  animation: slide 30s infinite linear;
+}
+.logos {
+  width: 150px;
+  margin: 0 15px;
+}
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.coreValues {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+.coreValuesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+.sectionHeading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.valueCard {
+  background-color: #87d67d;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.valueCard h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00704a;
+  margin-bottom: 10px;
+}
+.valueCard p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+.teamcard {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #b1d2b9;
+  border-radius: 12px;
+  display: flex;
+  height: 300px; /* Set a fixed height for uniform size */
+  width: 250px; /* Set a fixed width for uniform size */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width/height */
+}
+.name {
+  text-align: center;
+  padding-top: 15px;
+}
+.desgination {
+  text-align: center;
+  padding-top: 7px;
+  color: #5A3D1B;;
+}
+.note {
+  text-align: center;
+  padding-top: 8px;
+}
+.teamheading {
+  text-align: center;
+  padding-top: 30px;
+  text-decoration: underline;
+  text-decoration-color: #ff5733;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 15px;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .heroText {
+    font-size: 2.5rem;
+    padding: 0 20px;
+  }
+  .aboutUsAgpotatoContent {
+    padding: 30px 20px;
+  }
+  .aboutUsAgpotatoContent h2,
+  .missionAgpotatoContent h2,
+  .visionAgpotatoContent h2 {
+    font-size: 2rem;
+  }
+  .column {
+    flex: 1 1 100%;
+  }
+  .missionAgpotatoContent,
+  .visionAgpotatoContent {
+    padding: 30px 20px;
+  }
+  .achievements {
+    gap: 30px;
+  }
+  .achievementItem {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+  .achievementItem h3 {
+    font-size: 2.5rem;
+  }
+  .marketLeadersContent {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .textSection,
+  .imageSection {
+    flex: 1 1 100%;
+  }
+  .textSection h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .quoteContainer {
+    font-size: 1.4rem;
+    padding: 0 20px;
+  }
+  .quoteContainer span {
+    font-size: 2rem;
+  }
+  .teamimage {
+    flex: 1 1 100%;
+    min-width: 250px;
+  }
+  .teamcard {
+    width: 100%;
+    margin: 0;
+  }
+  .logoRows {
+    padding: 0 10px;
+  }
+  .logos {
+    width: 100px;
+    margin: 0 10px;
+  }
+}
+/* Additional adjustments for extra small screens */
+@media (max-width: 480px) {
+  .heroText {
+    font-size: 2rem;
+  }
+  .aboutUsAgpotatoContent h2,
+  .missionAgpotatoContent h2,
+  .visionAgpotatoContent h2,
+  .textSection h2 {
+    font-size: 1.8rem;
+  }
+  .aboutUsAgpotatoContent p,
+  .missionAgpotatoContent p,
+  .visionAgpotatoContent p,
+  .textSection p {
+    font-size: 1rem;
+  }
+  .achievementItem h3 {
+    font-size: 2rem;
+  }
+  .achievementItem p {
+    font-size: 1rem;
+  }
+  .quoteContainer {
+    font-size: 1.2rem;
+  }
+}
