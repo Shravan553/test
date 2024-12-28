@@ -6,6 +6,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { name, email, phone, message } = body;
 
+    // Validate input
     if (!name || !email || !phone || !message) {
       return NextResponse.json(
         { message: 'Missing required fields' },
@@ -13,24 +14,27 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Nodemailer transporter with connection pooling
+    // Nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: 'smtpout.secureserver.net',
-      port: 587,
-      secure: false,
+      host: 'smtpout.secureserver.net', // Replace with your SMTP server
+      port: 587, // Standard TLS port
+      secure: false, // Use true if using port 465
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER, // Ensure this is correctly set
+        pass: process.env.EMAIL_PASS, // Ensure this is correctly set
       },
-      pool: true, // Enable connection pooling
+      pool: true,
       maxConnections: 5,
       maxMessages: 100,
     });
 
-    // Email structure
+    // Debugging logs
+    console.log('Nodemailer Transporter Created');
+
+    // Email options
     const mailOptions = {
-      from: email,
-      to: process.env.EMAIL_USER,
+      from: email, // Always use authenticated email as sender
+      to: process.env.EMAIL_USER, // Send to yourself or a distribution list
       subject: 'New Contact Us Inquiry',
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
@@ -52,13 +56,12 @@ export async function POST(req: NextRequest) {
       `,
     };
 
-    // Asynchronous email sending
-    transporter.sendMail(mailOptions).catch((err) => {
-      console.error('Email sending failed:', err);
-    });
+    // Send the email
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent:', info.response);
 
     return NextResponse.json(
-      { message: 'Your request is being processed😊' },
+      { message: 'Your request has been submitted successfully 😊' },
       { status: 200 }
     );
   } catch (error) {
