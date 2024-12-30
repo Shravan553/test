@@ -6,7 +6,7 @@ import Footer from "../../../Footer/Footer";
 import NavbarTYP from "../../../Navbar/NavbarTYP";
 import Image from 'next/image'; // Importing Image from next/image
 import styles from './Meetthefarmer.module.css';
-// import SC from '../../../Scroll/scroll';
+import SC from '../../../Scroll/scroll';
 
 
 const Meetfarmer: React.FC = () => {
@@ -157,7 +157,7 @@ const Meetfarmer: React.FC = () => {
 
 
       {/* Business Description Section */}
-      {/* <SC/> */}
+      <SC/>
       <Footer />
     </div>
   );

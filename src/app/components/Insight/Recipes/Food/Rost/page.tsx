@@ -7,7 +7,7 @@ import Image from "next/image";
 import styles from "./rost.module.css";
 import Navbar from "../../../../../Navbar/NavbarTYP";
 import Footer from "../../../../../Footer/Footer";
-import Link from "next/link";
+import Scroll from '../../../../../Scroll/scroll';
 
 
 const Rost: React.FC = () => {
@@ -182,7 +182,7 @@ const Rost: React.FC = () => {
           ))}
         </motion.ol>
       </section>
-      {/* <Scroll/> */}
+      <Scroll/>
       <Footer/>
     </div>
   );
