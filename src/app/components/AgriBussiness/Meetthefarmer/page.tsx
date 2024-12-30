@@ -6,7 +6,7 @@ import Footer from "../../../Footer/Footer";
 import NavbarTYP from "../../../Navbar/NavbarTYP";
 import Image from 'next/image'; // Importing Image from next/image
 import styles from './Meetthefarmer.module.css';
-import SC from '../../../Scroll/scroll';
+// import SC from '../../../Scroll/scroll';
 
 
 const Meetfarmer: React.FC = () => {
@@ -108,7 +108,7 @@ const Meetfarmer: React.FC = () => {
   <h2 className={styles.mapHeading}>Explore Our Reach</h2>
   <div className={styles.mapContainer}>
     <Image
-      src="/assets/dmap (1).png" /* Replace with the actual map image path */
+      src="/assets/ytmap.png" /* Replace with the actual map image path */
       alt="Our Reach Map"
       width={1200}
       height={600}
@@ -157,7 +157,7 @@ const Meetfarmer: React.FC = () => {
 
 
       {/* Business Description Section */}
-      <SC/>
+      {/* <SC/> */}
       <Footer />
     </div>
   );

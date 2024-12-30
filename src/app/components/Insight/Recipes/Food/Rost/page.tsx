@@ -8,7 +8,7 @@ import styles from "./rost.module.css";
 import Navbar from "../../../../../Navbar/NavbarTYP";
 import Footer from "../../../../../Footer/Footer";
 import Link from "next/link";
-import Scroll from "../../../../../Scroll/scroll";
+
 
 const Rost: React.FC = () => {
   useEffect(() => {
@@ -47,7 +47,7 @@ const Rost: React.FC = () => {
       </Head>
       <section className={styles.friNav}>
       <div className={styles.friNavTitle}>Potato Recipes</div>
-      <ul className={styles.friNavList}>
+      {/* <ul className={styles.friNavList}>
         <li>
           <Link href="/components/Insight/Recipes/Food/Fries" className={styles.friNavItem}>
             French Fries
@@ -78,7 +78,7 @@ const Rost: React.FC = () => {
             Potato Soup
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </section>
       <section className={styles.heroSection4}>
         <Image
@@ -182,7 +182,7 @@ const Rost: React.FC = () => {
           ))}
         </motion.ol>
       </section>
-      <Scroll/>
+      {/* <Scroll/> */}
       <Footer/>
     </div>
   );

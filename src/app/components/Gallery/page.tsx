@@ -5,6 +5,7 @@ import Footer from "../../Footer/Footer"; // Adjust path as per your directory s
 import styles from "./Gallery.module.css";
 import NavbarTYP from "../../Navbar/NavbarTYP";
 import Image from 'next/image';
+import Scroll from "../../Scroll/scroll";
 // Scroll to top function
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -274,9 +275,7 @@ const Gallery: React.FC = () => {
       </div>
       <div style={{ margin: '25px 0' }}></div>
 
-      <button onClick={scrollToTop} className={styles.scrollToTop}>
-        Scroll to Top
-      </button>
+     <Scroll/>
       <Footer />
     </div>
     </div>

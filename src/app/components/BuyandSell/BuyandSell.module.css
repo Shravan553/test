@@ -307,3 +307,13 @@
     font-size: 12px; /* Adjust description font size */
   }
 }
+@media (min-width: 1024px) {
+  .gridcontainer {
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 2rem;
+  }
+
+  .marketimage {
+    height: 550px;
+  }
+}

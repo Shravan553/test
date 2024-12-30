@@ -5,8 +5,11 @@ import Image from 'next/image'; // Use Next.js's Image component for optimized i
 import styles from './digestive.module.css'; // Scoped styles import
 import Footer from '../../../../../Footer/Footer';
 import Navbar from '../../../../../Navbar/NavbarTYP';
-import Scroll from '../../../../../Scroll/scroll';
 
+// Scroll to top function
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 const Digestive = () => {
   useEffect(() => {
@@ -29,7 +32,7 @@ const Digestive = () => {
           />
           <div className={styles.overlay}>
             <div className={styles.heroText}>
-              <h1>Potatoes Help the Human Digestive System</h1>
+              <h1>Digestive health</h1>
             </div>
           </div>
         </div>
@@ -70,7 +73,10 @@ const Digestive = () => {
         </div>
       </section>
 
-     <Scroll/>
+      {/* Scroll to Top Button */}
+      <button onClick={scrollToTop} className={styles.scrollToTop}>
+        Scroll to Top
+      </button>
 
       <Footer />
     </div>

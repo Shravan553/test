@@ -177,7 +177,7 @@
       position: absolute;
       top: 80px;
       left: -100%; /* Initially hide off-screen */
-      width: 100vw;
+      width: 70vw;
       background: #1f5156;
       align-items: flex-start;
       padding-left: 20px;

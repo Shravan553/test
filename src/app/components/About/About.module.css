@@ -144,7 +144,7 @@
   font-size: 1.1rem;
   line-height: 1.6;
   color: #555;
-  margin-top: auto; /* Push text content down within the column */
+  /* margin-top: auto; Push text content down within the column */
   text-align: justify; /* Justify-align paragraphs for clean edges */
 }
 

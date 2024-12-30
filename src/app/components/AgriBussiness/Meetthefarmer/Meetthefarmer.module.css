@@ -115,6 +115,8 @@ width: 100%; /* Ensure the image stretches to fill the container's width */
 height: 100%; /* Ensure the image stretches to fill the container's height */
 object-fit: contain; /* Maintain aspect ratio while fitting the image within the container */
 transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+margin: 0; /* Remove space above and below */
+padding: 20px; /* Optional: Reduce padding for mobile */
 }
 
 .mapImage:hover {
@@ -356,6 +358,29 @@ filter: brightness(80%); /* Slightly lighten on hover */
     height: 100vh;
     object-fit: cover;
   }
+  .mapSection {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mapContainer {
+    width: 100%; /* Change from 100vw to 100% */
+    height: 50vh; /* Reduce height on mobile */
+    border-radius: 0; /* Remove border radius on mobile */
+  }
+  
+  .mapImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px; /* Add small padding to prevent image from touching edges */
+  }
+  
+  .mapHeading {
+    font-size: 1.5rem; /* Reduce heading size on mobile */
+    padding: 10px 0; /* Add some vertical padding */
+    margin-bottom: 10px;
+  }
   
   .galleryGrid {
     display: grid;
@@ -404,6 +429,29 @@ filter: brightness(80%); /* Slightly lighten on hover */
       object-fit: cover;
       transition: transform 0.3s ease, filter 0.3s ease;
       margin: auto; /* Center-align the image */
+    }
+    .mapSection {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .mapContainer {
+      width: 100%; /* Change from 100vw to 100% */
+      height: 50vh; /* Reduce height on mobile */
+      border-radius: 0; /* Remove border radius on mobile */
+    }
+    
+    .mapImage {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px; /* Add small padding to prevent image from touching edges */
+    }
+    
+    .mapHeading {
+      font-size: 1.5rem; /* Reduce heading size on mobile */
+      padding: 10px 0; /* Add some vertical padding */
+      margin-bottom: 10px;
     }
     .galleryGrid {
       display: flex;

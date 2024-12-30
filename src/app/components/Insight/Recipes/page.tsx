@@ -7,7 +7,7 @@ import styles from './PotatoRecipes.module.css'; // Importing CSS module for sty
 import Navbar from '../../../Navbar/NavbarTYP';
 import Footer from '../../../Footer/Footer';
 import Image from 'next/image'; // Import Image from next/image for optimization
-import SC from '../../../Scroll/scroll';
+// import SC from '../../../Scroll/scroll';
 
 
 const PotatoRecipes: React.FC = () => {
@@ -96,7 +96,7 @@ const PotatoRecipes: React.FC = () => {
           </MDBCol>
         ))}
       </MDBRow>
-<SC/>
+
       <Footer />
     </section>
   );

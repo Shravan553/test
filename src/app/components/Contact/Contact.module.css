@@ -9,10 +9,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
     background-size: cover; /* Ensures the image covers the entire footer */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
+    text-align: justify;
 }
 
 
@@ -21,6 +22,7 @@
     width: 100%;
     max-width: 500px;
     padding-bottom: 10px;
+    text-align: justify;
 }
 
 .footerContactForm h2 {
@@ -29,6 +31,9 @@
     margin-bottom: 10px;
     margin-top: 25px;
     font-weight: 600;
+    text-align: justify;
+
+
 }
 
 /* Contact Form Styling */
@@ -38,6 +43,8 @@
     gap: 15px;
     width: 100%;
     padding: 0 20px;
+    text-align: justify;
+
 }
 
 .contactForm input,
@@ -50,6 +57,8 @@
     color: white;
     border-radius: 3px;
     transition: border-color 0.3s ease;
+    text-align: justify;
+
 }
 
 .contactForm input:focus,
@@ -86,13 +95,15 @@
     max-width: 1200px;
     padding: 0 20px;
     box-sizing: border-box;
+    text-align: justify;
+
 }
 
 .footerColumn {
     flex: 1;
     min-width: 250px;
     margin: 20px;
-    text-align: left;
+    text-align: justify;
 }
 
 .footerColumn h3 {
@@ -107,16 +118,28 @@
     margin-bottom: 5px;
     font-weight: 600;
 }
+.footerColumn p{
+    text-align: justify;
+
+}
+.footerColumnv p{
+    text-align: justify;
+
+}
 
 .footerColumn p,
 .footerColumn ul {
     font-size: 1rem;
     line-height: 1.8;
+    text-align: justify;
+    
 }
 .footerColumn2 p,
 .footerColumn2 ul {
     font-size: 1rem;
     line-height: 1.8;
+    text-align: justify;
+
 }
 .footerColumn ul {
     list-style: none;
@@ -141,6 +164,8 @@
 .footerColumn2 ul {
     font-size: 1rem;
     line-height: 1.8;
+    text-align: justify;
+
 }
 
 /* Social Icons */
@@ -175,6 +200,8 @@
 
 .footerColumn2 ul li a:hover {
     color: #f1c40f;
+    text-align: justify;
+
 }
 .footerColumn2 ul li {
     margin-bottom: 10px;
@@ -192,6 +219,8 @@
     border-top: 1px solid #444;
     font-size: 1rem;
     color: #aaa;
+    text-align: justify;
+
 }
 
 /* Responsive Design */
@@ -201,14 +230,18 @@
         grid-template-columns: 1fr; /* Single column layout */
         grid-template-rows: repeat(4, auto); /* Stack sections vertically */
         gap: 10px;
-        text-align: center; /* Center-align for mobile */
+        /* text-align: center; Center-align for mobile */
         padding: 0 10px; /* Reduce side padding for mobile */
+        text-align: justify;
+
     }
 
     .footerColumn {
         width: 100%; /* Full width for each column */
         margin: 5px 0; /* Smaller margins for compact layout */
-        text-align: center; /* Center-align text in each column */
+        /* text-align: center; Center-align text in each column */
+        text-align: justify;
+
     }
     .footerColumn2 {
         display: none; /* Hide Quick Links section on mobile */
@@ -222,6 +255,9 @@
     .footerColumn ul {
         font-size: 0.8rem; /* Smaller text font size */
         line-height: 1.5; /* Adjust line spacing for readability */
+        text-align: justify;
+
+        
     }
 
     .footerColumn ul li {
@@ -232,11 +268,15 @@
         width: 100%;
         max-width: 100%;
         padding: 20px 0; /* Reduce padding */
+        text-align: justify;
+
     }
 
     .footerContactForm h2 {
         font-size: 1.2rem; /* Smaller heading font for form */
         margin-bottom: 15px;
+        text-align: justify;
+
     }
 
     .contactForm {
