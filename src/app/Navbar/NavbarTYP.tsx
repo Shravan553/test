@@ -94,11 +94,11 @@ const Navbar: React.FC = () => {
         <div className={styles.navContainer}>
           <Link href="/" className={styles.navLogo1}>
             <Image 
-              src="/assets/aa.png" 
+              src="/assets/AGPOTATO_LOGO.png" 
               alt="Logo" 
               className={styles.logo1} 
               width={330} 
-              height={100} 
+              height={90} 
             />
           </Link>
           <ul className={click ? `${styles.navMenu} ${styles.active}` : styles.navMenu}>
@@ -107,6 +107,7 @@ const Navbar: React.FC = () => {
                 Home
               </Link>
             </li>
+            
             <li className={styles.navItem}>
               <Link href="/components/About/" className={styles.navLinks} onClick={handleClick}>
                 About Us
