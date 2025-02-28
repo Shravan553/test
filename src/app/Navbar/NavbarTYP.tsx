@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
         <div className={styles.navContainer}>
           <Link href="/" className={styles.navLogo1}>
             <Image 
-              src="/assets/AG_logo_potato.png" 
+              src="/assets/AG_logo_potato1.png" 
               alt="Logo" 
               className={styles.logo1} 
               width={370} 
