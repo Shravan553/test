@@ -43,25 +43,29 @@ const benefitsData: Benefit[] = [
 
 const NutritionalFacts = () => {
   return (
-    <div className={styles.nutriContainer}>
+    <div className={styles.Container}>
       <Navbar />
 
-      {/* Hero Section */}
-      <div className={styles.recnutSection}>
-        <div className={styles.recnutImageSection}>
-        <Image
-          src="/assets/jh1.png"
-          alt="Types of Potatoes"
-          layout="fill"
-          objectFit="cover"
-          className={styles.recnutImage}
-        />
-        </div>
-        <div className={styles.recnutTextSection}>
-          <h1>Potato Recipes</h1>
-        </div>
-      </div>
-     
+
+      <section className={styles.heroSection}>
+          <div className={styles.heroOverlay}></div>
+          <Image
+            src="/assets/s1.jpg"
+            alt="Potato By Products"
+            className={styles.heroImage}
+            width={1920}
+            height={1080}
+          />
+          <h1 className={styles.heroTitle}><b>Potato </b>Nutritional Facts</h1>
+           <button
+            className={styles.contactButton}
+            onClick={() => (window.location.href = '/components/Contact/')}
+          >
+            Get in Touch with Us
+          </button> 
+        </section>
+
+      <br></br>
 
       {/* Testimonials Section */}
       <section className={styles.testimonialsSection}>

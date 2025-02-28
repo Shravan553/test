@@ -1,4 +1,3 @@
-// app/api/sendEmail/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
@@ -6,13 +5,14 @@ export async function POST(req: NextRequest) {
   try {
     // Parse the request body
     const body = await req.json();
-    const { personName, email, phone, address, quantity, potatoName, message } = body;
+    const { shopName,personName, email, phone, address, quantity, potatoName, message, pincode, selectedShopType, pancard, adharcard,accountNumber, ifsc,holderName } = body;
 
     // Validate required fields
-    if (!personName || !email || !phone || !address || !quantity) {
+    if (!personName || !email || !phone || !address || !quantity || !pincode || !selectedShopType || !pancard || !adharcard ||!accountNumber ||!ifsc ||!holderName) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }
+      
       );
     }
 
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
       requireTLS: true,
       authMethod: 'LOGIN',
     });
-    
+
     // Prepare email options
     const mailOptions = {
       from: email,  // From your GoDaddy email
@@ -42,11 +42,28 @@ export async function POST(req: NextRequest) {
     
             <p><strong>Seller Information:</strong></p>
             <ul>
-              <li><strong>Name:</strong> ${personName}</li>
+              <li><strong>Full Name:</strong> ${personName}</li>
               <li><strong>Email:</strong> ${email}</li>
               <li><strong>Phone:</strong> ${phone}</li>
               <li><strong>Address:</strong> ${address}</li>
+              <li><strong>Pincode:</strong> ${pincode}</li>
+              <li><strong>Shop Type:</strong> ${selectedShopType}</li>
+                 <li><strong>Shop Name:</strong> ${shopName}</li>
+ <!-- Include the selected shop type -->
             </ul>
+          <p><strong>Government ID Information:</strong></p>
+            <ul>
+              <li><strong style="color: red;">Adharcard Number:</strong> ${adharcard}</li>
+              <li><strong style="color: red;">Pancard Number:</strong> ${pancard}</li>
+            </ul>
+            <p><strong>Bank Account Information:</strong></p>
+            <ul>
+              <li><strong style="color: red;">Bank Account Number:</strong> ${accountNumber}</li>
+              <li><strong style="color: red;">Bank Holder Name:</strong> ${holderName}</li>
+              <li><strong style="color: red;">IFSC Code:</strong> ${ifsc}</li>
+
+            </ul>
+
     
             <p><strong>Potato Information:</strong></p>
             <ul>

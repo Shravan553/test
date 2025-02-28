@@ -18,9 +18,9 @@
   
   .logo1 {
     height: auto; /* Maintain aspect ratio */
-    max-height: 80px; /* Set a maximum height */
+    max-height: 90px; /* Set a maximum height */
     width: auto; /* Prevent distortion */
-    max-width: 440px; /* Ensure the logo doesn't grow too large */
+    max-width: 900px; /* Ensure the logo doesn't grow too large */
     filter: none;
   }
   
@@ -175,17 +175,17 @@
     .navMenu {
       flex-direction: column;
       position: absolute;
-      top: 80px;
-      left: -100%; /* Initially hide off-screen */
+      top: 74px;
+      right: -100%; /* Initially hide off-screen on the right */
       width: 70vw;
-      background: #1f5156;
+      background: #04D939;
       align-items: flex-start;
       padding-left: 20px;
       z-index: 5;
     }
   
     .navMenu.active {
-      left: 0; /* Show menu when active */
+      right: 0; /* Show menu when active */
     }
     
     .dropdownIcon {
@@ -195,19 +195,16 @@
    
    
   
-    .dropdownItem {
-      padding: 10px 20px;
-    }
+   
     .navItem {
       margin-bottom: 4px; /* Adds space below each item */
     }
-    .navMenu.active .dropdownMenu {
-      display: block;
-    }
+   
     /* For active state on mobile */
     .navItem.active {
       background-color: #2a3d42;
     }
+  
   
     .dropdownMenu {
       position: relative;
@@ -216,21 +213,36 @@
       margin-top: 10px;
       background-color: #fff;
       box-shadow: none;
+      max-height: 500px; /* Increase maximum height */
+      overflow-y: auto; /* Add scroll if content overflows */
+      transition: max-height 0.3s ease; /* Smooth height transition */
     }
-  
+
+    .dropdownItem {
+      padding: 20px 20px; /* Increase padding for larger items */
+      font-size: 0.9rem; /* Make text larger */
+      border-bottom: 1px solid #ddd; /* Add a separator for better visual distinction */
+    }
+    
+    .navMenu.active .dropdownMenu {
+      display: block;
+      max-height: 100%; /* Ensure full height is shown when active */
+    }
     .navIcon {
       display: block;
       height: 40px;
   
     }
+   
+
     .navLogo1 {
-      font-size: 0.1rem;
+      font-size: 0.8rem; /* Adjust logo size for mobile */
     }
   
     .logo1 {
     
         height: 80px; 
-        width: 240px;
+        width: 100px;
         filter: none; 
       
       

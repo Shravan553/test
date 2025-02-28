@@ -12,7 +12,7 @@ const History = () => {
   useEffect(() => {
   }, []);
   // Define images directly in the code
-  const historyImage = '/assets/HoHis.png';
+  const historyImage = '/assets/historyimage.jpg';
   const glimps1 = '/assets/potatohistoryglimps1.jpg';
   const glimps2 = '/assets/potatohistoryglimps2.jpg';
   const glimps3 = '/assets/potatohistoryglimps3.jpg';
@@ -48,20 +48,27 @@ const History = () => {
       </Head>
       {/* Hero Section */}
       <section className={styles.historyHero}>
-        <div className={styles.heroImage}>
-        <Image
-  src={historyImage}
-  alt="Olden History"
-  className={styles.historyHeroImg}
-  layout="fill" // Ensures the image covers the container
-  objectFit="cover" // Adjusts the image to fit the container dimensions
-/>
+  <div className={styles.heroImage}>
+    <Image
+      src={historyImage}
+      alt="Olden History"
+      className={styles.historyHeroImg}
+      layout="fill" // Ensures the image covers the container
+      objectFit="cover" // Adjusts the image to fit the container dimensions
+    />
+    <div className={styles.overlay}>
+      <div className={styles.heroText}>
+        <h1>History of Potatoes</h1>
+        <p>
+          The story of the potato dates back thousands of years, originating in
+          the Andes mountains. This remarkable crop has shaped civilizations
+          and continues to be a staple in diets worldwide.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div className={styles.overlay}>
-            <div className={styles.heroText}></div>
-          </div>
-        </div>
-      </section>
       <br />
       <br />
       {/* History Info Section */}
@@ -131,45 +138,45 @@ const History = () => {
             The cultivation of potatoes was crucial for local populations, providing a stable food source essential for survival. Key factors contributing to the potatos significance include:
           </p>
           <ul>
-            <li><strong>Nutritional Value:</strong> Potatoes are rich in carbohydrates, vitamins, and minerals, making them an ideal food source.</li>
-            <li><strong>Versatility:</strong> They can be prepared in numerous ways, including boiling, baking, and frying.</li>
-            <li><strong>Adaptability:</strong> Potatoes can grow in diverse climates and altitudes, making them suitable for various agricultural practices.</li>
+            <li className={styles.historyListItem}><strong>Nutritional Value:</strong> Potatoes are rich in carbohydrates, vitamins, and minerals, making them an ideal food source.</li>
+            <li className={styles.historyListItem}><strong>Versatility:</strong> They can be prepared in numerous ways, including boiling, baking, and frying.</li>
+            <li className={styles.historyListItem}><strong>Adaptability:</strong> Potatoes can grow in diverse climates and altitudes, making them suitable for various agricultural practices.</li>
           </ul>
           <h3>Inca Civilization and Agriculture</h3>
           <p>
             The Incas were pioneers in potato cultivation, employing advanced agricultural techniques to maximize yields. They developed methods such as:
           </p>
-          <ul>
-            <li><strong>Terracing:</strong> Utilizing steep mountainous terrain for planting potatoes, which helped reduce soil erosion.</li>
-            <li><strong>Crop Rotation:</strong> Alternating crops to maintain soil fertility and prevent pests.</li>
-            <li><strong>Storage Techniques:</strong> Using freeze-drying methods to preserve potatoes, allowing them to store food for long periods.</li>
+          <ul >
+            <li className={styles.historyListItem}><strong>Terracing:</strong> Utilizing steep mountainous terrain for planting potatoes, which helped reduce soil erosion.</li>
+            <li className={styles.historyListItem}><strong>Crop Rotation:</strong> Alternating crops to maintain soil fertility and prevent pests.</li>
+            <li className={styles.historyListItem}><strong>Storage Techniques:</strong> Using freeze-drying methods to preserve potatoes, allowing them to store food for long periods.</li>
           </ul>
           <h3>Introduction to Europe</h3>
           <p>
             In the 16th century, Spanish explorers encountered the potato during their conquests in South America. They recognized its potential and brought it back to Europe. The initial reception of potatoes in Europe was met with skepticism due to:
           </p>
           <ul>
-            <li><strong>Fear of Poison:</strong> Many Europeans believed potatoes were toxic because they belonged to the nightshade family.</li>
-            <li><strong>Resistance to Change:</strong> Traditional foods were deeply ingrained in European diets, making people hesitant to adopt new foods.</li>
-            <li><strong>Initial Cultivation Challenges:</strong> Early attempts at cultivation faced issues like poor soil conditions and lack of knowledge about proper agricultural practices.</li>
+            <li className={styles.historyListItem}><strong>Fear of Poison:</strong> Many Europeans believed potatoes were toxic because they belonged to the nightshade family.</li>
+            <li className={styles.historyListItem}><strong>Resistance to Change:</strong> Traditional foods were deeply ingrained in European diets, making people hesitant to adopt new foods.</li>
+            <li className={styles.historyListItem}><strong>Initial Cultivation Challenges:</strong> Early attempts at cultivation faced issues like poor soil conditions and lack of knowledge about proper agricultural practices.</li>
           </ul>
           <h3>Acceptance and Rise to Popularity</h3>
           <p>
             Over time, potatoes gained acceptance, especially in countries like Ireland and France. Factors that contributed to their rise in popularity include:
           </p>
           <ul>
-            <li><strong>Caloric Density:</strong> Potatoes provide high energy content, making them a vital food source during times of famine.</li>
-            <li><strong>Culinary Versatility:</strong> They became integral in various dishes, from French fries to shepherds pie, showcasing their adaptability.</li>
-            <li><strong>Support from Authorities:</strong> Leaders like Frederick the Great of Prussia promoted potato cultivation to combat famine.</li>
+            <li className={styles.historyListItem}><strong>Caloric Density:</strong> Potatoes provide high energy content, making them a vital food source during times of famine.</li>
+            <li className={styles.historyListItem}><strong>Culinary Versatility:</strong> They became integral in various dishes, from French fries to shepherds pie, showcasing their adaptability.</li>
+            <li className={styles.historyListItem}><strong>Support from Authorities:</strong> Leaders like Frederick the Great of Prussia promoted potato cultivation to combat famine.</li>
           </ul>
           <h3>Global Expansion and Modern Era</h3>
           <p>
             By the 18th century, the potato was firmly established in European agriculture, helping to sustain growing populations. Its global expansion led to:
           </p>
           <ul>
-            <li><strong>Trade and Transportation:</strong> Improved trade routes facilitated the movement of potatoes to Asia, Africa, and North America.</li>
-            <li><strong>Diverse Varieties:</strong> Selective breeding resulted in numerous potato varieties adapted to different climates and culinary uses.</li>
-            <li><strong>Food Security:</strong> The potato became a staple crop, significantly contributing to food security in many countries.</li>
+            <li className={styles.historyListItem}><strong>Trade and Transportation:</strong> Improved trade routes facilitated the movement of potatoes to Asia, Africa, and North America.</li>
+            <li className={styles.historyListItem}><strong>Diverse Varieties:</strong> Selective breeding resulted in numerous potato varieties adapted to different climates and culinary uses.</li>
+            <li className={styles.historyListItem}><strong>Food Security:</strong> The potato became a staple crop, significantly contributing to food security in many countries.</li>
           </ul>
           <h3>Conclusion</h3>
           <p>

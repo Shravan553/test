@@ -13,7 +13,7 @@ const WorldMap: React.FC = () => {
 
         {/* Image with Next.js Image Component for optimization */}
         <Image
-          src="/assets/websiteimage9.png"
+          src="/assets/map10.png"
                   alt="World Map of potato Export"
           layout="responsive"
           width={1200} // Adjust width as per your design

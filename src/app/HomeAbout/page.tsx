@@ -22,18 +22,18 @@ const HomeAbout: React.FC = () => {
         <h2>Bridging the Gap in the Potato Supply Chain</h2>
         <br />
         <p className={styles.webaboutdescription}>
-          <strong>AGPOTATO </strong> Trading Private Limited is a leading company in the potato trade, 
+          <strong>AGPOTATO TRADING PRIVATE LIMITED</strong> is a leading company in the potato trade, 
           acting as a vital intermediary between potato suppliers and customers. 
           We specialize in sourcing high-quality fresh potatoes from trusted 
           potato growers and efficiently distributing them to businesses in local markets.
         </p>
 
-        <p className={styles.webabouthighlight}>
+        <p className={styles.webaboutdescription}>
           With our extensive knowledge of agriculture and deep understanding of the 
           potato supply chain, we effectively bridge the gap between farmers and end-users, ensuring a seamless flow of fresh produce.
         </p>
 
-        <p className={styles.webabouthighlight}>
+        <p className={styles.webaboutdescription}>
           Through our innovative online platform, 
           agpotato.com, we have transformed the traditional <strong>agricultural</strong> supply chain, 
           making it easier for vendors to showcase their premium potatoes and for customers to access the 

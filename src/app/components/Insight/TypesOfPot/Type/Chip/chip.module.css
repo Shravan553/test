@@ -204,29 +204,63 @@ color: #444;
 /* Responsive Design */
 @media (max-width: 768px) {
     .mainContent {
-        flex-direction: column; /* Stack content vertically */
-        align-items: center; /* Center align */
-        padding: 20px;
+        flex-direction: column;
+        padding: 15px;
     }
 
     .textContent {
-        max-width: 100%; /* Full width on mobile */
-        text-align: center;
-        margin-right: 0; /* Remove margin on small screens */
+        margin: 0;
+    }
+
+    .titles {
+        font-size: 1.1em;
+        font-family: 'Arial', sans-serif;
+
+    }
+
+    .subtitle {
+        font-size: 1em;
+        color: #35ba3f;
+        font-family: 'Arial', sans-serif;
+
+    }
+    .tagline{
+        font-size: 1em;
+        text-align: justify;
+        font-family: 'Arial', sans-serif;
+
+    }
+
+    .description {
+        font-size: 0.9em;
+        text-align: justify;
+        font-family: 'Arial', sans-serif;
+
+    }
+
+    .see-details-btn {
+        font-size: 0.9em;
+        padding: 8px 12px;
     }
 
     .imageGallery {
-        display: flex;
-        flex-direction: column; /* Stack images vertically */
-        align-items: center; /* Center images horizontally */
-        justify-content: center; /* Center images vertically if needed */
-        width: fit-content;
-        margin: 0 auto; /* Center the entire gallery */
+        flex-direction: column;
+        gap: 10px;
     }
-    
+
     .imageGallery img {
-        width: auto; /* Maintain the original image width */
-        max-width: 100%; /* Ensure responsiveness */
-        margin: 10px 0; /* Add some spacing between images */
+        width: 100%; /* Full-width images */
+        max-width: 80px; /* Scale within bounds */
     }
-}    
+
+    .cookingGif {
+        max-width: 100%;
+    }
+    .detailsTitle{
+      font-size: 1rem;
+    }
+
+    .detailsText{
+        font-size: 0.9rem;
+    }
+}

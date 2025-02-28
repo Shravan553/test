@@ -95,8 +95,68 @@ const Export: React.FC = () => {
 
 
         
-        {/* Export Journey Section */}
-        <section className={styles.testimonialsSection1}>
+        
+
+
+
+        {/* Success Stories Section
+        <div className={styles.exportpageSuccessStoriesSection}>
+          <h2 className={styles.exportpageSuccessStoriesTitle}>Success Stories</h2>
+          <div className={styles.exportpageSuccessStory}>
+            <h3>Farmers' Journey Towards Sustainability</h3>
+            <p>
+              At AGPotato, we believe that sustainability starts at the grassroots level. Our collaboration with local
+              farmers is centered around empowering them with knowledge, resources, and technology to implement
+              eco-friendly farming practices. Through our initiatives, farmers are learning to utilize water-efficient
+              irrigation systems, organic farming techniques, and waste reduction strategies.
+            </p>
+            <Link href="/aboutus" className={styles.exportpageReadMore}>
+              Read More
+            </Link>
+          </div>
+        </div> */}
+
+        {/* Export Images Gallery Section */}
+        
+        </div>
+<br>
+</br>
+        <div className={styles.opportunityWrapper}>
+      {/* Section Header */}
+      <div className={styles.opportunityContent}>
+        <h2 className={styles.opportunityTitle}>Fresh Potatoes: A Growing Export Market</h2>
+        <p className={styles.opportunityDescription}>
+          India, the world <strong>second-largest potato producer</strong>, has become a hub for exporting high-quality potatoes. With an annual production exceeding
+          <strong> 50 million tons</strong>, Indian potatoes are in demand for their flavor, quality, and versatility. Countries like <strong>the Netherlands, UAE, Sri Lanka, and Malaysia</strong> present significant opportunities for expansion. 🌍
+        </p>
+        
+        <button
+          className={styles.learnMoreButton}
+          onClick={() => (window.location.href = "/components/Contact/")}
+        >
+          Partner with AGPotato Today!
+        </button>
+      </div>
+
+      {/* Section Images */}
+      <div className={styles.opportunityImages}>
+        <Image
+          src="/assets/Export4.jpeg"
+          alt="Fresh Potatoes Ready for Export"
+          className={styles.opportunityImage}
+          width={600}
+          height={400}
+        />
+        <Image
+          src="/assets/Export3.jpeg"
+          alt="Indian Farmers Harvesting Potatoes"
+          className={styles.opportunityImage}
+          width={600}
+          height={400}
+        />
+      </div>
+{/* Export Journey Section */}
+<section className={styles.testimonialsSection1}>
   <div className={styles.testimonialContainer1}>
     <div className={styles.testimonialImage1}>
       <Image
@@ -122,58 +182,57 @@ const Export: React.FC = () => {
     </div>
   </div>
 </section>
+      {/* Growth Section */}
+      <div className={styles.growthSection}>
+        <h3 className={styles.growthTitle}>Strategic Advantages of Indian Potatoes</h3>
+        <p className={styles.growthDescription}>
+          Indian potatoes are known for their <strong>diverse varieties</strong> and <strong>consistent quality</strong>, making them ideal for various cuisines and industrial applications. AGPotato leverages cutting-edge
+          <strong> storage facilities</strong>, <strong>sustainable farming practices</strong>, and a <strong>global distribution network</strong> to meet growing international demand.
+        </p>
+        <div className={styles.statsBox}>
+  <h4 className={styles.statsTitle}>Global Potato Trade Highlights</h4>
+  <ul className={styles.statsList}>
+    <li>
+      <strong>Global Potato Demand:</strong> Over <strong>380 million tons</strong> consumed annually worldwide.
+    </li>
+    <li>
+      <strong>India Share:</strong> Contributes <strong>12%</strong> to global potato production.
+    </li>
+    <li>
+      <strong>Export Milestone:</strong> AGPotato aims to ship <strong>100,000 tons</strong> globally by 2025.
+    </li>
+    <li>
+      <strong>Biggest Consumers:</strong> Europe leads with <strong>25%</strong> of total global imports.
+    </li>
+    <li>
+      <strong>Fresh Potato Preferences:</strong> Over <strong>70%</strong> of imports favor fresh, unprocessed potatoes.
+    </li>
+  </ul>
+</div>
 
+      </div>
 
-
-        {/* Success Stories Section
-        <div className={styles.exportpageSuccessStoriesSection}>
-          <h2 className={styles.exportpageSuccessStoriesTitle}>Success Stories</h2>
-          <div className={styles.exportpageSuccessStory}>
-            <h3>Farmers' Journey Towards Sustainability</h3>
-            <p>
-              At AGPotato, we believe that sustainability starts at the grassroots level. Our collaboration with local
-              farmers is centered around empowering them with knowledge, resources, and technology to implement
-              eco-friendly farming practices. Through our initiatives, farmers are learning to utilize water-efficient
-              irrigation systems, organic farming techniques, and waste reduction strategies.
-            </p>
-            <Link href="/aboutus" className={styles.exportpageReadMore}>
-              Read More
-            </Link>
-          </div>
-        </div> */}
-
-        {/* Export Images Gallery Section */}
-        <div className={styles.exportpageImagesSection}>
-          <h2 className={styles.exportpageTitle}>Export Images</h2>
-          <br>
-          </br>
-          <div className={styles.exportpageImageGallery}>
-          <Image
-  src="/assets/Export2.jpeg"
-  alt="AGPotato export shipment ready for delivery"
-  className={styles.exportpageImage}
-  width={800}
-  height={600}
-/>
-<Image
-  src="/assets/Export3.jpeg"
-  alt="Workers sorting high-quality potatoes for export"
-  className={styles.exportpageImage}
-  width={800}
-  height={600}
-/>
-<Image
-  src="/assets/Export4.jpeg"
-  alt="International potato product display in European market"
-  className={styles.exportpageImage}
-  width={800}
-  height={600}
-/>
-          </div>
-        </div>
+      {/* Growth Images */}
+      <div className={styles.growthImageGallery}>
+        <Image
+          src="/assets/Export2.jpeg"
+          alt="Lush Potato Field in India"
+          className={styles.growthImage}
+          width={800}
+          height={600}
+        />
+        <Image
+          src="/assets/Farmer2.jpeg"
+          alt="Potato Shipment Logistics"
+          className={styles.growthImage}
+          width={800}
+          height={600}
+        />
+        
+      </div>
+    </div>
 <SC/>
         <Footer />
-      </div>
     </div>
   );
 };

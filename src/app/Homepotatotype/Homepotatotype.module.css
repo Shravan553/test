@@ -105,7 +105,7 @@
 
 
 .about h2 {
-  font-size: 36px;
+  font-size: 26px;
   color: #03560b;
   margin: 25px 0;
   font-weight: 700;
@@ -115,10 +115,17 @@
 
 .about p {
   color: #000a0a;
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 25px;
+  font-size: 16px;
+  
+  font-family: 'Arial', sans-serif;
+
   text-align: justify;
+
+
+ 
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    
 }
 
 /* Know More Button */
@@ -164,20 +171,22 @@
   }
 
   .aboutRight h3 {
-    font-size: 16px; /* Adjusted for better readability */
-    letter-spacing: 1px; /* Slightly reduced letter-spacing */
+    font-size: 0.9rem;
+    font-family: 'Arial', sans-serif;
+
   }
 
   .about h2 {
-    font-size: 12px; /* Adjusted font size for mobile */
-    max-width: 90%; /* Make it more flexible on small screens */
+    font-size: 0.9rem;
+      font-family: 'Arial', sans-serif;
+
   }
 
   .about p {
-    font-size: 9px; /* Adjusted font size for mobile */
-    line-height: 1.6; /* Slightly reduced line height for mobile */
-    margin-bottom: 0px; /* Adjust spacing */
-    text-align: left; /* Align text to left for better readability */
+    font-size: 0.8rem;
+      height: 10rem;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
   }
 
   /* Know More Button */
@@ -190,5 +199,24 @@
   .aboutImg {
     max-width: 100%; /* Ensure the image is smaller on mobile */
     height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px;
   }
+}
+/* Larger screens */
+@media (min-width: 768px) {
+  
+
+  .about h2{
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+
+  }
+
+  .about p {
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+
+  }
+
+ 
 }

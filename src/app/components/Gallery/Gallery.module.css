@@ -1,163 +1,172 @@
-/* General Styling */
+/* General Styles */
 .galleryBody {
-  background: linear-gradient(to bottom right, #F8F8F8, #E0E0E0);
-  padding: 20px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-.scrollToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #04D939;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.scrollToTop:hover {
-  background-color: #03c829;
-}
-
-/* Gallery Entry */
-.galleryEntry {
+/* Hero Section */
+.heroSection {
   position: relative;
-  width: 100%;
-  max-height: 600px;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  text-align: center;
+  color: white;
 }
 
-.entryImage {
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures images fill the container without distortion */
-  transition: transform 0.3s, opacity 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.entryImage:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+.heroImage {
+  width: 100%;
+  height: 75vh;
+  display: block;
 }
 
-.entryOverlay {
+.heroContent {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px 30px;
-  border-radius: 10px;
-  transition: background-color 0.3s;
+  z-index: 2;
+  text-align: center;
 }
 
-.entryOverlay:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.entryTitle {
-  color: #fff;
-  font-size: 36px;
+.heroTitle {
+  font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-/* Section Descriptions */
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Gallery Sections */
+.gallerySections {
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #5A3D1B;
+  margin-bottom: 1rem;
+  text-align: center;
+  
+  text-decoration: underline dotted brown; /* Dotted underline with the color brown */
+  text-decoration-thickness: 2px; /* Adjust the thickness of the underline */
+  text-underline-offset: 5px; /* Adjust the space between the text and the underline */
+}
+
 .sectionDescription {
-  margin: 10px 0 20px;
-  font-size: 25px;
-  color: #A48650;
-  line-height: 1.6;
+  font-size: 1.3rem;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.gridContainer {
+.contactButton {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 15px 15px;
+  border: 2px solid #04D939;
+  background-color: transparent;
+  color: white;
+  font-size: 19.5px;
+  text-decoration: none;
+  border-radius: 80px; /* Makes the button look like a pill */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contactButton:hover {
+  background-color: #04D939;
+  color: white;
+}
+
+/* Image Grid */
+.imageGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
-  gap: 20px;
-  padding: 0 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.gridItem {
-  display: flex; /* Centers content inside the container */
-  justify-content: center; /* Aligns image horizontally */
-  align-items: center; /* Aligns image vertically */
-  overflow: hidden; /* Prevents image overflow outside the container */
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px #001542;
-  transition: transform 0.3s, box-shadow 0.3s, border 0.3s, opacity 0.3s;
-  border: 2px solid transparent;
-  background-color: #f8f8f8; /* Neutral background for empty spaces */
-  aspect-ratio: 4 / 2.5; /* Ensures consistent grid item dimensions */
+.gridImage {
+  width: 100%; /* Make image responsive */
+  height: 300px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures content fits and is cropped proportionally */
+  border: 5px solid #5df175; /* Green border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto; /* Center image horizontally */
 }
 
-.gridItem img {
-  width: auto; /* Maintains the natural width */
-  height: 100%; /* Scales height to fit the container */
-  max-width: 100%; /* Prevents the image from exceeding the container width */
-  object-fit: contain; /* Keeps the original resolution and aspect ratio */
-  object-position: center; /* Centers the image within the grid item */
-}
-
-.gridItem:hover {
+.gridImage:hover {
   transform: scale(1.05);
-  box-shadow: 0px 8px 20px #001542;
-  border: 5px solid #04D939;
-  opacity: 0.9;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
-  .galleryBody {
-      font-size: 0.9rem; /* Reduce general font size for mobile */
+/* Mobile View */
+@media (max-width: 768px) {
+  .heroImage {
+    height: 50vh; /* Adjust hero image height for mobile */
   }
 
-  .entryTitle {
-      font-size: 24px; /* Smaller title font size */
+  .heroTitle {
+    font-size: 1.5rem; /* Adjust title size for mobile */
+  }
+
+  .heroSubtitle {
+    font-size: 0.9rem; /* Adjust subtitle size for mobile */
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem; /* Adjust section title size for mobile */
   }
 
   .sectionDescription {
-      font-size: 20px; /* Smaller description font size */
+    font-size: 1.1rem; 
+    text-align: justify;/* Adjust description size for mobile */
   }
 
-  .gridContainer {
-    grid-template-columns: 1fr; /* Single-column layout on mobile */
-    gap: 10px;
-    padding: 0 5px;
+  .contactButton {
+    
+    position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 15px 1px;
+  border: 2px solid #04D939;
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 80px; /* Makes the button look like a pill */
+  transition: background-color 0.3s, color 0.3s;
   }
 
-  .gridItem {
-    height: auto; /* Let the height adjust automatically based on content */
-    max-height: 150px; /* Prevent oversized grid items */
-  }
-}
-
-/* For very small screens, like smartphones */
-@media (max-width: 480px) {
-  .galleryBody {
-      font-size: 0.7rem; /* Further reduce general font size */
+  .imageGrid {
+    grid-template-columns: 1fr; /* Stack images vertically on mobile */
   }
 
-  .entryTitle {
-      font-size: 13px; /* Further reduce title font size */
-  }
-
-  .sectionDescription {
-      font-size: 12px; 
-      text-align: left; /* Smaller description font */
-  }
-
-  .gridContainer {
-    grid-template-columns: 1fr; /* Maintain single-column layout */
-  }
-
-  .gridItem {
-    height: auto; /* Further adjust height for small screens */
-    max-height: 120px;
+  .gridImage {
+    width: 100%; /* Ensure image fits the screen width */
+    height: 200px; /* Fixed height for mobile images */
   }
 }

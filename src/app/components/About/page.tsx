@@ -7,9 +7,11 @@ import Head from "next/head";
 import Image from "next/image";
 import SC from "../../Scroll/scroll";
 import LogoSlider from "../../LogoSlider/LogoSlider";
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
 const About: React.FC = () => {
   const quotes = [
     "Potatoes are the perfect comfort food.",
@@ -17,7 +19,9 @@ const About: React.FC = () => {
     "Life is too short to skip potato day.",
     "Potatoes make everything better.",
   ];
+
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
   useEffect(() => {
     scrollToTop();
     const interval = setInterval(() => {
@@ -25,11 +29,13 @@ const About: React.FC = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [quotes.length]);
+
   return (
     <div>
       <div className={styles.aboutUsContainer}>
         <Head>
           <title>About AGPOTATO - Excellence in Potato Supply Chain</title>
+          <meta name="google-site-verification" content="sZBFMd3wcR6-f30Igk3vvcOhCP2LkDaXpKAXGkw25rI" />
           <meta
             name="description"
             content="Discover AGPOTATO, a leader in the potato industry, delivering high-quality products like potato fries, flour, and milk. Trusted since 2014."
@@ -40,10 +46,12 @@ const About: React.FC = () => {
           />
           <meta name="author" content="AGPOTATO Team" />
         </Head>
+
         <NavbarTYP />
+
         <section className={styles.aboutUsHero}>
           <Image
-            src="/assets/imageforabout1.jpg"
+            src="/assets/bimage1.jpg"
             alt="About AGPOTATO"
             className={styles.aboutUsHeroImg}
             width={1200} // Add width and height for optimization
@@ -54,21 +62,23 @@ const About: React.FC = () => {
             <p>Your trusted partner in the potato supply chain.</p>
           </div>
         </section>
+
         <section className={styles.aboutUsAgpotato}>
           <div className={styles.aboutUsAgpotatoContent}>
             <h2>About Agpotato</h2>
             <p>
-              Founded in 2014, <strong>Agpotato</strong> embarked on a mission to revolutionize the potato
+              Founded in 2014, <strong> AGPOTATO TRADING PRIVATE LIMITED </strong> embarked on a mission to revolutionize the potato
               industry with an ambitious vision to redefine how the world views this versatile crop. Starting
               with the humble staple potato, we have grown to offer a diverse range of high-quality products,
               including premium potato fries, finely milled potato flour, and even the innovative creation of
               potato milk. Our journey has been fueled by an unwavering commitment to research, sustainability,
               and innovation, allowing us to continually refine our processes and deliver solutions that cater to
-              the evolving needs of consumers. Every product under the <strong>Agpotato</strong> brand embodies our
+              the evolving needs of consumers. Every product under the <strong>AGPOTATO TRADING PRIVATE LIMITED </strong> brand embodies our
               dedication to excellence, offering not just utility but also the promise of quality and ingenuity.
             </p>
           </div>
         </section>
+
         <section className={styles.missionAgpotato}>
           <div className={styles.column}>
             <div className={styles.missionAgpotatoContent}>
@@ -79,7 +89,7 @@ const About: React.FC = () => {
               </p>
             </div>
           </div>
-          
+
           <div className={styles.column}>
             <div className={styles.visionAgpotatoContent}>
               <h2>Our Vision</h2>
@@ -124,21 +134,7 @@ const About: React.FC = () => {
             </div>
           </div>
         </section>
-    
-        {/* <div className={styles.achievements}>
-          <div className={styles.achievementItem}>
-            <h3>10+</h3>
-            <p>Years of Excellence</p>
-          </div>
-          <div className={styles.achievementItem}>
-            <h3>100+</h3>
-            <p>Innovative Products</p>
-          </div>
-          <div className={styles.achievementItem}>
-            <h3>1M+</h3>
-            <p>Happy Customers</p>
-          </div>
-        </div> */}
+
         <section className={styles.marketLeaders}>
           <div className={styles.marketLeadersContent}>
             <div className={styles.textSection}>
@@ -168,14 +164,9 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        
-        
-       
-        {/* Team Members Section */}
         <section className={styles.teamSection}>
           <h2>Meet Our Leaders</h2>
           <div className={styles.teamContainer}>
-            {/* Suhsma B - Director */}
             <div className={styles.teamMemberCard}>
               <Image
                 src="/assets/CEO.jpeg"
@@ -187,13 +178,8 @@ const About: React.FC = () => {
               <div className={styles.teamMemberInfo}>
                 <h3>Anand JP</h3>
                 <h4>CEO</h4>
-                <br></br>
-
                 <p>
-                  Anand JP, as the CEO, has steered AGPOTATO to new heights. His leadership and vision have been
-                  pivotal in expanding the company&apos;s market reach and ensuring that AGPOTATO remains a leader in the
-                  potato indust
-                  ry.
+                  Anand JP, serving as the CEO, has been the driving force behind AGPOTATO&apos;s remarkable journey of growth and success. His forward-thinking approach and strategic vision have been pivotal in navigating the company through challenges and seizing new opportunities. 
                 </p>
               </div>
             </div>
@@ -208,18 +194,14 @@ const About: React.FC = () => {
               <div className={styles.teamMemberInfo}>
                 <h3>Suhsma B</h3>
                 <h4>Director</h4>
-                <br></br>
-
                 <p>
-                  Suhsma B has been a driving force behind AGPOTATO&apos;s growth and operations. With a passion for
-                  excellence, Suhsma has led the company&apos;s strategic initiatives, ensuring growth, sustainability, and
-                  customer satisfaction.
+                  Suhsma B, serving as the Director, has been the cornerstone of AGPOTATO&apos;s exceptional progress and achievements. Her innovative mindset and strategic expertise have been critical in overcoming challenges and driving the company toward new horizons.
                 </p>
               </div>
             </div>
-            {/* Anand JP - CEO */}
           </div>
         </section>
+
         <section className={styles.quoteSlider}>
           <div className={styles.quoteContainer}>
             <blockquote className={styles.blockquote}>
@@ -229,28 +211,30 @@ const About: React.FC = () => {
             </blockquote>
           </div>
         </section>
-        {/* Map Section */}
+
         <section className={styles.mapSection}>
           <h2 className={styles.mapHeading}>Explore Our Reach</h2>
           <div className={styles.mapContainer}>
-          <Image
-  src="/assets/ytmap.png" // Image in public/assets/
-  alt="Our Reach Map"
-  width={1200}
-  height={600}
-  className={styles.mapImage}
-/>
+            <Image
+              src="/assets/ytmap.png"
+              alt="Our Reach Map"
+              width={1200}
+              height={600}
+              className={styles.mapImage}
+            />
           </div>
         </section>
+
         <center><h2 className={styles.sectionHeading}>Our Clients</h2></center>
 
+        <LogoSlider />
 
-        <LogoSlider/>
-        
-<SC/>
-        <Footer />
+        <SC />
       </div>
+      <Footer />
+
     </div>
   );
 };
+
 export default About;

@@ -81,11 +81,11 @@
 }
 
 /* Positioning for specific countries */
-.usa { top: 48%; left: 25%; }
-.netherlands { top: 40%; left: 50%; }
-.uae { top: 56%; left: 64%; }
-.india { top: 60%; left: 70%; }
-.australia { top: 79%; left: 84%; }
+.usa { top: 48%; left: 24.5%; }
+.netherlands { top: 53%; left: 61.4%; }
+.uae { top: 32%; left: 83.6%; }
+.india { top: 53.2%; left: 71%; }
+.australia { top: 78.5%; left: 89%; }
 
 /* Responsive adjustments */
 @media only screen and (max-width: 768px) {
@@ -104,11 +104,11 @@
   }
 
   /* Adjust marker positions */
-  .usa { top: 54%; left: 25%; }
-  .netherlands { top: 47%; left: 50%; }
-  .uae { top: 61%; left: 63%; }
-  .india { top: 64%; left: 70%; }
-  .australia { top: 81%; left: 83%; }
+  .usa { top: 52%; left: 25%; }
+  .netherlands { top: 37%; left: 84%; }
+  .uae { top: 57%; left: 61%; }
+  .india { top: 58%; left: 71%; }
+  .australia { top: 81%; left: 89%; }
 
   /* Marker styling adjustments */
   .marker {

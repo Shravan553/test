@@ -1,10 +1,14 @@
 {
   
+     
   "compilerOptions": {
     "target": "ESNext",
+    "typeRoots": ["./types", "./node_modules/@types"],
+
     "lib": ["dom", "dom.iterable", "esnext" ],
     "allowJs": true,
     "module": "ESNext",
+    "types": ["node"],
 
     "skipLibCheck": true,
     "strict": true,

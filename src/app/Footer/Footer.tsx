@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 import Link from "next/link";
 import Head from "next/head";
 
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF,  FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -127,6 +127,9 @@ const Footer = () => {
         {/* Contact Form */}
         <div className={styles.footerContactForm}>
           <h2>Contact Us</h2>
+          <h3>AGPOTATO TRADING PRIVATE LIMITED</h3>
+          
+
           <form ref={formRef} onSubmit={handleSubmit} className={styles.contactForm}>
             <input
               type="text"
@@ -204,23 +207,23 @@ const Footer = () => {
           </div>
           <div className={styles.footerColumn}>
             <h3>Contact Info</h3>
-            <p>Email: support@agpotato.com</p>
-            <p>Phone:+91 9591615099</p>
+            <p><strong>Email: </strong>support@agpotato.com</p>
+            <p><strong>Phone: </strong>+91 9591615099</p>
             <p>
-              Address: World Trade Centre, Unit No 2217, 22nd Floor, Malleshwaram (W), Next Orion Mall, Bangalore, Karnataka
+              <strong>Address: </strong> AGPOTATO TRADING PRIVATE LIMITED, World Trade Centre, Unit No 2217, 22nd Floor, Malleshwaram (W), Next Orion Mall, Bangalore, Karnataka
               560055, IN
             </p>
             <div className={styles.socialIcons}>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/share/1D3YExrYxU/" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                 <FaTwitter />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              </a> */}
+              <a href="https://www.instagram.com/agpotato_?igsh=cW40b2Q1ZWpkdjNt" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/106107647/admin/dashboard/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
             </div>

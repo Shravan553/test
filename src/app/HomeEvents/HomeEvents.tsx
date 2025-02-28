@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react'; // Import useState
+import { useState, useEffect } from 'react'; // Import useEffect
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './HomeEvents.module.css';
@@ -39,18 +39,17 @@ const eventsData: Event[] = [
     description:
       'Discover insights into the global potato export industry, as featured in recent newspaper reports.',
     image: '/assets/Gimage6.jpeg',
-},
-
+  },
   {
-    id: 3,
+    id: 4,
     title: 'Global Potato Export Insights Conference',
     date: '2024',
-    description:      'Discover insights into the global potato export industry, as featured in recent newspaper reports.',
-
+    description:
+      'Discover insights into the global potato export industry, as featured in recent newspaper reports.',
     image: '/assets/Gimage4.jpeg',
   },
   {
-    id: 3,
+    id: 5,
     title: 'Global Potato Export Insights Conference',
     date: '2024',
     description:
@@ -60,8 +59,17 @@ const eventsData: Event[] = [
 ];
 
 const HomeEvents = () => {
-  // Correctly type the useState hook
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  // Automatically move to the next event every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % eventsData.length);
+    }, 5000); // 5000ms = 5 seconds
+
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(interval);
+  }, []);
 
   const nextEvent = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % eventsData.length);

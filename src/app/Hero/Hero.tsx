@@ -9,34 +9,34 @@ import Link from "next/link"; // Import Link from Next.js
 const slides = [
   {
     image: "/assets/websiteimage7.png",
-    heading: "Agpotato - Innovating Farming Practices",
+    heading: "AGPOTATO - Innovating Farming Practices",
     description:
       "Empowering farmers with cutting-edge, sustainable farming techniques for optimized yields and quality.",
     alt: "Illustration of modern farming techniques at AGPotato.",
   },
   {
     image: "/assets/potatotractor.jpg",
-    heading: "Agpotato - Global Excellence in Potato Export",
+    heading: "AGPOTATO - Global Excellence in Potato Export",
     description: "Exporting the Best of Potatoes with a Focus on Sustainability.",
     alt: "Image of fresh potatoes being prepared for export.",
   },
   {
     image: "/assets/ma.png",
-    heading: "Agpotato - Sustainable Potato Flour",
+    heading: "AGPOTATO - Sustainable Potato Flour",
     description:
       "Committed to producing high-quality potato flour through sustainable practices, rich in nutrients and versatile.",
     alt: "Image showing sustainable potato flour by AGPotato.",
   },
   {
     image: "/assets/websiteimage3.jpg",
-    heading: "Agpotato - Exploring the World of Potatoes",
+    heading: "AGPOTATO - Exploring the World of Potatoes",
     description:
       "Discover diverse potato varieties like Russet, Yukon Gold, Red Bliss, and Fingerlings, each with unique flavors and uses.",
     alt: "Image showing a variety of potatoes including Russet, Yukon Gold, Red Bliss, and Fingerlings.",
   },
   {
     image: "/assets/websiteimage10.png",
-    heading: "Agpotato - Excellence in Prepackaging",
+    heading: "AGPOTATO - Excellence in Prepackaging",
     description:
       "Ensuring the freshness and quality of potatoes with innovative prepackaging solutions tailored for global markets.",
     alt: "Image showing prepackaged potatoes in eco-friendly packaging, ready for distribution.",
@@ -77,6 +77,7 @@ const WebHero: React.FC = () => {
     <div className={styles.webHero}>
       <Head>
         <title>Agpotato - Excellence in Sustainable Potato Products</title>
+        <meta name="google-site-verification" content="sZBFMd3wcR6-f30Igk3vvcOhCP2LkDaXpKAXGkw25rI" />
         <meta
           name="description"
           content="AGPotato leads in sustainable potato farming, producing nutrient-rich potato flour. Our eco-friendly farming techniques and global export services ensure the highest quality products. Explore our commitment to sustainability in agriculture."

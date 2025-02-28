@@ -8,7 +8,7 @@ import Footer from '../../../Footer/Footer';
 import { motion } from 'framer-motion';
 import styles from './Sell.module.css';
 
-const SellForm = () => {
+const BuyForm = () => {
   const [isClient, setIsClient] = useState(false);
   const [potatoName, setPotatoName] = useState<string | undefined>(undefined);
 
@@ -29,6 +29,8 @@ const SellForm = () => {
     }
   }, [searchParams, isClient]);
 
+
+  
   // Form submission handler
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,11 +42,17 @@ const SellForm = () => {
       address: (document.getElementById('address') as HTMLInputElement).value,
       quantity: (document.getElementById('quantity') as HTMLInputElement).value,
       message: (document.getElementById('message') as HTMLTextAreaElement).value,
+      accountNumber: (document.getElementById('accountNumber') as HTMLTextAreaElement).value,
+      ifsc: (document.getElementById('ifsc') as HTMLTextAreaElement).value,
+      holderName: (document.getElementById('holderName') as HTMLTextAreaElement).value,
+
       potatoName,
     };
 
+    
+
     try {
-      const response = await fetch('/api/sendEmail1', {
+      const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -78,7 +86,7 @@ const SellForm = () => {
           >
             <h2 className={styles.buyTitle}>Selling: {potatoName}</h2>
             <p className={styles.buyDescription}>
-              Please fill out the form to Sell potatoes.
+              Please fill out the form to sell potatoes.
             </p>
 
             <motion.form
@@ -104,7 +112,7 @@ const SellForm = () => {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="address">Shipping Address:</label>
+                <label htmlFor="address">Address:</label>
                 <input type="text" id="address" required />
               </div>
 
@@ -112,6 +120,43 @@ const SellForm = () => {
                 <label htmlFor="quantity">Quantity (kg):</label>
                 <input type="number" id="quantity" required />
               </div>
+
+              <div className={styles.formGroup}>
+  <label htmlFor="accountNumber">Bank Account Number:</label>
+  <input
+    type="text"
+    id="accountNumber"
+    name="accountNumber"
+    pattern="^\d{9,18}$"
+    title="Account number must be 9 to 18 digits."
+    required
+  />
+</div>
+
+<div className={styles.formGroup}>
+  <label htmlFor="ifsc">IFSC Code:</label>
+  <input
+    type="text"
+    id="ifsc"
+    name="ifsc"
+    pattern="^[A-Z]{4}0[A-Z0-9]{6}$"
+    title="Enter a valid IFSC code (e.g., ABCD0123456)."
+    required
+  />
+</div>
+
+<div className={styles.formGroup}>
+  <label htmlFor="holderName">Account Holder Name:</label>
+  <input
+    type="text"
+    id="holderName"
+    name="holderName"
+    pattern="^[a-zA-Z\s]+$"
+    title="Name should only contain letters and spaces."
+    required
+  />
+</div>
+
 
               <div className={styles.formGroup}>
                 <label htmlFor="message">Additional Message:</label>
@@ -141,7 +186,7 @@ export default function Page() {
     <div>
       <Nav />
       <Suspense fallback={<div>Loading page...</div>}>
-        <SellForm />
+        <BuyForm />
       </Suspense>
       <Footer />
     </div>

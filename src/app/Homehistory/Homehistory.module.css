@@ -75,6 +75,8 @@
     font-size: 3rem;
     font-weight: bold;
     color: #2d3748;
+    font-family: 'Arial', sans-serif;
+
     position: relative; /* Required for positioning the pseudo-element */
     display: inline-block; /* Ensure the title takes only as much width as needed */
   }
@@ -99,11 +101,13 @@
   }
   
   .historySectionText {
-    font-size: 1rem;
+    font-size: 16px;
     color: #2d3748;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     text-align: justify;
+    font-family: 'Arial', sans-serif;
+
 
   }
   
@@ -119,6 +123,8 @@
     padding: 0.5rem 1.5rem;
     color: white;
     border-radius: 50px;
+    font-family: 'Arial', sans-serif;
+
 
     background: linear-gradient(135deg,  #04D939,#001542);
     transition: all 0.3s ease;
@@ -149,12 +155,16 @@
   
     .historyTitle {
       font-size: 0.9rem;
+      font-family: 'Arial', sans-serif;
+
     }
   
     .historySectionText {
       font-size: 0.8rem;
       height: 10rem;
       overflow: hidden;
+      font-family: 'Arial', sans-serif;
+
     }
     .historyHighlightBar {
       width: 50px;
@@ -166,6 +176,8 @@
     .historyButtonLearnMore {
       font-size: 1rem;
       padding: 0.4rem 1rem;
+      font-family: 'Arial', sans-serif;
+
     }
   }
   
@@ -183,10 +195,14 @@
   
     .historyTitle {
       font-size: 2rem;
+      font-family: 'Arial', sans-serif;
+
     }
   
     .historySectionText {
       font-size: 1rem;
+      font-family: 'Arial', sans-serif;
+
     }
   
     .historyContentSection {

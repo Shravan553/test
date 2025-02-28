@@ -1,4 +1,45 @@
 
+/* Hero Section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease-out;
+  overflow: visible;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.heroTitle {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  animation: slideUp 1s ease-out;
+}
+
+
+
 .nutripageTestimonials {
   padding: 40px;
   background-color:  #A48650; /* Light background color */
@@ -22,7 +63,7 @@
 }
 .testimonialsSection{
   background-color: #a28356;
-  padding-top: 220px;
+  padding-top: 60px;
 }
 .testimonialCard {
   background: linear-gradient(135deg, #d8c49e, #cfa46f); /* Soft brown potato-like gradient */
@@ -71,12 +112,7 @@
   
 }
 
-.heroSections {
-  position: relative;
-  height: 800px; /* Adjust as needed */
-  overflow: hidden;
-  display: flex; /* Flexbox for layout */
-}
+
 .recdesSection {
   background: linear-gradient(135deg, rgba(255, 223, 186, 0.8), #A48650); /* Soft potato-themed background */
   padding: 60px 20px;
@@ -141,33 +177,30 @@
   margin: 0;
 }
 
-.heroImageContainer {
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-transform: translateZ(0); /* Improves rendering performance */
-  -webkit-backface-visibility: hidden; /* Prevents flickering */
-}
-
-.heroImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the container without distortion */
-  image-rendering: auto; /* Default rendering for modern browsers */
-  filter: none; /* Avoid unnecessary filters that can blur the image */
-}
-
-
-.blackOverlay {
+.contactButton {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1); /* Black overlay */
-  z-index: 1; /* Ensures the overlay is above the image but below the text */
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 15px 25px;
+  border: 2px solid #04D939;
+  background-color: transparent;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  border-radius: 50px; /* Makes the button look like a pill */
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.contactButton:hover {
+  background-color: #04D939;
+  color: white;
+}
+
+
+
 
 /* Text Section Styling */
 .nutritionBenefitsList {
@@ -206,28 +239,9 @@
   font-weight: bold;
   text-align: center;
 }
-.heroTitle {
-  position: absolute;
-  top: -480px; /* Adjusted to move the title higher */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 850px; /* Increased font size */
-  font-family: 'Arial', sans-serif; /* Or any other bold, clean font */
-  font-weight: 900; /* Bold font for impact */
-  color: rgba(255, 255, 255, 0.9); /* White color with slight transparency */
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
-  text-align: center;
-  letter-spacing: 2px; /* Adds some spacing between letters for style */
-  z-index: 2; /* Ensures title is on top */
-  max-width: 90%; /* Keeps text within the screen on smaller sizes */
-  line-height: 1.2; /* Controls the line height for better spacing */
-}
 
-.heroSubtitle {
-  font-size: 30px;
-  text-align: center; /* Centers the subtitle, adjust as needed */
-  padding-top: -90px;/* Remove any margin if unnecessary */
-}
+
+
 .nutripageContent {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
@@ -313,26 +327,9 @@
 
 
 
-.wave {
-  position: absolute;
-  bottom: -1px; /* Move slightly down to overlap any gap */
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 2; /* Ensure wave is above the image and black overlay */
-}
 
-.heroOverlay {
-  flex: 1; /* Take the other half */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center the text vertically */
-  align-items: center; /* Center the text horizontally */
-  background-color: rgb(250, 246, 246); /* Optional: white background with transparency */
-  position: relative;
-  z-index: 3; /* Ensure text is above both the image and the wave */
-  color: black; /* Text color */
-}
+
+
 
 .heroTitle {
   font-size: 2.5rem; /* Adjust size as needed */
@@ -655,14 +652,7 @@
     width: 100%; /* Full width for benefit cards on mobile */
     height: auto; /* Auto height for variable content */
   }
-  .heroOverlay {
-    position: absolute;
-    top: 40%; /* Decrease the percentage to move the title higher */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-  }
+ 
 }
 
 /* Additional small screen adjustments */
@@ -683,22 +673,149 @@
     font-size: 2rem; /* Adjusted title size for smaller screens */
   }
 
-  .heroSubtitle {
-    font-size: 1rem; /* Adjusted subtitle size */
-  }
-  .heroOverlay {
-    position: absolute;
-    top: 40%; /* Decrease the percentage to move the title higher */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-  }
-
+  
+ 
   .benefitButton {
     padding: 10px 20px;
     font-size: 0.9rem;
     background: linear-gradient(135deg,  #04D939,#001542);
+  }
+  .contactButton {
+    position: absolute;
+    bottom: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 15px 25px;
+    border: 2px solid #04D939;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 50px; /* Makes the button look like a pill */
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+/* Media Queries for iPhone 14 Pro Max */
+@media (max-width: 430px) {
+  /* Hero Section */
+  .heroSection {
+    height: 60vh; /* Reduce height to fit better on smaller screens */
+  }
+
+  .heroTitle {
+    font-size: 2rem; /* Adjust title size */
+    padding-top: 20px; /* Reduce padding */
+  }
+
+  .heroSubtitle {
+    font-size: 1rem; /* Smaller subtitle */
+  }
+
+  /* Testimonial Cards */
+  .testimonialCard {
+    width: 60%; /* Adjust width to take more space */
+    height: auto; /* Make height auto to handle different content sizes */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .testimonialCard img {
+    width: 60%; /* Adjust image size */
+    height: auto;
+  }
+
+  /* Nutritional Content Section */
+  .nutritionContent {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .nutritionImage {
+    max-width: 100%; /* Ensure the image fits within the container */
+  }
+
+  /* Nutritional Benefits */
+  .nutritionBenefitsList li {
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  /* Nutripage Section */
+  .nutripageSection {
+    padding: 20px; /* Reduce padding */
+  }
+
+  .nutripageTitle {
+    font-size: 1.8rem; /* Smaller title */
+  }
+
+  .nutripageContent {
+    font-size: 1rem; /* Adjust content size */
+  }
+
+  .nutripageListCard {
+    width: 100%; /* Full-width for mobile */
+  }
+
+  .nutripageListCard:hover {
+    transform: scale(1); /* Remove zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }
+
+  /* Contact Button */
+  .contactButton {
+    font-size: 16px; /* Adjust button text size */
+    bottom: 20%; /* Adjust vertical position */
+    padding: 12px 20px; /* Adjust padding */
+  }
+
+  /* Benefit Buttons */
+  .benefitButton {
+    font-size: 0.9rem; /* Smaller button text */
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  /* Read More Button */
+  .readMoreButton {
+    font-size: 0.9rem; /* Smaller font */
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  /* Wave SVG */
+  .svg-wave {
+    height: 80px; /* Reduce height of wave */
+  }
+
+  /* Benefit Cards */
+  .benefitCard {
+    width: 100%; /* Full width */
+    margin: 10px 0; /* Adjust margins */
+  }
+
+  .benefitCard img {
+    height: auto; /* Allow image to adjust size */
+  }
+
+  /* Nutritional Facts Section */
+  .nutritionalFactsSection {
+    margin-bottom: 20px; /* Reduce bottom margin */
+  }
+
+  /* Testimonials Section */
+  .testimonialCards {
+    flex-direction: column; /* Stack testimonial cards */
+    gap: 10px; /* Adjust gap */
+  }
+
+  .testimonialCard {
+    width: 100%; /* Full-width cards */
+    padding: 20px; /* Adjust padding */
+  }
+
+  /* Other minor adjustments */
+  .benefitsContainer {
+    flex-direction: column; /* Stack benefit cards vertically */
+    align-items: center;
   }
 }
 

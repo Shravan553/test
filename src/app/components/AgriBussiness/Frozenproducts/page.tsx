@@ -75,7 +75,7 @@ const Frozenproducts = () => {
         </div>
       </section>
 
-      <h1 className={styles.centeredTitle}><center>Agpotatos Commitment to Premium Frozen Supplies</center></h1>
+      <h1 className={styles.centeredTitle}><center>Agpotatoes Commitment to Premium Frozen Supplies</center></h1>
 
 
 

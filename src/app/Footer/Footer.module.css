@@ -22,6 +22,13 @@
 .footerContactForm h2 {
     font-size: 2rem;
     color: #13F10F;
+    margin-bottom: 6px;
+    margin-top: 25px;
+    font-weight: 600;
+}
+.footerContactForm h3 {
+    font-size: 1.5rem;
+    color: #13F10F;
     margin-bottom: 10px;
     margin-top: 25px;
     font-weight: 600;
@@ -218,6 +225,7 @@
         padding: 10px 15px; /* Compact button padding */
         font-size: 0.9rem; /* Smaller button font size */
     }
+    
     .socialIcons {
         gap: 15px; /* Reduce spacing between icons */
         font-size: 1.5rem; /* Smaller icon size */

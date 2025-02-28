@@ -110,7 +110,7 @@
 .visionAgpotatoContent {
   flex: 1; /* Equal width and size for both boxes */
   text-align: justify; /* Justify-align the text for a neat appearance */
-  background-color: #97f39b;
+  background-color: #2ddd59;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -162,7 +162,7 @@
 }
 .achievementItem h3 {
   font-size: 3rem;
-  color: #189738;
+  color: #2ddd59;
   font-weight: 700;
 }
 .achievementItem p {
@@ -608,7 +608,7 @@
   gap: 20px;
 }
 .valueCard {
-  background-color: #87d67d;
+  background-color: #2ddd59;
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 20px;
@@ -743,6 +743,13 @@
   .logos {
     width: 100px;
     margin: 0 10px;
+  }
+
+  .aboutUsHeroImg {
+    width: 100%;       /* Full width */
+    height: 100vh;     /* Full viewport height */
+    object-fit: cover; /* Ensures the image covers the full area */
+    filter: brightness(130%);
   }
 }
 /* Additional adjustments for extra small screens */

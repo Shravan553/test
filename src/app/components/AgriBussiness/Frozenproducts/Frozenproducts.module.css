@@ -94,8 +94,19 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
+    position: relative; /* Required for positioning the ::after element */
+    display: inline-block; /* Ensure the element's width wraps its content */
   }
   
+  .frozenHeroTitle::after{
+    content: ''; /* Empty content to create the underline */
+  position: absolute;
+  bottom: 0; /* Align the underline with the bottom of the text */
+  left: 0; /* Start the underline from the beginning */
+  width: 50%; /* Cover half of the text */
+  height: 2px; /* Thickness of the underline */
+  border-bottom: 5px dotted brown; /* Dotted underline */
+  }
   .frozenHeroImageContainer {
     flex: 1;
     position: relative;

@@ -28,7 +28,8 @@ export default function Home() {
 
         <Title subTitle='What We Offer' title='Agribusiness-Bridging the Gap in the Potato Supply Chain' />
         <Programs />
-        <HomeWorld />  
+        <HomeWorld />          
+
         <br />
         <HomeAbout />
 
@@ -47,23 +48,28 @@ export default function Home() {
           <Homerecipes />
         </div>
 
-        <div style={{ margin: '-25px 0' }}>
+        <div style={{ margin: '-60px 0' }}>
           <Title subTitle='Our Clients' title='Our Esteemed Clients and the Relationships We Build' />
           <LogoSlider />
         </div>
 
         <br />
-        <div style={{ margin: '-25px 0' }}>
+        <div style={{ margin: '-70px 0' }}>
           <Title subTitle='Buy and Sell' title='A Dynamic Marketplace for All Your Transactions' />
           <HomeBuySell />
         </div>
         <br />
         <br />
+
         <Title subTitle='Our Events' title='Connecting Communities Through Memorable Events' />
         <HomeEvents />
+
       </div>
-<SC/>
-      <Footer />
-    </div>
+      <SC/>
+
+          <Footer />
+
+      </div>
+      
   );
 }

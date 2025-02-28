@@ -366,8 +366,13 @@
   .recheroTextSection h1{
     font-size: 0.9rem;
   }
-  .sourcingSection h1{
-    font-size: 1.7rem;
+  .sourcingSection{
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 600px;
+  }
+  .sourcingSection p{
+    font-size: 2.7rem;
 
 
   }
@@ -375,11 +380,16 @@
   {
     font-size: 8px;
   }
- 
+ .imageOverlay h3{
+  text-align: center;
+ }
 
   .recdesContent p {
-    font-size: 6px; /* Smaller font size for paragraph text */
+    font-size: 9px; /* Smaller font size for paragraph text */
     margin-bottom: 8px; /* Reduce margin between paragraphs */
+    color: black;
+    font-family: 'Arial', sans-serif;
+
   }
 
   .recdesSection {

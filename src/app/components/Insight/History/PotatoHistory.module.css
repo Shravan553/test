@@ -27,32 +27,57 @@
     animation: zoomIn 20s infinite alternate; */
   }
 
-  .overlay {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Align content to the top */
-    text-align: center;
-    color: #04D939; /* Bright Green */
-    padding: 1rem 2rem; /* Reduced padding to move text up */
+ 
+  .heroText {
+    position: absolute; /* Positions the text within the parent container */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts the centering offset */
+    text-align: center; /* Centers the text content */
+    z-index: 10; /* Ensures the text is above the overlay and image */
   }
+  
   .heroText h1 {
-    font-size: 3rem;
-    color: #F4F2F0; /* Bronze */
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+    font-size: 3.5rem; /* Slightly larger for emphasis */
+    color: #2b1703; /* Bronze color */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), 0px 0px 15px #e38d36; /* Glowing effect */
     margin-bottom: 1rem;
-    animation: fadeIn 2s ease;
-    padding-bottom: 20px; /* Reduced padding to bring text closer */
+    text-align: center; /* Centers the text content */
+
+    animation: fadeInSlide 2s ease-out; /* Custom fade-in animation */
+    border-bottom: 3px solid rgba(227, 141, 54, 0.7); /* Decorative underline */
+    display: inline-block; /* Keeps underline close to the text */
+    padding-bottom: 10px; /* Padding for space above underline */
   }
+  
   .heroText p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    color: #FFFFFF;
-    line-height: 1.6;
-    animation: fadeIn 3s ease;
-    padding-bottom: 50px; /* Adjusted padding to move text up */
+    font-size: 1.4rem; /* Slightly larger for readability */
+    max-width: 900px; 
+    text-align: center; /* Centers the text content */
+    /* Constrains the width for better readability */
+    margin: 0 auto; /* Centers the paragraph horizontally */
+    color: #f34444; /* Keeps text readable on darker backgrounds */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1)); /* Subtle gradient */
+    padding: 15px 20px; /* Adds padding for a highlighted effect */
+    border-radius: 10px; /* Rounded corners for elegance */
+    line-height: 1.8; /* Improves readability */
+    animation: fadeInSlide 2.5s ease-out; /* Matches heading animation timing */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adds depth */
   }
+  
+  /* Add a soft fade-in and slide-up effect */
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -154,6 +179,15 @@
     border-bottom: 2px solid #A48650; /* Bronze border */
     padding-bottom: 0.5rem;
   }
+
+  .historyListItem {
+    font-size: 14px; /* Adjust the font size */
+    color: #555; /* Set the text color */
+    line-height: 1.6; /* Adjust the line height for readability */
+    margin-bottom: 10px; /* Add spacing between list items */
+    list-style-type: disc; /* Use a disc as the list marker */
+    padding-left: 20px; /* Add padding for better alignment */
+  }
   .historyContent h3 {
     font-size: 1.8rem;
     color: #001542; /* Dark Blue */
@@ -197,6 +231,36 @@
   }
   /* Media Queries */
   @media (max-width: 768px) {
+    .heroText p {
+display: none;}
+    .infoCard {
+      padding: 1.5rem;
+    }
+    .infoCard h2 {
+      font-size: 1rem;
+    }
+    .infoCard p {
+      font-size: 0.9rem;
+    }
+
+    .historyContent h2 {
+      font-size: 1rem;
+
+    }
+    .historyContent p {
+      font-size: 0.9rem;
+
+    }
+    .historyContent h3 {
+      font-size: 1rem;
+
+    }
+  
+
+    .historyListItem {
+      font-size: 0.8rem;
+
+    }
     .historyHero {
       height: 60vh;
     }
@@ -212,15 +276,8 @@
     .historyContent h3 {
       font-size: 0.8rem;
     }
-    .infoCard {
-      padding: 1.5rem;
-    }
-    .infoCard h2 {
-      font-size: 1rem;
-    }
-    .infoCard p {
-      font-size: 0.9rem;
-    }
+    
+    
     .historyContent p{
       font-size: 0.9rem;
     }

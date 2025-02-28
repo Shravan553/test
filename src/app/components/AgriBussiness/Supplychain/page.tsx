@@ -151,6 +151,11 @@ const SupplyChain: React.FC = () => {
           content:
 'Potatoes are not only sold in stores but also served in a variety of delicious dishes at restaurants. At AGPotato, we are committed to ensuring that our potatoes reach consumers at their peak quality, whether they are being sold at retail outlets or carefully prepared and included in gourmet dishes. By maintaining strict quality control from farm to table, we guarantee that every potato delivers the fresh, natural flavor and texture that our customers expect.',       
    image: '/assets/sliceoh.jpg',
+        },{
+          title: 'Logistics & Transportation',
+          content:
+'          Our logistics and transportation services are designed to ensure the seamless and efficient movement of potatoes at every stage of the supply chain. From farm to warehouse to retail and restaurant, we prioritize speed, reliability, and quality preservation. With a network of carefully managed routes and temperature-controlled transportation, we ensure that our potatoes arrive fresh and in optimal condition, ready for delivery to customers on time.',       
+   image: '/assets/logistic11.png',
         },
       ].map((section, index) => (
         <section className={styles.csSection} key={index}>
@@ -163,19 +168,7 @@ const SupplyChain: React.FC = () => {
           </div>
         </section>
       ))}
-      {/* Logistics Section */}
-      <section className={styles.csSection}>
-        <div className={styles.csImage}>
-          <Image src="/assets/logistic11.png" alt="Logistics & Transportation" width={800} height={600} />
-        </div>
-        <div className={styles.csContent}>
-          <h2>Logistics & Transportation</h2>
-          <p>
-          Our logistics and transportation services are designed to ensure the seamless and efficient movement of potatoes at every stage of the supply chain. From farm to warehouse to retail and restaurant, we prioritize speed, reliability, and quality preservation. With a network of carefully managed routes and temperature-controlled transportation, we ensure that our potatoes arrive fresh and in optimal condition, ready for delivery to customers on time.
-          </p>
-          
-        </div>
-      </section>
+   
       {/* <Scroll /> */}
       <Footer />
     </div>

@@ -65,9 +65,9 @@ const Coldstorage: React.FC = () => {
 
         {/* Facilities Section */}
         <section className={styles.webcscoldstore}>
-          <h2 className={styles.webcscoldstoretitle}>AGPotato Cold Storage Facilities</h2>
+          <h2 className={styles.webcscoldstoretitle}>AGPOTATO Cold Storage Facilities</h2>
           <p className={styles.webcscoldstoredescription}>
-            At AGPotato, our state-of-the-art cold storage facilities are meticulously engineered to preserve the quality, freshness, and nutritional value of potatoes year-round.
+            At AGPOTATO, our state-of-the-art cold storage facilities are meticulously engineered to preserve the quality, freshness, and nutritional value of potatoes year-round.
             Equipped with precision temperature and humidity control systems, each facility ensures ideal conditions, reducing spoilage and extending shelf life to deliver the best produce to customers.
           </p>
         </section>

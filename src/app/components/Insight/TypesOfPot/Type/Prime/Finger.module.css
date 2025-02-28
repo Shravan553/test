@@ -74,18 +74,24 @@
     margin: 0;
     color: #4e3b31; /* Darker brown for titles */
     font-weight: 700; /* Increased weight for better prominence */
+    font-family: 'Arial', sans-serif;
+
 }
 
 .subtitle {
     font-size: 2.5em; /* Larger subtitle */
     margin: 20px 0;
     color: #6e6e6e; /* Medium gray for subtitles */
+    font-family: 'Arial', sans-serif;
+
 }
 
 .tagline {
     font-size: 1.8em; /* Slightly bigger font size */
     font-style: italic;
     color: #888; /* Lighter gray for the tagline */
+    font-family: 'Arial', sans-serif;
+
 }
 
 .description {
@@ -93,6 +99,8 @@
     margin: 20px 0;
     line-height: 1.8;
     color: #555;
+    font-family: 'Arial', sans-serif;
+
 }
 
 .see-details-btn {
@@ -121,6 +129,8 @@
     gap: 30px; /* Space between cards */
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Soft shadow for the section */
+    font-family: 'Arial', sans-serif;
+
 }
 
 /* Individual Detail Card */
@@ -148,6 +158,8 @@
     border-left: 4px solid #f59e0b;
     font-size: 1.2em;
     color: #444;
+    font-family: 'Arial', sans-serif;
+
 }
 /* Card Icon */
 .detailsIcon {
@@ -162,6 +174,8 @@
     color: white;
     font-size: 1.5em;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Depth for the icon */
+    font-family: 'Arial', sans-serif;
+
 }
 
 /* Card Title */
@@ -170,6 +184,8 @@
     color: #4a4a4a; /* Dark gray for titles */
     margin: 15px 0 10px;
     font-weight: bold;
+    font-family: 'Arial', sans-serif;
+
 }
 
 /* Card Text */
@@ -177,6 +193,8 @@
     font-size: 1.2em;
     color: #666; /* Medium gray for text */
     line-height: 1.6; /* Improved readability */
+    font-family: 'Arial', sans-serif;
+
 }
 
 /* Example Icons */
@@ -193,6 +211,8 @@
     padding-left: 20px;
     margin: 20px 0;
     font-size: 1.2em; /* Slightly larger text */
+    font-family: 'Arial', sans-serif;
+
 }
 
 .bestServedImage {
@@ -216,27 +236,181 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Refined shadow */
 }
 
-/* Responsive Design */
+/* Base Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
+    .fingerlingpotatoes {
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lighter shadow for smaller screens */
+    }
+  
     .mainContent {
-        flex-direction: column; /* Stack content vertically */
-        align-items: center; /* Center align */
-        padding: 20px;
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center align items */
+      padding: 20px;
+      margin: 30px 0; /* Adjusted margin for better spacing */
     }
-
+  
     .textContent {
-        max-width: 100%; /* Full width on mobile */
-        text-align: center;
-        margin-right: 0; /* Remove margin on small screens */
+      max-width: 100%; /* Use full width on small screens */
+      text-align: center; /* Center-align text for better visibility */
+      margin-right: 0; /* Remove margin */
     }
-
+  
+    .titles {
+      font-size: 2rem; /* Adjust title size for small screens */
+      text-align: center;
+    }
+  
+    .subtitle {
+      font-size: 1.8rem; /* Adjust subtitle size */
+      margin: 15px 0;
+    }
+  
+    .description {
+      font-size: 1rem; /* Smaller font for better readability on mobile */
+      line-height: 1.5;
+    }
+  
+    .potatoImage {
+      width: 300px; /* Adjust image size */
+      height: 300px;
+    }
+  
     .imageGallery {
-        flex-direction: column; /* Stack images vertically on small screens */
+      flex-direction: column; /* Stack images vertically */
+      align-items: center;
     }
-
+  
     .imageGallery img {
-        width: 100%; /* Full width for images */
-        max-width: none; /* Remove max width */
-        margin: 10px 0;
+      width: 90%; /* Full width for images */
+      max-width: none;
+      margin: 10px 0;
     }
-}
+  
+    .detailsSection {
+      grid-template-columns: 1fr; /* Single column layout */
+      padding: 20px; /* Reduce padding */
+      gap: 20px; /* Smaller gap */
+    }
+  
+    .detailsCard {
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    }
+  
+    .detailsTitle {
+      font-size: 1 rem; /* Slightly smaller for mobile */
+      font-family: 'Arial', sans-serif;
+
+    }
+  
+    .detailsText {
+      font-size: 0.9rem;
+      font-family: 'Arial', sans-serif;
+
+    }
+  
+    .cookingGif {
+      width: 250px; /* Smaller gif */
+      margin: 20px auto;
+    }
+  
+    .see-details-btn {
+      padding: 10px 15px; /* Smaller button size */
+      font-size: 1 rem; /* Adjust font size */
+    }
+  }
+  
+  /* For Larger Mobile Screens and Tablets */
+  @media (max-width: 1024px) {
+    .fingerlingpotatoes {
+      padding: 20px;
+    }
+  
+    .mainContent {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center;
+      padding: 25px;
+    }
+  
+    .titles {
+      font-size: 1rem; /* Adjust title size for larger mobile screens */
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+
+    }
+    .tagline{
+        font-size: 1.3rem;
+        text-align: justify;
+        font-family: 'Arial', sans-serif;
+
+    }
+  
+    .subtitle {
+      font-size: 1.2rem;
+      color: #35ba3f;
+      font-family: 'Arial', sans-serif;
+
+
+    }
+  
+    .description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: justify;
+      font-family: 'Arial', sans-serif;
+
+    }
+  
+    .potatoImage {
+      width: 350px;
+      height: 350px;
+    }
+  
+    .imageGallery {
+      flex-wrap: wrap; /* Wrap images */
+      justify-content: center;
+    }
+  
+    .imageGallery img {
+      width: 160px;
+      margin: 10px;
+    }
+  
+    .detailsSection {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible grid for larger screens */
+      gap: 25px;
+    }
+  
+    .detailsCard {
+      padding: 20px;
+    }
+  
+    .detailsTitle {
+      font-size: 1 rem;
+    }
+  
+    .cookingGif {
+      width: 300px; /* Slightly larger gif for tablets */
+    }
+  }
+  
+  /* General Styles to Retain Desktop Look */
+  @media (min-width: 1025px) {
+    .mainContent {
+      flex-direction: row; /* Side-by-side layout */
+    }
+  
+    .textContent {
+      max-width: 60%;
+    }
+  
+    .detailsSection {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  
+    .cookingGif {
+      width: 350px;
+    }
+  }
+  

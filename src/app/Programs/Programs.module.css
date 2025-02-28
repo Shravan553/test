@@ -55,6 +55,8 @@
   .programTitle
   {
     font-size: 28px;
+    font-family: 'Arial', sans-serif;
+
   
   }
   /* Programs.css */
@@ -83,6 +85,8 @@
     margin-top: 10px;
     font-size: 0.9rem;
     color: #333;
+    font-family: 'Arial', sans-serif;
+
   }
   
   
@@ -125,6 +129,8 @@
     .programTitle
     {
       font-size: 0.6rem;
+      font-family: 'Arial', sans-serif;
+
     }
     .caption {
         font-size: 0.8rem; /* Smaller font size for captions in mobile view */

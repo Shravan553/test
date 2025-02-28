@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Empowering potato trade, one spud at a time",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

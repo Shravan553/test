@@ -91,7 +91,7 @@
 
   .gallery img {
       width: 50%; /* Set width to 40% to fit images properly */
-      max-height: 150px; /* Adjust height for smaller screens */
+      max-height: 100px; /* Adjust height for smaller screens */
       margin-bottom: 0px; /* Add margin for spacing */
   }
 }

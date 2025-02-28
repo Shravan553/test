@@ -6,10 +6,10 @@ export async function POST(req: NextRequest) {
   try {
     // Parse the request body
     const body = await req.json();
-    const { personName, email, phone, address, quantity, potatoName, message } = body;
+    const { personName, email, phone, address, quantity, potatoName, message,accountNumber, ifsc,holderName} = body;
 
     // Validate required fields
-    if (!personName || !email || !phone || !address || !quantity) {
+    if (!personName || !email || !phone || !address || !quantity || !accountNumber || !ifsc || !holderName) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }
@@ -53,6 +53,15 @@ export async function POST(req: NextRequest) {
               <li><strong style="color: red;">Potato Name:</strong> ${potatoName || 'N/A'}</li>
               <li><strong style="color: red;">Quantity:</strong> ${quantity}</li>
             </ul>
+
+            <p><strong>Banking Information:</strong></p>
+            <ul>
+              <li><strong style="color: red;">Account Holder Name:</strong> ${holderName}</li>
+              <li><strong style="color: red;">Account Number:</strong> ${accountNumber}</li>
+                            <li><strong style="color: red;">IFSC Code:</strong> ${ifsc}</li>
+
+            </ul>
+
     
             <p><strong>Additional Message:</strong></p>
             <p>${message}</p>

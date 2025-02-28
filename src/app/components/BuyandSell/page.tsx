@@ -76,8 +76,14 @@ const BuyandSell: React.FC = () => {
           <meta name="description" content="Browse and purchase fresh potatoes, frozen products, and byproducts." />
           <meta name="keywords" content="potatoes, frozen products, byproducts" />
         </Head>
-
-        <Image src="/assets/buysell2.webp" alt="Marketplace" className={styles.marketimage} width={1200} height={800} />
+        <Image 
+  src="/assets/buysell2.webp" 
+  alt="Marketplace" 
+  className={styles.marketimage} 
+  layout="responsive" 
+  width={1200} 
+  height={800} 
+/>
         <h1 className={styles.headingpot}>Browse Our Products: Choose What You’d Like to Buy or Sell.</h1>
 
         <div className={styles.categoryimages}>
@@ -103,7 +109,7 @@ const BuyandSell: React.FC = () => {
                 <h3 className={styles.productname}>{item.name}</h3>
                 <p className={styles.productdescription}>{item.description}</p>
                 <div className={styles.productbuttons}>
-                  <button onClick={() => handleNavigate("/components/BuyandSell/Buy/", { potatoName: item.name })} className={styles.buybutton}>
+                  <button onClick={() => handleNavigate("/components/BuyandSell/Buy", { potatoName: item.name })} className={styles.buybutton}>
                     Buy
                   </button>
                   <button onClick={() => handleNavigate("/components/BuyandSell/Sell", { potatoName: item.name })} className={styles.sellbutton}>
