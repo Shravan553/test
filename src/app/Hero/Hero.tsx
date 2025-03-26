@@ -8,7 +8,7 @@ import Link from "next/link"; // Import Link from Next.js
 
 const slides = [
   {
-    image: "/assets/websiteimage7.png",
+    image: "/assets/far233.png",
     heading: "AGPOTATO - Innovating Farming Practices",
     description:
       "Empowering farmers with cutting-edge, sustainable farming techniques for optimized yields and quality.",

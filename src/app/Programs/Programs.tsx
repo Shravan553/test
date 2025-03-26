@@ -1,13 +1,14 @@
-"use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styles from "./Programs.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+
 // Define program data types
 interface ProgramData {
   src: string;
   title: string;
+  description: string;
   link: string;
   alt: string; // New field for alt text
 }
@@ -16,107 +17,75 @@ const programs: ProgramData[] = [
   {
     src: "/assets/supply.jpg",
     title: "Supply Chain",
+    description: "Potatoes move from farms to consumers through harvesting, processing, and distribution.",
     link: "/components/AgriBussiness/Supplychain/",
     alt: "Image showcasing an efficient agricultural supply chain."
   },
   {
     src: "/assets/bypro.jpg",
     title: "Potato By Product",
+    description: "Discover innovative uses for potato by-products, reducing waste and adding value.",
     link: "/components/AgriBussiness/Potatobyproduct/",
     alt: "Image of potato by-products being processed."
   },
   {
-    src: "/assets/expo.jpg",
+    src: "/assets/Export2.jpeg",
     title: "Export Excellence",
+    description: "Deliver high-quality potatoes to international markets with ease.",
     link: "/components/AgriBussiness/Exportexcellence/",
     alt: "Image of high-quality potatoes prepared for export."
-  },
+  }, 
   {
     src: "/assets/cold.png",
     title: "Cold Storage",
+    description: "Potatoes are stored at 2-4°C with 90-95% humidity to prevent spoilage and sprouting.",
     link: "/components/AgriBussiness/Coldstorage/",
     alt: "Image depicting advanced cold storage facilities for potatoes."
-  },
+  
+  }, 
+  
   {
     src: "/assets/flo.jpg",
     title: "Frozen Products",
+    description: "Frozen potato products are preserved for a longer shelf life and convenient use.",
+
     link: "/components/AgriBussiness/Frozenproducts/",
     alt: "Image of frozen potato products ready for distribution."
   },
   {
     src: "/assets/far.jpg",
     title: "Meet the Farmer",
+    description: "Meet the potato farmer, dedicated to growing quality crops through hard work and sustainable practices.",
+
     link: "/components/AgriBussiness/Meetthefarmer/",
     alt: "Image of a farmer in a potato field."
   },
 ];
 
 const Programs: React.FC = () => {
-  // Correctly type and initialize programRefs
-  const programRefs = useRef<(HTMLDivElement | null)[]>([]);
-  useEffect(() => {
-    // Create a local copy of programRefs.current to avoid the warning
-    const refsCopy = programRefs.current;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.animated);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    // Observe each ref from the copied array
-    refsCopy.forEach((program) => {
-      if (program) observer.observe(program);
-    });
-    return () => {
-      // Cleanup observers using the copied array
-      refsCopy.forEach((program) => {
-        if (program) observer.unobserve(program);
-      });
-    };
-  }, []); // Empty dependency array to only run on mount/unmount
   return (
-    <div className={styles.programs}>
+    <div className={styles.programs}>  
       <Head>
         <title>Our Programs - AGPotato</title>
-        <meta
-          name="description"
-          content="Explore AGPotato's various programs including Supply Chain, Potato By Product, Export Excellence, Cold Storage, Frozen Products, and Meet the Farmer."
-        />
-        <meta
-          name="keywords"
-          content="AGPotato, supply chain, potato by product, export excellence, cold storage, frozen products, meet the farmer, agricultural programs"
-        />
-        <meta name="robots" content="index, follow" />
+        <meta name="description" content="Explore AGPotato's various agricultural programs." />
       </Head>
       {programs.map((program, index) => (
-        <div
-          key={index}
-          className={styles.program}
-          ref={(el) => {
-            programRefs.current[index] = el as HTMLDivElement | null; // Explicit type assertion
-          }}
-        >
+        <div key={index} className={styles.programCard}>
+          <h2 className={styles.programTitle}>{program.title}</h2>
+          <p className={styles.programDescription}>{program.description}</p>
           <Link href={program.link} passHref>
-            
             <Image
-  src={program.src}
-  alt={program.alt} // Use the custom alt text
-  width={400} // Adjust as needed
-  height={300} // Adjust as needed
-  className={styles.programImage}
-/>
+              src={program.src}
+              alt={program.alt}
+              width={400}
+              height={300}
+              className={styles.programImage}
+            />
           </Link>
-          <div className={styles.caption}>
-            <h2 className={styles.programTitle}>{program.title}</h2>
-          </div>
         </div>
       ))}
     </div>
   );
 };
+
 export default Programs;

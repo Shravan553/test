@@ -1,3 +1,4 @@
+
 "use client"; // Ensure this is at the top to enable client-side rendering
 
 import Head from "next/head";
@@ -58,7 +59,6 @@ const BuyandSell: React.FC = () => {
   const toggleCategory = (category: string) => {
     setExpandedCategory(category);
 
-
   };
 
   const handleNavigate = (path: string, queryParams: { [key: string]: string }) => {
@@ -109,10 +109,10 @@ const BuyandSell: React.FC = () => {
                 <h3 className={styles.productname}>{item.name}</h3>
                 <p className={styles.productdescription}>{item.description}</p>
                 <div className={styles.productbuttons}>
-                  <button onClick={() => handleNavigate("/components/BuyandSell/Buy", { potatoName: item.name })} className={styles.buybutton}>
+                  <button onClick={() => handleNavigate("/Buysign-in", { potatoName: item.name })} className={styles.buybutton}>
                     Buy
                   </button>
-                  <button onClick={() => handleNavigate("/components/BuyandSell/Sell", { potatoName: item.name })} className={styles.sellbutton}>
+                  <button onClick={() => handleNavigate("/Sellsign-in", { potatoName: item.name })} className={styles.sellbutton}>
                     Sell
                   </button>
                 </div>

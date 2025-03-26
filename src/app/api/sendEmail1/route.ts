@@ -1,3 +1,4 @@
+// app/api/sendEmail/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
@@ -5,14 +6,15 @@ export async function POST(req: NextRequest) {
   try {
     // Parse the request body
     const body = await req.json();
-    const { shopName,personName, email, phone, address, quantity, potatoName, message, pincode, selectedShopType, pancard, adharcard,accountNumber, ifsc,holderName } = body;
+    
+    // Use the correct field names from your form component
+    const { name, email, phone, address, quantity, potatoName, message, accountno, ifsc, holdername } = body;
 
     // Validate required fields
-    if (!personName || !email || !phone || !address || !quantity || !pincode || !selectedShopType || !pancard || !adharcard ||!accountNumber ||!ifsc ||!holderName) {
+    if (!email || !phone || !address || !quantity) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }
-      
       );
     }
 
@@ -27,10 +29,10 @@ export async function POST(req: NextRequest) {
       requireTLS: true,
       authMethod: 'LOGIN',
     });
-
-    // Prepare email options
+    
+    // Prepare email options with correct field names
     const mailOptions = {
-      from: email,  // From your GoDaddy email
+      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,  // Send to the same GoDaddy email or a different one
       subject: 'New Potato "Sell" Order Request',
       html: `  <!-- HTML content starts here -->
@@ -42,37 +44,26 @@ export async function POST(req: NextRequest) {
     
             <p><strong>Seller Information:</strong></p>
             <ul>
-              <li><strong>Full Name:</strong> ${personName}</li>
+              <li><strong>Name:</strong> ${name}</li>
               <li><strong>Email:</strong> ${email}</li>
               <li><strong>Phone:</strong> ${phone}</li>
               <li><strong>Address:</strong> ${address}</li>
-              <li><strong>Pincode:</strong> ${pincode}</li>
-              <li><strong>Shop Type:</strong> ${selectedShopType}</li>
-                 <li><strong>Shop Name:</strong> ${shopName}</li>
- <!-- Include the selected shop type -->
             </ul>
-          <p><strong>Government ID Information:</strong></p>
-            <ul>
-              <li><strong style="color: red;">Adharcard Number:</strong> ${adharcard}</li>
-              <li><strong style="color: red;">Pancard Number:</strong> ${pancard}</li>
-            </ul>
-            <p><strong>Bank Account Information:</strong></p>
-            <ul>
-              <li><strong style="color: red;">Bank Account Number:</strong> ${accountNumber}</li>
-              <li><strong style="color: red;">Bank Holder Name:</strong> ${holderName}</li>
-              <li><strong style="color: red;">IFSC Code:</strong> ${ifsc}</li>
-
-            </ul>
-
     
             <p><strong>Potato Information:</strong></p>
             <ul>
               <li><strong style="color: red;">Potato Name:</strong> ${potatoName || 'N/A'}</li>
               <li><strong style="color: red;">Quantity:</strong> ${quantity}</li>
             </ul>
+            <p><strong>Banking Information:</strong></p>
+            <ul>
+              <li><strong style="color: red;">Account Holder Name:</strong> ${holdername}</li>
+              <li><strong style="color: red;">Account Number:</strong> ${accountno}</li>
+              <li><strong style="color: red;">IFSC Code:</strong> ${ifsc}</li>
+            </ul>
     
             <p><strong>Additional Message:</strong></p>
-            <p>${message}</p>
+            <p>${message || 'No additional message provided.'}</p>
     
             <p><em>Thank you for handling this request.</em></p>
             <p><strong>Best regards,</strong></p>
@@ -81,10 +72,10 @@ export async function POST(req: NextRequest) {
         </html>
       `,  // HTML email body
     };
-
+    
     // Send email
     await transporter.sendMail(mailOptions);
-
+    
     return NextResponse.json(
       { message: 'Email sent successfully' },
       { status: 200 }

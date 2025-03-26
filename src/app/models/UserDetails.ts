@@ -20,6 +20,7 @@ interface IUser1 extends Document {
   ifsc: string,
   holdername: string,
   message: string,
+  potatoName:string,
   id: string;
 
 
@@ -62,7 +63,7 @@ shopname: {
   },
 //   adharcardimage: {
 //     type: String,
-//     required: false,
+//     required: false,c
 //   },
   pancard: {
     type: String,
@@ -85,11 +86,15 @@ shopname: {
     type: String,
     required: false,
   },
+  potatoName: {
+    type: String,
+    required: false,
+  },
 });
 
 
   const User1: Model<IUser1> =
-  mongoose.models.userinfovalue1 || mongoose.model<IUser1>("userinfovalue1", UserSchema1);
+  mongoose.models.userinfovalue2 || mongoose.model<IUser1>("userinfovalue2", UserSchema1);
 
   
 export default User1;

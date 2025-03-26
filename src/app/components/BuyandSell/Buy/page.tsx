@@ -1,6 +1,5 @@
 'use client';
 
-
 import React, { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Head from "next/head";
@@ -9,7 +8,6 @@ import Footer from "../../../Footer/Footer";
 import { motion } from "framer-motion";
 import styles from "./Buy.module.css";
 import Image from "next/image";
-
 
 
 const shopTypes: { id: string; label: string; icon: string }[] = [
@@ -24,13 +22,12 @@ const shopTypes: { id: string; label: string; icon: string }[] = [
 ];
 
 
-
 const Buy = () => {
-  const [isClient, setIsClient] = useState(false);
+  
   const [potatoName, setPotatoName] = useState<string | undefined>(undefined);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [showModal, setShowModal] = useState(false); // Modal state
+  const [showModal, setShowModal] = useState(false);
   const [selectedShopType, setSelectedShopType] = useState<string | null>(null);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -41,62 +38,116 @@ const Buy = () => {
     address: "",
     pincode: "",
     quantity: "",
-    shoptype:" ",
+    shoptype: "",
     shopname: "",
     adharcard: "",
-    adharcardImage:"",
-    pancardImage:"",
+    adharcardImage: "",
+    pancardImage: "",
     pancard: "",
     accountno: "",
     ifsc: "",
     holdername: "",
     message: "",
+    potatoName1:potatoName,
   });
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (isClient) {
-      const potatoQuery = searchParams.get("potatoName");
-      if (potatoQuery) {
-        setPotatoName(potatoQuery);
+    const fetchUserData = async (email: string) => {
+      try {
+        const res = await fetch(`/api/getUserDetails?email=${email}`);
+        if (res.ok) {
+          const data = await res.json();
+          setForm((prevForm) => ({
+            ...prevForm,
+            ...data, // Pre-fill the form with fetched data
+          }));
+        }
+      } catch (err) {
+        console.error("Error fetching user data:", err);
       }
+    };
+  
+    // Get parameters from URL
+    const potatoQuery = searchParams.get("potatoName");
+    const emailQuery = searchParams.get("userEmail");
+  
+    if (potatoQuery) {
+      setPotatoName(potatoQuery);
     }
-  }, [searchParams, isClient]);
+  
+    if (emailQuery) {
+      setForm((prevForm) => ({ ...prevForm, email: emailQuery }));
+      fetchUserData(emailQuery); // Fetch user details
+    }
+  }, [searchParams]);
+  
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setPending(true);
-    setError(null);
+  // In your Buy component, update the handleSubmit function:
 
-    try {
-      console.log("Submitting form data:", { ...form, potatoName });
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setPending(true);
+  setError(null);
 
-      const res = await fetch("/api/saveUserDetails", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, potatoName }),
-      });
+  try {
+    console.log("Submitting form data:", { ...form, potatoName });
 
-      const data = await res.json();
+    const res = await fetch("/api/saveUserDetails", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...form, potatoName }),
+    });
 
-      if (!res.ok) {
-        setError(data.message || "Something went wrong. Please try again.");
-        alert(data.message || "Something went wrong. Please try again.");
-      } else {
-        setShowModal(true); // Show modal on success
+    const data = await res.json();
+
+    if (!res.ok) {
+      setError(data.message || "Something went wrong. Please try again.");
+      alert(data.message || "Something went wrong. Please try again.");
+    } else {
+      // Send an email notification
+      try {
+        const emailRes = await fetch("/api/sendEmail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            // Match the field names expected by your API route
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            address: form.address,
+            quantity: form.quantity,
+            potatoName: potatoName,
+            message: form.message,
+            accountno: form.accountno,
+            ifsc: form.ifsc,
+            holdername: form.holdername,
+            shoptype: form.shoptype,
+            shopname: form.shopname
+          }),
+        });
+
+        if (!emailRes.ok) {
+          const emailData = await emailRes.json();
+          console.error("Email failed:", emailData?.message || "Unknown email error");
+        } else {
+          console.log("Email sent successfully");
+        }
+      } catch (emailErr) {
+        console.error("Error sending email:", emailErr);
+        // Don't block the main flow if email fails
       }
-    } catch (err) {
-      console.error("Error during submission:", err);
-      setError("An unexpected error occurred. Please try again.");
-      alert("An unexpected error occurred. Please try again.");
-    } finally {
-      setPending(false);
-    }
-  };
 
+      setShowModal(true); // Show modal on success
+    }
+  } catch (err) {
+    console.error("Error during submission:", err);
+    setError("An unexpected error occurred. Please try again.");
+    alert("An unexpected error occurred. Please try again.");
+  } finally {
+    setPending(false);
+  }
+};
+  
   const handleCloseModal = () => {
     setShowModal(false);
     router.push("/"); // Redirect to home page
@@ -139,16 +190,16 @@ const Buy = () => {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="email">Email Address:</label>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  disabled={pending}
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  required
-                />
-              </div>
+  <label htmlFor="email">Email Address:</label>
+  <input
+    type="email"
+    placeholder="Email"
+    disabled={pending}
+    value={form.email}
+    readOnly={true}  // Add this line to make it not changeable
+    required
+  />
+</div>
 
                  <div className={styles.formGroup}>
                  <label htmlFor="phone">Phone Number:</label>
@@ -254,7 +305,6 @@ const Buy = () => {
                     required />
                   </div>
 
-
                   <div className={styles.formGroup}>
                     <label htmlFor="adharcard">Adharcard Number:</label>
                     <input type="number" 
@@ -275,7 +325,6 @@ const Buy = () => {
   />
 </div> */}
 
-
                   {/* <div className={styles.formGroup}>
       <label htmlFor="adharcardImage">Upload Aadharcard Image:</label>
       <input 
@@ -289,7 +338,6 @@ const Buy = () => {
     </div> */}
 
     
-
 
     <div className={styles.formGroup}>
                     <label htmlFor="pancard">Pancard Number:</label>
@@ -334,7 +382,6 @@ const Buy = () => {
         required
       />
     </div>
-
 
 
     <div className={styles.formGroup}>
@@ -409,3 +456,4 @@ export default function Page() {
     </div>
   );
 }
+

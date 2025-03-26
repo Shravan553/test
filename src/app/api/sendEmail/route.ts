@@ -6,10 +6,12 @@ export async function POST(req: NextRequest) {
   try {
     // Parse the request body
     const body = await req.json();
-    const { personName, email, phone, address, quantity, potatoName, message,accountNumber, ifsc,holderName} = body;
+    
+    // Use the correct field names from your form component
+    const { name, email, phone, address, quantity, potatoName, message, accountno, ifsc, holdername } = body;
 
     // Validate required fields
-    if (!personName || !email || !phone || !address || !quantity || !accountNumber || !ifsc || !holderName) {
+    if (!email || !phone || !address || !quantity) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }
@@ -28,9 +30,9 @@ export async function POST(req: NextRequest) {
       authMethod: 'LOGIN',
     });
     
-    // Prepare email options
+    // Prepare email options with correct field names
     const mailOptions = {
-      from: email,  // From your GoDaddy email
+      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,  // Send to the same GoDaddy email or a different one
       subject: 'New Potato "Buy" Order Request',
       html: `  <!-- HTML content starts here -->
@@ -42,7 +44,7 @@ export async function POST(req: NextRequest) {
     
             <p><strong>Buyer Information:</strong></p>
             <ul>
-              <li><strong>Name:</strong> ${personName}</li>
+              <li><strong>Name:</strong> ${name}</li>
               <li><strong>Email:</strong> ${email}</li>
               <li><strong>Phone:</strong> ${phone}</li>
               <li><strong>Address:</strong> ${address}</li>
@@ -53,18 +55,15 @@ export async function POST(req: NextRequest) {
               <li><strong style="color: red;">Potato Name:</strong> ${potatoName || 'N/A'}</li>
               <li><strong style="color: red;">Quantity:</strong> ${quantity}</li>
             </ul>
-
             <p><strong>Banking Information:</strong></p>
             <ul>
-              <li><strong style="color: red;">Account Holder Name:</strong> ${holderName}</li>
-              <li><strong style="color: red;">Account Number:</strong> ${accountNumber}</li>
-                            <li><strong style="color: red;">IFSC Code:</strong> ${ifsc}</li>
-
+              <li><strong style="color: red;">Account Holder Name:</strong> ${holdername}</li>
+              <li><strong style="color: red;">Account Number:</strong> ${accountno}</li>
+              <li><strong style="color: red;">IFSC Code:</strong> ${ifsc}</li>
             </ul>
-
     
             <p><strong>Additional Message:</strong></p>
-            <p>${message}</p>
+            <p>${message || 'No additional message provided.'}</p>
     
             <p><em>Thank you for handling this request.</em></p>
             <p><strong>Best regards,</strong></p>
@@ -73,10 +72,10 @@ export async function POST(req: NextRequest) {
         </html>
       `,  // HTML email body
     };
-
+    
     // Send email
     await transporter.sendMail(mailOptions);
-
+    
     return NextResponse.json(
       { message: 'Email sent successfully' },
       { status: 200 }

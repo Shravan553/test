@@ -5,10 +5,10 @@ import Title from "../app/Title/Title";
 
 import Programs from "./Programs/Programs";
 import Campus from "./Campus/Campus";
-import Homehistory from "./Homehistory/Homehistory";
+// import Homehistory from "./Homehistory/Homehistory";
 import Homepotatotype from "./Homepotatotype/Homepotatotype";
 import Homenutrition from "./Homenutrition/Homenutrition";
-import Homerecipes from "./Homerecipes/Homerecipes";
+// import Homerecipes from "./Homerecipes/Homerecipes";
 import LogoSlider from "./LogoSlider/LogoSlider";
 import HomeBuySell from "./HomeBuySell/HomeBuySell";
 import HomeEvents from "./HomeEvents/HomeEvents";
@@ -39,14 +39,14 @@ export default function Home() {
         <div style={{ margin: '-25px 0' }}></div>
         <Campus />
 
-        <Homehistory />
+        {/* <Homehistory /> */}
         <Homepotatotype />
         <Homenutrition />
         <br />
-        <div style={{ margin: '-25px 0' }}>
+        {/* <div style={{ margin: '-25px 0' }}>
           <Title subTitle='Potatoes Recipes' title='Satisfy Your Cravings with These Potato Recipes' />
           <Homerecipes />
-        </div>
+        </div> */}
 
         <div style={{ margin: '-60px 0' }}>
           <Title subTitle='Our Clients' title='Our Esteemed Clients and the Relationships We Build' />
