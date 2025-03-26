@@ -1,15 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-// import { signIn } from "next-auth/react";
-// import { FcGoogle } from "react-icons/fc";
-// import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
 import styles from "./signin.module.css";
 
-const SignIn = () => {
+const SignInContent = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -85,15 +82,6 @@ const SignIn = () => {
           </button>
         </form>
 
-        {/* <div className={styles.divider}>or</div>
-
-        <button className={styles.googleButton} onClick={() => signIn("google")}> 
-          <FcGoogle size={20} className={styles.icon} /> Continue with Google
-        </button>
-        <button className={styles.githubButton} onClick={() => signIn("github")}> 
-          <FaGithub size={20} className={styles.icon} /> Continue with GitHub
-        </button> */}
-
         <p className={styles.footer}>
           Don’t have an account?{' '}
           <Link href={`/Buysign-up?potatoName=${encodeURIComponent(potatoName || "")}`} className={styles.link}>
@@ -102,6 +90,14 @@ const SignIn = () => {
         </p>
       </div>
     </div>
+  );
+};
+
+const SignIn = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInContent />
+    </Suspense>
   );
 };
 

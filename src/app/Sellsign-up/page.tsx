@@ -1,13 +1,24 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
-import styles from "./sign-up.module.css"; // Importing your custom CSS
+import styles from "./sign-up.module.css";
+
+const ExtractPotatoName = ({ setPotatoName }: { setPotatoName: (name: string | null) => void }) => {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const name = searchParams.get("potatoName");
+    setPotatoName(name);
+  }, [searchParams, setPotatoName]);
+
+  return null; // This component is only used to extract and update state
+};
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -20,15 +31,6 @@ const SignUp = () => {
   const [error, setError] = useState<string | null>(null);
   const [potatoName, setPotatoName] = useState<string | null>(null);
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    // Extract the "potatoName" from query parameters
-    const name = searchParams.get("potatoName");
-    if (name) {
-      setPotatoName(name);
-    }
-  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,6 +74,10 @@ const SignUp = () => {
 
   return (
     <div className={styles.container}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ExtractPotatoName setPotatoName={setPotatoName} />
+      </Suspense>
+
       <div className={styles.card}>
         <div className={styles.header}>
           <h2 className={styles.title}>Sign up</h2>
@@ -85,12 +91,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit} className={styles.form}>
           {/* Hidden potatoName field */}
           {potatoName && (
-            <input
-              type="hidden"
-              id="potatoName"
-              value={potatoName}
-              name="potatoName"
-            />
+            <input type="hidden" id="potatoName" value={potatoName} name="potatoName" />
           )}
 
           <input
@@ -126,16 +127,10 @@ const SignUp = () => {
             className={styles.input}
             disabled={pending}
             value={form.confirmPassword}
-            onChange={(e) =>
-              setForm({ ...form, confirmPassword: e.target.value })
-            }
+            onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
             required
           />
-          <button
-            type="submit"
-            className={styles.button}
-            disabled={pending}
-          >
+          <button type="submit" className={styles.button} disabled={pending}>
             {pending ? "Creating account..." : "Continue"}
           </button>
         </form>
@@ -143,19 +138,11 @@ const SignUp = () => {
         <div className={styles.divider}>or</div>
 
         <div className={styles.socialButtons}>
-          <button
-            onClick={(e) => handleProvider(e, "google")}
-            className={styles.googleButton}
-            disabled={pending}
-          >
+          <button onClick={(e) => handleProvider(e, "google")} className={styles.googleButton} disabled={pending}>
             <FcGoogle size={20} />
             Continue with Google
           </button>
-          <button
-            onClick={(e) => handleProvider(e, "github")}
-            className={styles.githubButton}
-            disabled={pending}
-          >
+          <button onClick={(e) => handleProvider(e, "github")} className={styles.githubButton} disabled={pending}>
             <FaGithub size={20} />
             Continue with GitHub
           </button>
@@ -163,12 +150,7 @@ const SignUp = () => {
 
         <p className={styles.footer}>
           Already have an account?{" "}
-          <Link
-            href={`/Sellsign-in?potatoName=${encodeURIComponent(
-              potatoName || ""
-            )}`}
-            className={styles.link}
-          >
+          <Link href={`/Sellsign-in?potatoName=${encodeURIComponent(potatoName || "")}`} className={styles.link}>
             Sign in
           </Link>
         </p>
