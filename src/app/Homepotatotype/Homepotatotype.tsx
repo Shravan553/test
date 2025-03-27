@@ -60,7 +60,7 @@ const Homepotatotype: React.FC = () => {
           Explore Our Premium Potato Varieties
         </h2>
         <p className={styles.aboutText}>
-          AGPotato offers a variety of premium potato types suited for all
+          AGPOTATO offers a variety of premium potato types suited for all
           needs. Our <strong>3797</strong> variety is prized for its high yield
           and adaptability across regions. The <strong>302 Hybrid</strong> is
           known for its disease resistance and ideal chip-making quality.{" "}

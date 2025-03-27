@@ -3,8 +3,7 @@ import { useRef, useState, ChangeEvent, FormEvent } from "react";
 import styles from "./Footer.module.css";
 import Link from "next/link";
 import Head from "next/head";
-
-import { FaFacebookF,  FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaPinterest, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -214,23 +213,32 @@ const Footer = () => {
               560055, IN
             </p>
             <div className={styles.socialIcons}>
-              <a href="https://www.facebook.com/share/1D3YExrYxU/" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.facebook.com/share/1D3YExrYxU/" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
-              </a>
-              {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
-              </a> */}
-              <a href="https://www.instagram.com/agpotato_?igsh=cW40b2Q1ZWpkdjNt" target="_blank" rel="noopener noreferrer">
+  </a>
+  <a href="https://x.com/agpotato0" target="_blank" rel="noopener noreferrer">
+    <FaTwitter />
+  </a>
+  <a href="https://www.instagram.com/agpotato_?igsh=cW40b2Q1ZWpkdjNt" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
-              </a>
-              <a href="https://www.linkedin.com/company/106107647/admin/dashboard/" target="_blank" rel="noopener noreferrer">
+  </a>
+  <a href="https://www.linkedin.com/company/106107647/admin/dashboard/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
-              </a>
-            </div>
+  </a>
+  <a href="https://www.youtube.com/@Agpotato" target="_blank" rel="noopener noreferrer">
+    <FaYoutube />
+  </a>
+  <a href="https://in.pinterest.com/agpotato0" target="_blank" rel="noopener noreferrer">
+    <FaPinterest />
+  </a>
+  <a href=" https://whatsapp.com/channel/0029VanTtzGEQIaiMwZqvB1T" target="_blank" rel="noopener noreferrer">
+    <FaWhatsapp />
+  </a>
+</div>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>&copy; 2024 AGPotato. All rights reserved.</p>
+          <p>&copy; 2025 AGPotato. All rights reserved.</p>
         </div>
       </footer>
        
