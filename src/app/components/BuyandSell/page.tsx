@@ -54,8 +54,8 @@ const BuyandSell: React.FC = () => {
     { name: "Onion", description: "Essential for most dishes.", image: "/assets/Onion.jpg" },
     { name: "Tomato", description: "Adds tangy flavor to meals.", image: "/assets/Tomato.jpg" },
     { name: "Lemon", description: "Great for seasoning and drinks.", image: "/assets/Lemon.jpg" },
-    { name: "Ginger", description: "Adds a spicy kick to dishes and drinks.", image: "/assets/Ginger.jpg" },
-    { name: "Garlic", description: "Perfect for enhancing flavor in any meal.", image: "/assets/Garlic.jpg" },
+    { name: "Ginger", description: "Adds a spicy kick to dishes and drinks.", image: "/assets/ginger.jpg" },
+    { name: "Garlic", description: "Perfect for enhancing flavor in any meal.", image: "/assets/garlic.jpg" },
     { name: "Mango", description: "Sweet and juicy, perfect for desserts and drinks.", image: "/assets/mango.png" },
     { name: "Grapes", description: "Great for snacking and making juice.", image: "/assets/grapes.jpg" }
   ];
