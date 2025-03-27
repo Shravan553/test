@@ -49,10 +49,22 @@ const BuyandSell: React.FC = () => {
     { name: "Potato Cheese Shotz", description: "Cheesy goodness in every bite.", image: "/assets/balls1.jpg" },
   ];
 
+  // Other products
+  const otherProducts = [
+    { name: "Onion", description: "Essential for most dishes.", image: "/assets/Onion.jpg" },
+    { name: "Tomato", description: "Adds tangy flavor to meals.", image: "/assets/Tomato.jpg" },
+    { name: "Lemon", description: "Great for seasoning and drinks.", image: "/assets/Lemon.jpg" },
+    { name: "Ginger", description: "Adds a spicy kick to dishes and drinks.", image: "/assets/Ginger.jpg" },
+    { name: "Garlic", description: "Perfect for enhancing flavor in any meal.", image: "/assets/Garlic.jpg" },
+    { name: "Mango", description: "Sweet and juicy, perfect for desserts and drinks.", image: "/assets/mango.png" },
+    { name: "Grapes", description: "Great for snacking and making juice.", image: "/assets/grapes.jpg" }
+  ];
+
   const getDisplayItems = () => {
     if (expandedCategory === "Fresh Potatoes") return potatoVariants;
     if (expandedCategory === "Byproducts") return byProducts;
     if (expandedCategory === "Frozen Products") return frozenProducts;
+    if (expandedCategory === "Other Products") return otherProducts;
     return [];
   };
 
@@ -99,6 +111,10 @@ const BuyandSell: React.FC = () => {
             <Image src="/assets/vandc3.jpg" alt="Frozen Products" className={styles.categoryimage} width={300} height={200} />
             <p className={styles.categorytitle}>Frozen Products</p>
           </div>
+          <div onClick={() => toggleCategory("Other Products")}>
+    <Image src="/assets/vandff.jpg" alt="Other Products" className={styles.categoryimage} width={300} height={200} />
+    <p className={styles.categorytitle}>Other Products</p>
+  </div>
         </div>
 
         {expandedCategory && (
