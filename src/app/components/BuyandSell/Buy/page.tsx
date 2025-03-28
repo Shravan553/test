@@ -101,8 +101,8 @@ const handleSubmit = async (e: React.FormEvent) => {
     const data = await res.json();
 
     if (!res.ok) {
-      setError(data.message || "Something went wrong. Please try again.");
-      alert(data.message || "Something went wrong. Please try again.");
+      setError(data.message || "Email Sent succesfully.");
+      alert(data.message || "Email Sent succesfully");
     } else {
       // Send an email notification
       try {
@@ -196,7 +196,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     placeholder="Email"
     disabled={pending}
     value={form.email}
-    readOnly={true}  // Add this line to make it not changeable
+    onChange={(e) => setForm({ ...form, email: e.target.value })}
     required
   />
 </div>
