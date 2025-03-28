@@ -9,7 +9,7 @@
 
 .programCard {
   width: 400px;
-  background-color: #fff;
+  background-color: #c4f3cf;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -23,13 +23,14 @@
 .programTitle {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #05116e;
   padding: 16px;
+  text-align: center;
 }
 
 .programDescription {
   font-size: 14px;
-  color: #666;
+  color: #090404;
   padding: 0 16px 16px;
 }
 
