@@ -1,82 +1,82 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./Homepotatotype.module.css"; // Importing the CSS module
+import styles from "./Homepotatotype.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
 const Homepotatotype: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const aboutSectionRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting) {
-          setIsVisible(true); // Trigger animation when in view
-        } else {
-          setIsVisible(false); // Optional: remove animation when out of view
-        }
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.2 }
     );
 
-    // Capture the current value of aboutSectionRef in a variable
-    const currentAboutSection = aboutSectionRef.current;
-
-    if (currentAboutSection) {
-      observer.observe(currentAboutSection);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
     return () => {
-      if (currentAboutSection) {
-        observer.unobserve(currentAboutSection);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
       }
     };
-  }, []); // Empty dependency array to only run once when component mounts
+  }, []);
 
   return (
-    <div
-      className={`${styles.about} ${isVisible ? styles.visible : ""}`}
-      ref={aboutSectionRef}
+    <section 
+      className={`${styles.section} ${isVisible ? styles.visible : ""}`}
+      ref={sectionRef}
     >
-      <div
-        className={`${styles.aboutLeft} ${isVisible ? styles.visible : ""}`}
-      >
-        <Image
-          src="/assets/tyimage1.jpg"
-          alt="Types of Potatoes"
-          className={styles.aboutImg}
-          width={500}
-          height={300}
-        />
+      <div className={styles.container}>
+        <div className={`${styles.imageContainer} ${isVisible ? styles.visible : ""}`}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/assets/tyimage1.jpg"
+              alt="Types of Potatoes"
+              width={800}
+              height={800}
+              className={styles.image}
+              priority
+            />
+          </div>
+        </div>
+        
+        <div className={`${styles.content} ${isVisible ? styles.visible : ""}`}>
+          <span className={styles.sectionTag}>TYPES OF POTATOES</span>
+          <h2 className={styles.title}>Explore Our Premium Potato Varieties</h2>
+          
+          <div className={styles.textContainer}>
+            <p className={styles.text}>
+              AGPOTATO offers a variety of premium potato types suited for all
+              needs. Our <strong>3797</strong> variety is prized for its high yield
+              and adaptability across regions. The <strong>302 Hybrid</strong> is
+              known for its disease resistance and ideal chip-making quality.{" "}
+              <strong>Chipsona 2001</strong> is specially cultivated for producing
+              crispy, golden chips with minimal oil absorption.
+            </p>
+            <p className={styles.text}>
+              The <strong>Mohan</strong> and <strong>Kyathi</strong> varieties are
+              versatile, with excellent texture for boiling, frying, or baking.{" "}
+              <strong>Jyothi</strong> and <strong>Hasan Potatoes</strong> are
+              favored for their smooth texture and delicious flavor, perfect for a
+              range of culinary applications.
+            </p>
+          </div>
+          
+          <Link href="/components/Insight/TypesOfPot/" className={styles.ctaButton}>
+            Discover All Varieties
+            <span className={styles.arrow}>&rarr;</span>
+          </Link>
+        </div>
       </div>
-      <div
-        className={`${styles.aboutRight} ${isVisible ? styles.visible : ""}`}
-      >
-        <h3 className={styles.aboutTitle}>TYPES OF POTATOES</h3>
-        <h2 className={styles.aboutSubtitle}>
-          Explore Our Premium Potato Varieties
-        </h2>
-        <p className={styles.aboutText}>
-          AGPOTATO offers a variety of premium potato types suited for all
-          needs. Our <strong>3797</strong> variety is prized for its high yield
-          and adaptability across regions. The <strong>302 Hybrid</strong> is
-          known for its disease resistance and ideal chip-making quality.{" "}
-          <strong>Chipsona 2001</strong> is specially cultivated for producing
-          crispy, golden chips with minimal oil absorption. The{" "}
-          <strong>Mohan</strong> and <strong>Kyathi</strong> varieties are
-          versatile, with excellent texture for boiling, frying, or baking.{" "}
-          <strong>Jyothi</strong> and <strong>Hasan Potatoes</strong> are
-          favored for their smooth texture and delicious flavor, perfect for a
-          range of culinary applications.
-        </p>
-        <Link href="/components/Insight/TypesOfPot/" className={styles.knowMoreBtn}>
-          Know More
-        </Link>
-      </div>
-    </div>
+    </section>
   );
 };
 

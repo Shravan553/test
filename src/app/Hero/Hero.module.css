@@ -1,412 +1,286 @@
-.webPotatoInsightsContainer {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    padding: 20px;
-}
-.discoverButton {
-    position: absolute;
-    bottom: 30%;
-    left: 45%;
-    /* transform: translate(-50%, 0); */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    font-family: 'Arial', sans-serif;
-
-    font-size: 1.2rem;
-    font-weight:bolder;
-    border-radius: 50px;
-    cursor: pointer;
-    background: linear-gradient(135deg, #04D939, #001542);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* Ensure the button appears above other elements */
-}
-
-  
-  .discoverButton:hover {
-   
-    background: linear-gradient(135deg, #001542, #04D939); /* Invert gradient */
-    transform: translateY(-3px) scale(1.05);
-  }
-  
+/* ===== Hero Section Styles ===== */
 .webHero {
-    width: auto;
+    width: 100%;
     height: 84vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    max-height: 800px;
     position: relative;
+    overflow: hidden;
     background-color: #F4F4F4;
     margin-top: 2px;
-}
-
-
-.webHeroSlider {
-    width: 100%;
-    height: 95vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.webHeroSlide {
+  }
+  
+  .webHeroSlider {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 1s ease-in-out;
+    position: relative;
+  }
+  
+  /* ===== Slide Styles ===== */
+  .webHeroSlide {
     position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     opacity: 0;
-    visibility: visible;
-
-    
-}
-
-.webHeroSlide.webActive {
+    visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .webHeroSlide.webActive {
     opacity: 1;
     visibility: visible;
-}
-
-/* For img4 slide, position text to the right */
-.webHeroSlide.img4Active {
-    justify-content: flex-end; 
-    background-color: #070707;/* Move text to the right */
-}
-
-.webHeroText {
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
-    padding: 20px 30px; /* Add padding for space inside the box */
-    border-radius: 12px; /* Slightly round corners for a modern feel */
-    text-align: justify;
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
-    animation: fadeIn 1.5s ease-in-out forwards;
-    transform: translateY(20px);
-    font-family: 'Arial', sans-serif;
-
-    opacity: 0; /* Hidden initially */
-    width: auto; /* Allow the width to adjust based on content */
-    max-width: 75%; /* Set a max width to prevent the box from becoming too wide */
-    margin-right: 30px; /* More space from the right edge */
-    backdrop-filter: blur(10px); /* Subtle blur effect for more modern design */
-    z-index: 2; /* Ensure text stays above the image */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInFromLeftToRight {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-.firstSlide {
-    background-color: #070707; /* Example: dark background */
-    transition: all 0.5s ease;
   }
   
-  .firstSlide .webHeroText {
-    transform: translateX(0);
+  /* Special slide positioning */
+  .webHeroSlide.img4Active {
+    justify-content: flex-end;
+    background-color: #070707;
+  }
+  
+  /* ===== Slide Content Styles ===== */
+  .webHeroText {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px 40px;
+    border-radius: 12px;
+    max-width: 650px;
+    margin: 0 50px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  }
+  
+  .webActive .webHeroText {
+    transform: translateY(0);
     opacity: 1;
-    animation: fadeInText 2s ease-in-out forwards;  /* Example: custom animation */
   }
   
-
-.slideInFromLeftToRight {
-    animation: slideInFromLeftToRight 1s ease-out forwards;
-  }
-  
-/* Animation Keyframe */
-@keyframes slideInFromLeftToRight {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-@keyframes slideInFromLeft {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  .slideAnimation {
-    animation: slideInFromLeft 1s ease-out forwards;
-  }
-
-  @keyframes slideAnimation {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-.webHeroText h1 {
-    font-size: 36px;
+  .webHeroText h1 {
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     color: #fff;
-    font-family: 'Arial', sans-serif;
-
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    opacity: 0; /* Hidden initially */
-    transform: translateX(-100%); /* Start off-screen */
+    line-height: 1.2;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 0.6s ease-out 0.4s;
   }
   
+  .webActive .webHeroText h1 {
+    transform: translateX(0);
+    opacity: 1;
+  }
   
   .webHeroText p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-
-    color: #fff; /* White text for readability */
-    max-width: 700px;
-    text-align: justify;
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6); /* Text shadow for contrast */
-    animation: fadeInText 1.5s ease-in forwards;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s ease-out 0.6s;
   }
   
-  @keyframes fadeInText {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .webActive .webHeroText p {
+    transform: translateY(0);
+    opacity: 1;
   }
-@keyframes fadeInText {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.webSliderControls {
+  
+  /* ===== CTA Button Styles ===== */
+  .discoverButton {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 12px 28px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #04D939, #001542);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  
+  .webActive .discoverButton {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  
+  .discoverButton:hover {
+    background: linear-gradient(135deg, #001542, #04D939);
+    transform: translate(-50%, -3px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* ===== Slider Controls ===== */
+  .webSliderControls {
     position: absolute;
     bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
-    z-index: 2;
-}
-
-.webSliderDot {
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
+    gap: 12px;
+    z-index: 10;
+  }
+  
+  .webSliderDot {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.4);
     border: 2px solid #04D939;
     border-radius: 50%;
     cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.webSliderDot.webActive {
-    opacity: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .webSliderDot:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .webSliderDot.webActive {
+    background-color: #fff;
     transform: scale(1.2);
-}
-
-/* Keyframe animations */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInText {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 850px) {
-    .webHeroSlider {
-        height: 60vh;
-    }
+    opacity: 1;
+  }
   
-    .webHeroText {
-        width: 80%; /* Increase width on smaller screens */
-        padding: 20px;
-        position: absolute;
-        top: 30%;    font-family: 'Arial', sans-serif;
-
-        left: 10%;
-        transform: translate(-50%, -50%);
-        box-sizing: border-box; /* Ensure padding is included in width */
-    }
-   
-
-    .webHeroText h1 {
-        font-size: 28px;
-        text-align: center; /* Center the text */
-        margin-bottom: 20px;
-        font-family: 'Arial', sans-serif;
-
-    }
-
-
-    .discoverButton {
-        position: absolute;
-        bottom: 30%; /* Adjust position on mobile */
-        left: 50%;
-        font-family: 'Arial', sans-serif;
-
-        transform: translateX(-50%);
-        font-size: 1.1rem; /* Make button text smaller on mobile */
-        padding: 8px 16px; /* Adjust padding for mobile */
-    }
-
-    .webHeroText p {
-        font-size: 16px;
-        font-family: 'Arial', sans-serif;
-
-    }
-
-    .webSliderDot {
-        width: 5px;
-        height: 5px;
-        background-color: #fff;
-        border: 2px solid #04D939;
-        border-radius: 90%;
-        cursor: pointer;
-        opacity: 0.6;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-}
-
-@media (max-width: 650px) {
-
-
-  
-    .webHeroText {
-        width: 80%; /* Increase width on smaller screens */
-        padding: 20px;
-        position: absolute;
-        top: 30%;
-        font-family: 'Arial', sans-serif;
-
-        left: 10%;
-        transform: translate(-50%, -50%);
-        box-sizing: border-box; /* Ensure padding is included in width */
-    }
-
-    .webHeroText h1 {
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 15px;
-        font-family: 'Arial', sans-serif;
-
-    }
-
-    .discoverButton {
-        position: absolute;
-        bottom: 20%; /* Adjust position on mobile */
-        left: 50%;
-        font-family: 'Arial', sans-serif;
-
-        transform: translateX(-50%);
-        font-size: 1.1rem; /* Make button text smaller on mobile */
-        padding: 8px 16px; /* Adjust padding for mobile */
-    }
-
-   
-
-    .webHeroText p {
-        font-size: 14px;
-        font-family: 'Arial', sans-serif;
-
-    }
-
-
+ /* ===== Mobile Responsive Styles ===== */
+@media (max-width: 768px) {
     .webHero {
-        height: 49vh; /* Adjust height to make the hero image fit better */
+      height: 60vh;
+      min-height: 400px; /* Ensure minimum height for content */
     }
-
-    .webSliderDot {
-        width: 5px;
-        height: 5px;
-        background-color: #fff;
-        border: 2px solid #04D939;
-        border-radius: 90%;
-        cursor: pointer;
-        opacity: 0.6;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+  
     .webHeroSlider {
-        height: 50vh; /* Adjust height for mobile */
+      height: 100%;
     }
+  
     .webHeroSlide {
-        background-size: cover; /* Ensure the image covers the full container */
-        background-position: center; /* Center the image */
+      justify-content: center;
+      align-items: flex-start; /* Align content to top on mobile */
+      padding-top: 20vh; /* Push content down from top */
     }
-
+  
+    .webHeroText {
+      width: 90%;
+      max-width: none;
+      padding: 20px;
+      margin: 0 auto;
+      position: static;
+      transform: none;
+      backdrop-filter: blur(5px); /* Reduce blur for performance */
+    }
+  
+    .webHeroText h1 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      text-align: center;
+      transform: none; /* Remove transform for simpler animation */
+      opacity: 1; /* Always visible */
+    }
+  
+    .webHeroText p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      text-align: center;
+      transform: none; /* Remove transform for simpler animation */
+      opacity: 1; /* Always visible */
+    }
+  
+    .discoverButton {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      display: block;
+      margin: 0 auto;
+      width: fit-content;
+      font-size: 1rem;
+      padding: 10px 24px;
+      margin-top: 15px;
+      opacity: 1; /* Always visible */
+    }
+  
     .webSliderControls {
-        position: absolute;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 2;
+      bottom: 30px;
+      gap: 8px;
     }
-    
+  
     .webSliderDot {
-        width: 10px;
-        height: 10px;
+      width: 10px;
+      height: 10px;
+      border-width: 1px;
     }
-}
+  }
+  
+  @media (max-width: 480px) {
+    .webHero {
+      height: 55vh;
+      min-height: 350px;
+    }
+  
+    .webHeroSlide {
+      padding-top: 15vh;
+    }
+  
+    .webHeroText {
+      width: 92%;
+      padding: 16px;
+    }
+  
+    .webHeroText h1 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+  
+    .webHeroText p {
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+  
+    .discoverButton {
+      font-size: 0.9rem;
+      padding: 8px 20px;
+      margin-top: 12px;
+    }
+  
+    .webSliderControls {
+      bottom: 25px;
+    }
+  
+    .webSliderDot {
+      width: 8px;
+      height: 8px;
+    }
+  }
+  
+  /* Special adjustments for very small screens */
+  @media (max-width: 360px) {
+    .webHero {
+      height: 50vh;
+      min-height: 300px;
+    }
+  
+    .webHeroText h1 {
+      font-size: 1.3rem;
+    }
+  
+    .webHeroText p {
+      font-size: 0.8rem;
+    }
+  
+    .discoverButton {
+      font-size: 0.85rem;
+    }
+  }

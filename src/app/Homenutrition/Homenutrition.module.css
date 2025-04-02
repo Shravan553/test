@@ -1,206 +1,263 @@
+/* Homenutrition.module.css */
 
-
-
-
-
-
-.potatoSection {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    background-color: #A48650;
-    
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.7s ease-in-out;
-    /* Added opacity for better contrast */
-  }
-
-  .visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .potatoImageContainer {
-    position: relative;
-    height: 400px;
-    margin-bottom: 2rem;
-    overflow: hidden;
-
-    opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease-in-out 0.3s; /* Delay for staggered effect */
-  }
-  .visible .potatoImageContainer {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .potatoMainImage {
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-    object-fit: cover;
-  }
-  
-  .potatoMainImage:hover {
-    transform: scale(1.05);
-  }
-  
-  .potatoContentWrapper {
-    margin-top: 2rem;
-
-    /* Initial state for animation */
+/* Main Section Styles */
+.nutritionSection {
+  display: flex;
+  min-height: 600px;
+  width: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f5e9 100%);
+  overflow: hidden;
+  position: relative;
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease-in-out 0.6s; /* Delay for staggered effect */
-  }
-  
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
 
-  .visible .potatoContentWrapper {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .potatoTitle {
-    font-size: 1.875rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: black;
-  }
-  
-  .potatoGradientBar {
-    height: 0.25rem;
-    width: 4rem;
-    background: linear-gradient(90deg, rgba(0, 21, 66, 0.5) 50%, rgba(4, 217, 57, 0.5) 50%);
-    margin-bottom: 1.5rem;
-  }
-  
-  .potatoSubtitle {
-   
-    font-weight: bold;
-    
-color:#045319;
-    font-size: 16px;
-  
-  font-family: 'Arial', sans-serif;
+.nutritionSection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  text-align: justify;
+/* Image Container */
+.imageContainer {
+  flex: 1;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
 
+.nutritionSection.visible .imageContainer {
+  opacity: 1;
+  transform: translateX(0);
+}
 
- 
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.imageContainer:hover .mainImage {
+  transform: scale(1.05);
+}
+
+/* Content Container */
+.contentContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+.nutritionSection.visible .contentContainer {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  max-width: 600px;
+}
+
+.sectionTag {
+  display: inline-block;
+  background: linear-gradient(90deg, #04D939, #001542);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #03560b;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #04D939, #001542);
+  margin-bottom: 2rem;
+}
+
+/* Nutrition Facts */
+.nutritionFacts {
+  margin-bottom: 2.5rem;
+}
+
+.factItem {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.factItem:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  background: #04D939;
+  border-radius: 50%;
+}
+
+.factTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #001542;
+  margin-bottom: 0.5rem;
+}
+
+.factText {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primaryButton, .secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #04D939, #001542);
+  color: white;
+  box-shadow: 0 8px 20px rgba(4, 217, 57, 0.3);
+}
+
+.secondaryButton {
+  background: white;
+  color: #001542;
+  border: 2px solid #001542;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.primaryButton:hover {
+  background: linear-gradient(135deg, #001542, #04D939);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(4, 217, 57, 0.4);
+}
+
+.secondaryButton:hover {
+  background: #001542;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.buttonIcon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonIcon,
+.secondaryButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .contentContainer {
+    padding: 3rem;
   }
   
-  .potatoParagraph {
-    color: black;
+  .title {
+    font-size: 2rem;
+  }
+  
+  .factText {
+    font-size: 1rem;
+  }
+}
 
-    font-size: 16px;
+@media (max-width: 768px) {
+  .nutritionSection {
+    flex-direction: column;
+    min-height: auto;
+  }
   
-  font-family: 'Arial', sans-serif;
+  .imageContainer, 
+  .contentContainer {
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .imageContainer {
+    min-height: 300px;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+  
+  .primaryButton, 
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
-  text-align: justify;
-
-
- 
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+@media (max-width: 480px) {
+  .contentContainer {
+    padding: 1.5rem;
   }
   
-  .potatoButtonContainer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
+  .title {
+    font-size: 1.6rem;
   }
   
-  .potatoButton {
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    /* transition: background-color 0.3s, transform 0.3s; */
-    color: white;
-
-    background: linear-gradient(135deg,  #04D939,#001542);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* background: linear-gradient(90deg, #22ff00, #1b00b3); */
+  .sectionTag {
+    font-size: 0.8rem;
+    padding: 0.4rem 1.2rem;
   }
   
-  .potatoButton:hover {
-    /* background-color: #10b981; */
-    background: linear-gradient(135deg, #001542, #04D939); /* Invert gradient */
-    transform: translateY(-3px) scale(1.05);
+  .factTitle {
+    font-size: 1.1rem;
   }
   
-  /* Media Queries for Mobile View */
-  @media (max-width: 767px) {
-    .potatoSection {
-      flex-direction: column;
-      padding: 1rem;
-    }
-  
-    .potatoImageContainer {
-      width: 100%;
-      height: 230px;
-      margin-bottom: 1rem;
-    }
-  
-    .mobileContent {
-      display: block;
-      font-size: 0.9rem;
-      color: green;
-      font-weight: bold;
-      text-align: center;
-      padding: 2rem;
-    }
-  
-    .potatoContentWrapper {
-      display: none; /* Hide desktop content */
-    }
-  
-    .mobileButtonContainer {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-  
-    .mobileButton {
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-      color: white;
-      background: linear-gradient(90deg, #22ff00, #1b00b3);
-      text-align: center;
-    }
-  
-    .mobileButton:hover {
-      background-color: #2563eb;
-    }
+  .factText {
+    font-size: 0.95rem;
   }
-  
-  /* Media Queries for Desktop View */
-  @media (min-width: 768px) {
-    .potatoSection {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-  
-    .potatoImageContainer {
-      width: 50%;
-      padding-right: 1rem;
-    }
-  
-    .potatoContentWrapper {
-      width: 50%;
-      padding-left: 1rem;
-    }
-  
-    .mobileContent {
-      display: none; /* Hide mobile content */
-    }
-  }
-  
+}

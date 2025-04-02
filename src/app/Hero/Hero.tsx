@@ -4,74 +4,85 @@ import React, { useState, useEffect } from "react";
 import styles from "../Hero/Hero.module.css";
 import Image from "next/image";
 import Head from "next/head";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link";
 
 const slides = [
   {
     image: "/assets/websiteimage7.png",
     heading: "AGPOTATO - Innovating Farming Practices",
-    description:
-      "Empowering farmers with cutting-edge, sustainable farming techniques for optimized yields and quality.",
-    alt: "Illustration of modern farming techniques at AGPotato.",
+    description: "Empowering farmers with cutting-edge, sustainable farming techniques for optimized yields and quality.",
+    alt: "Illustration of modern farming techniques at AGPotato."
+    
   },
   {
     image: "/assets/potatotractor.jpg",
-    heading: "AGPOTATO - Global Excellence in Potato Export",
-    description: "Exporting the Best of Potatoes with a Focus on Sustainability.",
-    alt: "Image of fresh potatoes being prepared for export.",
+    heading: "AGPOTATO - Global Potato Excellence",
+    description: "Exporting premium potatoes with sustainable practices to markets worldwide.",
+    alt: "Image of fresh potatoes being prepared for export."
+  
   },
   {
     image: "/assets/ma.png",
-    heading: "AGPOTATO - Sustainable Potato Flour",
-    description:
-      "Committed to producing high-quality potato flour through sustainable practices, rich in nutrients and versatile.",
-    alt: "Image showing sustainable potato flour by AGPotato.",
+    heading: "Sustainable Potato Flour",
+    description: "High-quality, nutrient-rich potato flour produced with eco-friendly processes.",
+    alt: "Image showing sustainable potato flour by AGPotato."
+    
   },
   {
     image: "/assets/websiteimage3.jpg",
-    heading: "AGPOTATO - Exploring the World of Potatoes",
-    description:
-      "Discover diverse potato varieties like Russet, Yukon Gold, Red Bliss, and Fingerlings, each with unique flavors and uses.",
-    alt: "Image showing a variety of potatoes including Russet, Yukon Gold, Red Bliss, and Fingerlings.",
+    heading: "Diverse Potato Varieties",
+    description: "Russet, Yukon Gold, Red Bliss, and Fingerlings - each with unique flavors and culinary uses.",
+    alt: "Image showing potato varieties."
+
   },
   {
     image: "/assets/websiteimage10.png",
-    heading: "AGPOTATO - Excellence in Prepackaging",
-    description:
-      "Ensuring the freshness and quality of potatoes with innovative prepackaging solutions tailored for global markets.",
-    alt: "Image showing prepackaged potatoes in eco-friendly packaging, ready for distribution.",
+    heading: "Innovative Prepackaging",
+    description: "Freshness guaranteed with our advanced prepackaging solutions for global distribution.",
+    alt: "Image showing packaged potatoes."
   },
 ];
 
 const WebHero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
-  // Slide transition logic
+  // Slide transition with animation handling
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 9000);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => 
+          prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsTransitioning(false);
+      }, 500); // Match this with your CSS transition duration
+    }, 7000);
 
-    // Clean up the interval on component unmount
     return () => clearInterval(interval);
   }, []);
 
-  // Handle window resize logic
+  // Handle window resize
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 650);
+      setIsMobile(window.innerWidth <= 768); // Slightly larger breakpoint
     };
 
+    handleResize(); // Initial check
     window.addEventListener("resize", handleResize);
-    handleResize(); // Set initial mobile state on mount
-
-    return () => {
-      window.removeEventListener("resize", handleResize); // Clean up resize listener
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Handle manual slide change
+  const goToSlide = (index: number) => {
+    if (index === currentIndex || isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsTransitioning(false);
+    }, 500);
+  };
 
   return (
     <div className={styles.webHero}>
@@ -80,11 +91,11 @@ const WebHero: React.FC = () => {
         <meta name="google-site-verification" content="sZBFMd3wcR6-f30Igk3vvcOhCP2LkDaXpKAXGkw25rI" />
         <meta
           name="description"
-          content="AGPotato leads in sustainable potato farming, producing nutrient-rich potato flour. Our eco-friendly farming techniques and global export services ensure the highest quality products. Explore our commitment to sustainability in agriculture."
+          content="AGPotato leads in sustainable potato farming, producing nutrient-rich potato flour. Our eco-friendly farming techniques and global export services ensure the highest quality products."
         />
         <meta
           name="keywords"
-          content="Potato, Sustainable Farming, AGPotato, Potato Flour, Agriculture Innovation, Sustainable Agriculture, Eco-Friendly Farming, Potato Products, Export, Nutrient-Rich Potato Flour, Sustainable Practices"
+          content="Potato, Sustainable Farming, AGPotato, Potato Flour, Agriculture Innovation, Sustainable Agriculture"
         />
       </Head>
 
@@ -94,41 +105,64 @@ const WebHero: React.FC = () => {
             key={index}
             className={`${styles.webHeroSlide} ${
               index === currentIndex ? styles.webActive : ""
-            }`}
+            } ${isTransitioning ? styles.transitioning : ""}`}
+            aria-hidden={index !== currentIndex}
           >
+            <div className={styles.imageOverlay}></div>
             <Image
               src={slide.image}
               alt={slide.alt}
-              layout="fill"
-              objectFit="cover"
+              fill
+              priority={index === currentIndex}
               className={styles.slideImage}
+              sizes="100vw"
             />
-            <div className={styles.webHeroText}>
-              {/* Apply animation dynamically to the active slide */}
-              <h1
-                className={`${styles.h1} ${
-                  index === currentIndex ? styles.slideInFromLeftToRight : ""
-                }`}
-              >
-                {slide.heading}
-              </h1>
-              {!isMobile && <p>{slide.description}</p>}
+            
+            <div className={styles.webHeroContent}>
+              <div className={`${styles.webHeroText} ${
+                index === currentIndex ? styles.visible : ""
+              }`}>
+                <h1 className={styles.heading}>
+                  {slide.heading}
+                </h1>
+                <p className={styles.description}>{slide.description}</p>
+                <Link href="/components/About/" className={styles.ctaButton}>
+              
+                </Link>
+              </div>
             </div>
-            <Link href="/components/About/">
-              <button className={styles.discoverButton}>Discover More</button>
-            </Link>
           </div>
         ))}
+        
         <div className={styles.webSliderControls}>
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              className={`${styles.webSliderDot} ${
-                index === currentIndex ? styles.webActive : ""
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            ></div>
-          ))}
+          <button 
+            className={styles.prevButton}
+            onClick={() => goToSlide(currentIndex === 0 ? slides.length - 1 : currentIndex - 1)}
+            aria-label="Previous slide"
+          >
+            &lsaquo;
+          </button>
+          
+          <div className={styles.dotsContainer}>
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                className={`${styles.webSliderDot} ${
+                  index === currentIndex ? styles.webActive : ""
+                }`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          <button 
+            className={styles.nextButton}
+            onClick={() => goToSlide(currentIndex === slides.length - 1 ? 0 : currentIndex + 1)}
+            aria-label="Next slide"
+          >
+            &rsaquo;
+          </button>
         </div>
       </div>
     </div>
