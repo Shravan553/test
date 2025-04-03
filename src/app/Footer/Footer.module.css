@@ -4,21 +4,23 @@
     padding: 30px 0;
     font-family: 'Arial', sans-serif;
     width: 100%;
-    height:fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-size: cover; /* Ensures the image covers the entire footer */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 /* Contact Form Section */
 .footerContactForm {
     width: 100%;
     max-width: 500px;
     padding-bottom: 10px;
 }
+
 .footerContactForm h2 {
     font-size: 2rem;
     color: #13F10F;
@@ -26,6 +28,7 @@
     margin-top: 25px;
     font-weight: 600;
 }
+
 .footerContactForm h3 {
     font-size: 1.5rem;
     color: #13F10F;
@@ -33,6 +36,7 @@
     margin-top: 25px;
     font-weight: 600;
 }
+
 /* Contact Form Styling */
 .contactForm {
     display: flex;
@@ -41,6 +45,7 @@
     width: 100%;
     padding: 0 20px;
 }
+
 .contactForm input,
 .contactForm textarea {
     width: 100%;
@@ -52,10 +57,12 @@
     border-radius: 3px;
     transition: border-color 0.3s ease;
 }
+
 .contactForm input:focus,
 .contactForm textarea:focus {
     border-color: #13F10F;
 }
+
 .contactForm button {
     padding: 12px 20px;
     font-size: 1rem;
@@ -67,13 +74,36 @@
     transition: background-color 0.3s, transform 0.3s;
     margin-bottom: 0;
 }
+
 .contactForm button:hover {
     background-color: #0EB50C;
     transform: translateY(-3px);
 }
+
 .contactForm button:active {
     transform: translateY(1px);
 }
+
+/* Form Error Styling */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    text-align: left;
+    margin-top: -10px;
+}
+
+.formResult {
+    color: #13F10F;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
 /* Footer Details Section */
 .footerDetails {
     display: flex;
@@ -83,156 +113,205 @@
     padding: 0 20px;
     box-sizing: border-box;
 }
+
 .footerColumn {
     flex: 1;
     min-width: 250px;
     margin: 20px;
     text-align: left;
 }
+
 .footerColumn h3 {
     color: #13F10F;
     font-size: 1.2rem;
     margin-bottom: 5px;
     font-weight: 600;
 }
-.footerColumn2 h3 {
-    color: #13F10F;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
+
 .footerColumn p,
 .footerColumn ul {
     font-size: 1rem;
     line-height: 1.8;
 }
-.footerColumn2 p,
-.footerColumn2 ul {
-    font-size: 1rem;
-    line-height: 1.8;
-}
+
 .footerColumn ul {
     list-style: none;
     padding: 0;
 }
+
 .footerColumn ul li {
     margin-bottom: 5px;
 }
+
 .footerColumn ul li a {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
 }
+
 .footerColumn ul li a:hover {
     color: #F1C40F;
 }
-.footerColumn2 p,
-.footerColumn2 ul {
-    font-size: 1rem;
-    line-height: 1.8;
-}
-/* Social Icons */
+
+/* Social Icons with Brand Colors */
 .socialIcons {
     display: flex;
-    gap: 20px;
-    margin-top: 10px;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
 }
+
 .socialIcons a {
-    color:#13f10f;
-    font-size: 1.8rem;
-    transition: color 0.3s;
-}
-.socialIcons a:hover {
-    color:#001542;
-}
-.footerColumn2 {
-    flex: 1;
-    min-width: 250px;
-    margin: 20px;
-    text-align: left; /* Hide Quick Links section on mobile */
-}
-.footerColumn2 ul {
-    list-style: none;
-    padding: 0;
-}
-.footerColumn2 ul li a:hover {
-    color: #F1C40F;
-}
-.footerColumn2 ul li {
-    margin-bottom: 10px;
-}
-.footerColumn2 ul li a {
     color: white;
-    text-decoration: none;
-    transition: color 0.3s;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Facebook */
+.socialIcons a:nth-child(1) {
+    color: #1877F2; /* Facebook blue */
+}
+
+/* Twitter */
+.socialIcons a:nth-child(2) {
+    color: #1DA1F2; /* Twitter blue */
+}
+
+/* Instagram */
+.socialIcons a:nth-child(3) {
+    color: #E4405F; /* Instagram pink */
+}
+
+/* LinkedIn */
+.socialIcons a:nth-child(4) {
+    color: #0A66C2; /* LinkedIn blue */
+}
+
+/* YouTube */
+.socialIcons a:nth-child(5) {
+    color: #FF0000; /* YouTube red */
+}
+
+/* Pinterest */
+.socialIcons a:nth-child(6) {
+    color: #E60023; /* Pinterest red */
+}
+
+/* WhatsApp */
+.socialIcons a:nth-child(7) {
+    color: #25D366; /* WhatsApp green */
+}
+
+.socialIcons a:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
 /* Footer Bottom */
 .footerBottom {
+    width: 100%;
     text-align: center;
-    padding-top: 5px;
+    padding: 20px 0 0;
     border-top: 1px solid #444;
     font-size: 1rem;
     color: #aaa;
+    margin-top: 20px;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .footerDetails {
         display: grid;
-        grid-template-columns: 1fr; /* Single column layout */
-        grid-template-rows: repeat(4, auto); /* Stack sections vertically */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
         gap: 10px;
-        text-align: center; /* Center-align for mobile */
-        padding: 0 10px; /* Reduce side padding for mobile */
+        text-align: center;
+        padding: 0 10px;
     }
+
     .footerColumn {
-        width: 100%; /* Full width for each column */
-        margin: 5px 0; /* Smaller margins for compact layout */
-        text-align: center; /* Center-align text in each column */
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
     }
-    .footerColumn2 {
-        display: none; /* Hide Quick Links section on mobile */
-    }
+
     .footerColumn h3 {
-        font-size: 0.9rem; /* Smaller heading font size */
-        margin-bottom: 8px; /* Reduce space below heading */
+        font-size: 1.1rem;
+        margin-bottom: 8px;
     }
+
     .footerColumn p,
     .footerColumn ul {
-        font-size: 0.8rem; /* Smaller text font size */
-        line-height: 1.5; /* Adjust line spacing for readability */
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
+
     .footerColumn ul li {
-        margin-bottom: 5px; /* Tighter spacing between list items */
+        margin-bottom: 5px;
     }
+
     .footerContactForm {
         width: 100%;
         max-width: 100%;
-        padding: 20px 0; /* Reduce padding */
+        padding: 20px 0;
     }
+
     .footerContactForm h2 {
-        font-size: 1.2rem; /* Smaller heading font for form */
+        font-size: 1.5rem;
         margin-bottom: 15px;
     }
+
     .contactForm {
-        padding: 0 10px; /* Reduce padding for compactness */
+        padding: 0 15px;
     }
+
     .contactForm input,
     .contactForm textarea {
-        padding: 10px; /* Reduce input padding */
-        font-size: 0.9rem; /* Smaller font size */
+        padding: 10px;
+        font-size: 0.9rem;
     }
+
     .contactForm button {
-        padding: 10px 15px; /* Compact button padding */
-        font-size: 0.9rem; /* Smaller button font size */
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
-    
+
     .socialIcons {
-        gap: 15px; /* Reduce spacing between icons */
-        font-size: 1.5rem; /* Smaller icon size */
         justify-content: center;
+        gap: 12px;
     }
+
+    .socialIcons a {
+        font-size: 1.3rem;
+        width: 36px;
+        height: 36px;
+    }
+
     .footerBottom {
-        padding-top: 10px; /* Compact padding */
-        font-size: 0.8rem; /* Smaller footer text */
+        padding-top: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerContactForm h2 {
+        font-size: 1.3rem;
+    }
+
+    .footerContactForm h3 {
+        font-size: 1.1rem;
+    }
+
+    .socialIcons a {
+        font-size: 1.2rem;
+        width: 32px;
+        height: 32px;
     }
 }
