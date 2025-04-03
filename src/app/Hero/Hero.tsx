@@ -12,28 +12,24 @@ const slides = [
     heading: "AGPOTATO - Innovating Farming Practices",
     description: "Empowering farmers with cutting-edge, sustainable farming techniques for optimized yields and quality.",
     alt: "Illustration of modern farming techniques at AGPotato."
-    
   },
   {
     image: "/assets/potatotractor.jpg",
     heading: "AGPOTATO - Global Potato Excellence",
     description: "Exporting premium potatoes with sustainable practices to markets worldwide.",
     alt: "Image of fresh potatoes being prepared for export."
-  
   },
   {
     image: "/assets/ma.png",
     heading: "Sustainable Potato Flour",
     description: "High-quality, nutrient-rich potato flour produced with eco-friendly processes.",
     alt: "Image showing sustainable potato flour by AGPotato."
-    
   },
   {
     image: "/assets/websiteimage3.jpg",
     heading: "Diverse Potato Varieties",
     description: "Russet, Yukon Gold, Red Bliss, and Fingerlings - each with unique flavors and culinary uses.",
     alt: "Image showing potato varieties."
-
   },
   {
     image: "/assets/websiteimage10.png",
@@ -45,7 +41,6 @@ const slides = [
 
 const WebHero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
   // Slide transition with animation handling
@@ -61,17 +56,6 @@ const WebHero: React.FC = () => {
     }, 7000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  // Handle window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Slightly larger breakpoint
-    };
-
-    handleResize(); // Initial check
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Handle manual slide change
@@ -103,9 +87,7 @@ const WebHero: React.FC = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`${styles.webHeroSlide} ${
-              index === currentIndex ? styles.webActive : ""
-            } ${isTransitioning ? styles.transitioning : ""}`}
+            className={`${styles.webHeroSlide} ${index === currentIndex ? styles.webActive : ""} ${isTransitioning ? styles.transitioning : ""}`}
             aria-hidden={index !== currentIndex}
           >
             <div className={styles.imageOverlay}></div>
@@ -119,16 +101,10 @@ const WebHero: React.FC = () => {
             />
             
             <div className={styles.webHeroContent}>
-              <div className={`${styles.webHeroText} ${
-                index === currentIndex ? styles.visible : ""
-              }`}>
-                <h1 className={styles.heading}>
-                  {slide.heading}
-                </h1>
+              <div className={`${styles.webHeroText} ${index === currentIndex ? styles.visible : ""}`}>
+                <h1 className={styles.heading}>{slide.heading}</h1>
                 <p className={styles.description}>{slide.description}</p>
-                <Link href="/components/About/" className={styles.ctaButton}>
-              
-                </Link>
+                <Link href="/components/About/" className={styles.ctaButton}></Link>
               </div>
             </div>
           </div>
@@ -147,9 +123,7 @@ const WebHero: React.FC = () => {
             {slides.map((_, index) => (
               <button
                 key={index}
-                className={`${styles.webSliderDot} ${
-                  index === currentIndex ? styles.webActive : ""
-                }`}
+                className={`${styles.webSliderDot} ${index === currentIndex ? styles.webActive : ""}`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
               />

@@ -14,7 +14,7 @@ interface ProgramData {
 
 const programs: ProgramData[] = [
   {
-    src: "/assets/supply.jpg",
+    src: "/assets/h09.jpg",
     title: "Supply Chain",
     link: "/components/AgriBussiness/Supplychain/",
     alt: "Image showcasing an efficient agricultural supply chain."
@@ -26,7 +26,7 @@ const programs: ProgramData[] = [
     alt: "Image of potato by-products being processed."
   },
   {
-    src: "/assets/expo.jpg",
+    src: "/assets/er5.jpg",
     title: "Export Excellence",
     link: "/components/AgriBussiness/Exportexcellence/",
     alt: "Image of high-quality potatoes prepared for export."
@@ -38,7 +38,7 @@ const programs: ProgramData[] = [
     alt: "Image depicting advanced cold storage facilities for potatoes."
   },
   {
-    src: "/assets/flo.jpg",
+    src: "/assets/fr455.jpg",
     title: "Frozen Products",
     link: "/components/AgriBussiness/Frozenproducts/",
     alt: "Image of frozen potato products ready for distribution."
