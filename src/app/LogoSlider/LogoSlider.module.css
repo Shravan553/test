@@ -1,107 +1,186 @@
+/* Stylish Gallery Section */
 .campus {
   margin: 80px auto;
   width: 90%;
   text-align: center;
-  overflow: hidden; /* Hide overflow for animation effect */
+  position: relative;
+  overflow: hidden;
 }
 
 .gallery {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
-  animation: scroll 20s linear infinite; /* Add animation to the gallery */
-  gap: 10px; /* Ensure space between the images */
-  flex-wrap: nowrap; /* Prevent wrapping on smaller screens */
+  animation: scroll 20s linear infinite;
+  gap: 12px;
+  flex-wrap: nowrap;
+  padding: 20px 0;
+  position: relative;
 }
 
-/* Gallery image styling */
+/* Gallery image styling with hover effects */
 .gallery img {
   width: 24%;
-  height: 200px; /* Maintain aspect ratio */
-  max-height: 200px; /* Set maximum height */
+  height: 200px;
+  max-height: 200px;
   border-radius: 14px;
-  margin-right: 10px; /* Add spacing between images */
+  object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  filter: brightness(0.95);
+  position: relative;
+  z-index: 1;
 }
+
+.gallery img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  filter: brightness(1);
+  z-index: 2;
+}
+
+/* Gradient overlay for depth */
+.gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.8) 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Enhanced Know More Button */
 .knowMoreBtn {
-  display: inline-block;
-  background: linear-gradient(135deg,  #04D939,#001542);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #04D939, #001542);
   color: #fff;
   padding: 15px 40px;
-  margin-top: 20px;
+  margin-top: 40px;
   border-radius: 50px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  text-align: center;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  }
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px rgba(4, 217, 57, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.knowMoreBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.8s ease;
+}
 
 .knowMoreBtn:hover {
-  background: linear-gradient(135deg, #001542, #04D939); /* Invert gradient */
-  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, #001542, #04D939);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(4, 217, 57, 0.4);
 }
 
-/* Media query for smaller screens (max-width: 768px) */
+.knowMoreBtn:hover::before {
+  left: 100%;
+}
+
+/* Responsive adjustments */
 @media only screen and (max-width: 768px) {
-  .potatoInsightsContainer {
-      padding: 10px; /* Adjust padding for mobile */
-      margin-left: 0; /* Remove left margin on mobile for full width */
-  }
-
-  .contentContainer {
-      grid-template-columns: 1fr; /* One column layout for mobile */
-  }
-
-  .contentBox {
-      padding: 15px; /* Adjust padding for boxes */
-  }
-
-  .contentTitle {
-      font-size: 1.2rem; /* Smaller title font for mobile */
-  }
-
-  .contentText {
-      font-size: 0.9rem; /* Smaller text font for mobile */
-  }
-
-  
-
-  /* Keep the gallery scroll animation and ensure it works on mobile */
   .gallery {
-      flex-wrap: nowrap; /* Prevent wrapping and keep images in a single line */
-      justify-content: start; /* Align images to the start */
-      animation: scroll 10s linear infinite; /* Ensure the animation stays */
+    animation: scroll 15s linear infinite;
+    gap: 10px;
   }
 
   .gallery img {
-      width: 40%; /* Adjust image width to fit better on mobile */
-      max-height: 150px; /* Adjust maximum height for smaller screens */
-      margin-right: 10px; /* Add spacing between images */
+    width: 40%;
+    max-height: 150px;
+  }
+
+  .knowMoreBtn {
+    padding: 12px 30px;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+  .gallery::before,
+  .gallery::after {
+    width: 50px;
   }
 }
 
-/* Media query for screens between 768px and 800px */
-@media (max-width: 800px) {
+@media (max-width: 480px) {
   .gallery {
-      flex-wrap: nowrap; /* Keep images in a single line for scrolling effect */
-      justify-content: start;
+    animation: scroll 12s linear infinite;
   }
 
   .gallery img {
-      width: 50%; /* Set width to 40% to fit images properly */
-      max-height: 100px; /* Adjust height for smaller screens */
-      margin-bottom: 0px; /* Add margin for spacing */
+    width: 60%;
+    max-height: 120px;
   }
 }
 
-/* Keyframe animation for scrolling effect */
+/* Enhanced scroll animation */
 @keyframes scroll {
   0% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
-      transform: translateX(-100%); /* Move left by 100% of its width */
+    transform: translateX(calc(-100% + 100vw - 90%));
+  }
+}
+
+/* Floating particles for extra style */
+.particle {
+  position: absolute;
+  background: rgba(4, 217, 57, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Add this JavaScript to create particles */
+/*
+document.querySelectorAll('.campus').forEach(section => {
+  for (let i = 0; i < 15; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.width = `${Math.random() * 10 + 5}px`;
+    particle.style.height = particle.style.width;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite ${Math.random() * 5}s`;
+    section.appendChild(particle);
+  }
+});
+*/
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
   }
 }
