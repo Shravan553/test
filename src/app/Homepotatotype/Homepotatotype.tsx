@@ -36,15 +36,20 @@ const Homepotatotype: React.FC = () => {
     >
       <div className={styles.container}>
         <div className={`${styles.imageContainer} ${isVisible ? styles.visible : ""}`}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/assets/tyimage1.jpg"
-              alt="Types of Potatoes"
-              width={800}
-              height={800}
-              className={styles.image}
-              priority
-            />
+          <div className={styles.circleWrapper}>
+            <div className={styles.circleBackground}></div>
+            <div className={styles.cloudAnimation}></div>
+            <div className={styles.cloudAnimation2}></div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/assets/tyimage1.jpg"
+                alt="Types of Potatoes"
+                width={800}
+                height={800}
+                className={styles.circleImage}
+                priority
+              />
+            </div>
           </div>
         </div>
         
