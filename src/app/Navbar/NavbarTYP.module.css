@@ -15,6 +15,42 @@
     left: 0; /* Ensure it starts at the left edge */
     right: 0; /* Ensure it ends at the right edge */
   }
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between icons */
+    margin-top: 10px;
+  }
+  
+  .socialIcons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #04D939, #018a29); /* Gradient effect */
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .socialIcons a:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    background: linear-gradient(135deg, #018a29, #04D939);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .socialIcons a i {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .socialIcons a:hover i {
+    transform: rotate(360deg); /* Smooth rotation effect */
+  }
   
   .logo1 {
     height: auto; /* Maintain aspect ratio */

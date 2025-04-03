@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/assets/websiteimage7.png",
+    image: "/assets/s32.jpg",
     heading: "AGPOTATO - Innovating Farming Practices",
     description: "Empowering farmers with cutting-edge, sustainable farming techniques for optimized yields and quality.",
     alt: "Illustration of modern farming techniques at AGPotato."
@@ -32,7 +32,7 @@ const slides = [
     alt: "Image showing potato varieties."
   },
   {
-    image: "/assets/websiteimage10.png",
+    image: "/assets/3e.webp",
     heading: "Innovative Prepackaging",
     description: "Freshness guaranteed with our advanced prepackaging solutions for global distribution.",
     alt: "Image showing packaged potatoes."

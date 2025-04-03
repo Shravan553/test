@@ -7,6 +7,7 @@ import Image from 'next/image';  // Make sure to import Image from next/image
 
 import styles from "../Navbar/NavbarTYP.module.css";
 import { HamburgetMenuClose, HamburgetMenuOpen } from "../Navbar/Icons"
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaPinterest, FaWhatsapp } from "react-icons/fa";
 
 // Define type for the click state and dropdown states
 const Navbar: React.FC = () => {
@@ -101,6 +102,15 @@ const Navbar: React.FC = () => {
               height={100} 
             />
           </Link>
+          <div className={styles.socialIcons}>
+          <a href="https://www.facebook.com/share/1D3YExrYxU/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://x.com/agpotato0" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+          <a href="https://www.instagram.com/agpotato_?igsh=cW40b2Q1ZWpkdjNt" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a href="https://www.linkedin.com/company/106107647/admin/dashboard/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+          <a href="https://www.youtube.com/@Agpotato" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+          <a href="https://in.pinterest.com/agpotato0" target="_blank" rel="noopener noreferrer"><FaPinterest /></a>
+          <a href="https://whatsapp.com/channel/0029VanTtzGEQIaiMwZqvB1T" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+        </div>
           <ul className={click ? `${styles.navMenu} ${styles.active}` : styles.navMenu}>
             <li className={styles.navItem}>
               <Link href="/" className={styles.navLinks} onClick={handleClick} >
