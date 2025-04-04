@@ -9,7 +9,7 @@ const HomeAbout: React.FC = () => {
       <div className={styles.webaboutleft}>
         {/* Use Next.js Image for optimized image rendering */}
         <Image 
-          src="/assets/agpotatoabout.jpg" // Use relative path to the image in the /public folder
+          src="/assets/abt45.png" // Use relative path to the image in the /public folder
           alt="About AGPOTATO's success and history" 
           className={styles.webaboutimg} 
           width={500} // Specify the width
