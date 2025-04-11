@@ -103,46 +103,30 @@
 /* Adjust styles for smaller screens */
 @media (max-width: 650px) {
   .programs {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Space between elements */
-    padding: 10px;
-}
-
-.program {
-    width: 45%; /* Make each program take almost half the width */
-    margin: 5px; /* Adjust margins */
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 160px; /* Set a fixed height for uniformity */
-    background: #f8f8f8; /* Light background for clarity */
-    border-radius: 10px;
-}
-
-/* Ensure images are the same size */
-.program img {
-    width: 100%;
-    height: 140px; /* Set a fixed height */
-    object-fit: cover; /* Ensures the image scales while maintaining aspect ratio */
-    border-radius: 10px;
-}
-
-/* Adjust text sizes for mobile view */
-.programTitle {
-    font-size: 0.6rem;
-    text-align: center;
-    margin-top: 0px;
-}
-
-.caption {
-    font-size: 0.8rem; /* Smaller font size for captions */
-    text-align: center;
-}
+    width:auto;
+      justify-content: space-between; /* Align items evenly */
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
   
+  .program {
+      width: calc(50% - 20px); /* Make each program take half the width minus gaps */
+      margin: 10px 0; /* Add vertical margin */
+      padding: 0; /* Remove padding */
+  }
+  
+  /* Adjust image size for mobile view to prevent overlapping */
+  .program img {
+      width: 100%; /* Make the image take full width of the program card */
+      height:80%; /* Adjust height automatically to maintain aspect ratio */
+  }
+  
+  /* Adjust text sizes for mobile view */
+  
+  .programTitle
+  {
+    font-size: 1.0rem;
+  }
+  .caption {
+      font-size: 0.8rem; /* Smaller font size for captions in mobile view */
+  }
 }

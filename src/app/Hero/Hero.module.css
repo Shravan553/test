@@ -1,286 +1,303 @@
 /* ===== Hero Section Styles ===== */
 .webHero {
-    width: 100%;
-    height: 84vh;
-    max-height: 800px;
-    position: relative;
-    overflow: hidden;
-    background-color: #F4F4F4;
-    margin-top: 2px;
-  }
-  
-  .webHeroSlider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  
-  /* ===== Slide Styles ===== */
-  .webHeroSlide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .webHeroSlide.webActive {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  /* Special slide positioning */
-  .webHeroSlide.img4Active {
-    justify-content: flex-end;
-    background-color: #070707;
-  }
-  
-  /* ===== Slide Content Styles ===== */
-  .webHeroText {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 30px 40px;
-    border-radius: 12px;
-    max-width: 650px;
-    margin: 0 50px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-  }
-  
-  .webActive .webHeroText {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  .webHeroText h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #fff;
-    line-height: 1.2;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    transform: translateX(-50px);
-    opacity: 0;
-    transition: all 0.6s ease-out 0.4s;
-  }
-  
-  .webActive .webHeroText h1 {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  
-  .webHeroText p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 25px;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.6s ease-out 0.6s;
-  }
-  
-  .webActive .webHeroText p {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  /* ===== CTA Button Styles ===== */
-  .discoverButton {
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    padding: 12px 28px;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    background: linear-gradient(135deg, #04D939, #001542);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    transform: translate(-50%, 20px);
-  }
-  
-  .webActive .discoverButton {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  
-  .discoverButton:hover {
-    background: linear-gradient(135deg, #001542, #04D939);
-    transform: translate(-50%, -3px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* ===== Slider Controls ===== */
-  .webSliderControls {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 10;
-  }
-  
-  .webSliderDot {
-    width: 14px;
-    height: 14px;
-    background-color: rgba(255, 255, 255, 0.4);
-    border: 2px solid #04D939;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .webSliderDot:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-  
-  .webSliderDot.webActive {
-    background-color: #fff;
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  
- /* ===== Mobile Responsive Styles ===== */
+  width: 100%;
+  height: 84vh;
+  max-height: 800px;
+  position: relative;
+  overflow: hidden;
+  background-color: #F4F4F4;
+  margin-top: 2px;
+}
+
+.webHeroSlider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ===== Slide Styles ===== */
+.webHeroSlide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webHeroSlide.webActive {
+  opacity: 1;
+  visibility: visible;
+}
+
+.webHeroSlide.img4Active {
+  justify-content: flex-end;
+  background-color: #070707;
+}
+
+/* ===== Slide Image Styling (added) ===== */
+.webHeroSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the area without distortion */
+}
+
+/* ===== Slide Content Styles ===== */
+.webHeroText {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 650px;
+  margin: 0 50px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.webActive .webHeroText {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.webHeroText h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  line-height: 1.2;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: all 0.6s ease-out 0.4s;
+}
+
+.webActive .webHeroText h1 {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.webHeroText p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 25px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.6s ease-out 0.6s;
+}
+
+.webActive .webHeroText p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ===== CTA Button Styles ===== */
+.discoverButton {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #04D939, #001542);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translate(-50%, 20px);
+}
+
+.webActive .discoverButton {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.discoverButton:hover {
+  background: linear-gradient(135deg, #001542, #04D939);
+  transform: translate(-50%, -3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Slider Controls ===== */
+.webSliderControls {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.webSliderDot {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid #04D939;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.webSliderDot:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.webSliderDot.webActive {
+  background-color: #fff;
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* ===== Mobile Responsive Styles ===== */
 @media (max-width: 768px) {
-    .webHero {
-      height: 60vh;
-      min-height: 400px; /* Ensure minimum height for content */
-    }
-  
-    .webHeroSlider {
-      height: 100%;
-    }
-  
-    .webHeroSlide {
-      justify-content: center;
-      align-items: flex-start; /* Align content to top on mobile */
-      padding-top: 20vh; /* Push content down from top */
-    }
-  
-    .webHeroText {
-      width: 90%;
-      max-width: none;
-      padding: 20px;
-      margin: 0 auto;
-      position: static;
-      transform: none;
-      backdrop-filter: blur(5px); /* Reduce blur for performance */
-    }
-  
-    .webHeroText h1 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-      text-align: center;
-      transform: none; /* Remove transform for simpler animation */
-      opacity: 1; /* Always visible */
-    }
-  
-    .webHeroText p {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      text-align: center;
-      transform: none; /* Remove transform for simpler animation */
-      opacity: 1; /* Always visible */
-    }
-  
-    .discoverButton {
-      position: relative;
-      bottom: auto;
-      left: auto;
-      transform: none;
-      display: block;
-      margin: 0 auto;
-      width: fit-content;
-      font-size: 1rem;
-      padding: 10px 24px;
-      margin-top: 15px;
-      opacity: 1; /* Always visible */
-    }
-  
-    .webSliderControls {
-      bottom: 30px;
-      gap: 8px;
-    }
-  
-    .webSliderDot {
-      width: 10px;
-      height: 10px;
-      border-width: 1px;
-    }
+  .webHero {
+    height: 60vh;
+    min-height: 400px;
   }
-  
-  @media (max-width: 480px) {
-    .webHero {
-      height: 55vh;
-      min-height: 350px;
-    }
-  
-    .webHeroSlide {
-      padding-top: 15vh;
-    }
-  
-    .webHeroText {
-      width: 92%;
-      padding: 16px;
-    }
-  
-    .webHeroText h1 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-  
-    .webHeroText p {
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-  
-    .discoverButton {
-      font-size: 0.9rem;
-      padding: 8px 20px;
-      margin-top: 12px;
-    }
-  
-    .webSliderControls {
-      bottom: 25px;
-    }
-  
-    .webSliderDot {
-      width: 8px;
-      height: 8px;
-    }
+
+  .webHeroSlider {
+    height: 100%;
   }
-  
-  /* Special adjustments for very small screens */
-  @media (max-width: 360px) {
-    .webHero {
-      height: 50vh;
-      min-height: 300px;
-    }
-  
-    .webHeroText h1 {
-      font-size: 1.3rem;
-    }
-  
-    .webHeroText p {
-      font-size: 0.8rem;
-    }
-  
-    .discoverButton {
-      font-size: 0.85rem;
-    }
+
+  .webHeroSlide {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20vh;
   }
+
+  .webHeroSlide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .webHeroText {
+    width: 90%;
+    max-width: none;
+    padding: 20px;
+    margin: 0 auto;
+    position: static;
+    transform: none;
+    backdrop-filter: blur(5px);
+  }
+
+  .webHeroText h1 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    text-align: center;
+    transform: none;
+    opacity: 1;
+  }
+
+  .webHeroText p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    text-align: center;
+    transform: none;
+    opacity: 1;
+  }
+
+  .discoverButton {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 1rem;
+    padding: 10px 24px;
+    margin-top: 15px;
+    opacity: 1;
+  }
+
+  .webSliderControls {
+    bottom: 30px;
+    gap: 8px;
+  }
+
+  .webSliderDot {
+    width: 10px;
+    height: 10px;
+    border-width: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .webHero {
+    height: 55vh;
+    min-height: 350px;
+  }
+
+  .webHeroSlide {
+    padding-top: 15vh;
+  }
+
+  .webHeroSlide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .webHeroText {
+    width: 92%;
+    padding: 16px;
+  }
+
+  .webHeroText h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .webHeroText p {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .discoverButton {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    margin-top: 12px;
+  }
+
+  .webSliderControls {
+    bottom: 25px;
+  }
+
+  .webSliderDot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Special adjustments for very small screens */
+@media (max-width: 360px) {
+  .webHero {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .webHeroText h1 {
+    font-size: 1.3rem;
+  }
+
+  .webHeroText p {
+    font-size: 0.8rem;
+  }
+
+  .discoverButton {
+    font-size: 0.85rem;
+  }
+}
