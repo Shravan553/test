@@ -29,7 +29,7 @@
     line-height: 1.8;
     margin-bottom: 20px;
     text-align: justify;
-    font-family: 'Arial', sans-serif;
+    font-family: 'popins';
 
 }
 
@@ -81,7 +81,7 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'popins', sans-serif;
 
 }
 
@@ -91,7 +91,7 @@
     font-weight: 800;
     line-height: 1.5;
     margin: 20px 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'popins', sans-serif;
 
 }
 
@@ -142,7 +142,7 @@
 
 
     .webabouthheading {
-        font-family: 'Arial', sans-serif;
+        font-family: 'popins', sans-serif;
 
         font-size: 40px;
         position: relative;
@@ -156,6 +156,9 @@
         text-align: center;
         height: fit-content;
     }
+    .webabouthheading{
+        font-family:'popins';
+    }
 
     .webaboutright {
         padding: 0 20px; /* Add padding to prevent text from touching edges */
@@ -167,9 +170,10 @@
 
     .webaboutright h2{
          display: none; 
-         font-family: 'Arial', sans-serif;
+         font-family: 'popins', sans-serif;
 
     }
+    
 
     .webaboutright p:not(:first-of-type) {
         display: none; /* Hide all paragraphs except the first one */
