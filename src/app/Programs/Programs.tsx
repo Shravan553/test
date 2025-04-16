@@ -38,7 +38,7 @@ const programs: ProgramData[] = [
     alt: "Image depicting advanced cold storage facilities for potatoes."
   },
   {
-    src: "/assets/flo.jpg",
+    src: "/assets/f21.png",
     title: "Frozen Products",
     link: "/components/AgriBussiness/Frozenproducts/",
     alt: "Image of frozen potato products ready for distribution."
