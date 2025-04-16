@@ -10,6 +10,8 @@ const Homepotatotype: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const currentRef = sectionRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -18,13 +20,13 @@ const Homepotatotype: React.FC = () => {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -86,3 +88,4 @@ const Homepotatotype: React.FC = () => {
 };
 
 export default Homepotatotype;
+
