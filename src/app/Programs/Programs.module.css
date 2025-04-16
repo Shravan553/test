@@ -1,4 +1,6 @@
 /* Slide-in animations */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
@@ -32,6 +34,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
+
+   
+ 
 }
 
 .program {
@@ -55,7 +60,8 @@
 .programTitle
 {
   font-size: 28px;
-
+  font-family: 'Poppins';
+  color: black;
 }
 /* Programs.css */
 
@@ -124,6 +130,7 @@
   
   .programTitle
   {
+    font-family: 'Poppins';
     font-size: 1.0rem;
   }
   .caption {
