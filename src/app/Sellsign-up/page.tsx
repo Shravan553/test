@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
-import styles from "./sign-up.module.css"; 
+import styles from "./sign-up.module.css";
 
-
+// Input Component
 const Input = ({
   type,
   placeholder,
@@ -39,7 +39,7 @@ const Input = ({
   />
 );
 
-
+// Main SignUpForm Component
 export default function SignUpForm() {
   const [form, setForm] = useState({
     name: "",
@@ -109,98 +109,103 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.card}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Sign up</h2>
-          <p className={styles.description}>
-            Use email or a service to create an account
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className={styles.container}>
+        <div className={styles.card}>
+          <div className={styles.header}>
+            <h2 className={styles.title}>Sign up</h2>
+            <p className={styles.description}>
+              Use email or a service to create an account
+            </p>
+          </div>
+
+          {error && <div className={styles.error}>{error}</div>}
+
+          <form onSubmit={handleSubmit} className={styles.form}>
+            {potatoName && (
+              <input type="hidden" name="potatoName" value={potatoName} />
+            )}
+
+            <Input
+              type="text"
+              placeholder="Full name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              disabled={pending}
+              required
+              autoComplete="name"
+            />
+            <Input
+              type="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              disabled={pending}
+              required
+              autoComplete="email"
+            />
+            <Input
+              type="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              disabled={pending}
+              required
+              autoComplete="new-password"
+            />
+            <Input
+              type="password"
+              placeholder="Confirm password"
+              value={form.confirmPassword}
+              onChange={(e) =>
+                setForm({ ...form, confirmPassword: e.target.value })
+              }
+              required
+              autoComplete="new-password"
+              disabled={false}
+            />
+
+            <button
+              type="submit"
+              className={styles.button}
+              disabled={pending}
+            >
+              {pending ? "Creating account..." : "Continue"}
+            </button>
+          </form>
+
+          <div className={styles.divider}>or</div>
+
+          <div className={styles.socialButtons}>
+            <button
+              onClick={(e) => handleProvider(e, "google")}
+              className={styles.googleButton}
+              disabled={pending}
+            >
+              <FcGoogle size={20} />
+              Continue with Google
+            </button>
+            <button
+              onClick={(e) => handleProvider(e, "github")}
+              className={styles.githubButton}
+              disabled={pending}
+            >
+              <FaGithub size={20} />
+              Continue with GitHub
+            </button>
+          </div>
+
+          <p className={styles.footer}>
+            Already have an account?{" "}
+            <Link
+              href={`/Sellsign-in?potatoName=${encodeURIComponent(potatoName || "")}`}
+              className={styles.link}
+            >
+              Sign in
+            </Link>
           </p>
         </div>
-
-        {error && <div className={styles.error}>{error}</div>}
-
-        <form onSubmit={handleSubmit} className={styles.form}>
-          {potatoName && (
-            <input type="hidden" name="potatoName" value={potatoName} />
-          )}
-
-          <Input
-            type="text"
-            placeholder="Full name"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            disabled={pending}
-            required
-            autoComplete="name"
-          />
-          <Input
-            type="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            disabled={pending}
-            required
-            autoComplete="email"
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-            disabled={pending}
-            required
-            autoComplete="new-password"
-          />
-          <Input
-            type="password"
-            placeholder="Confirm password"
-            value={form.confirmPassword}
-            onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
-
-            required
-            autoComplete="new-password" disabled={false}          />
-
-          <button
-            type="submit"
-            className={styles.button}
-            disabled={pending}
-          >
-            {pending ? "Creating account..." : "Continue"}
-          </button>
-        </form>
-
-        <div className={styles.divider}>or</div>
-
-        <div className={styles.socialButtons}>
-          <button
-            onClick={(e) => handleProvider(e, "google")}
-            className={styles.googleButton}
-            disabled={pending}
-          >
-            <FcGoogle size={20} />
-            Continue with Google
-          </button>
-          <button
-            onClick={(e) => handleProvider(e, "github")}
-            className={styles.githubButton}
-            disabled={pending}
-          >
-            <FaGithub size={20} />
-            Continue with GitHub
-          </button>
-        </div>
-
-        <p className={styles.footer}>
-          Already have an account?{" "}
-          <Link
-            href={`/Sellsign-in?potatoName=${encodeURIComponent(potatoName || "")}`}
-            className={styles.link}
-          >
-            Sign in
-          </Link>
-        </p>
       </div>
-    </div>
+    </Suspense>
   );
 }
