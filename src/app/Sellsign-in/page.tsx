@@ -3,9 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-// import { signIn } from "next-auth/react";
-// import { FcGoogle } from "react-icons/fc";
-// import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
 import styles from "./signin.module.css";
 
@@ -33,9 +30,11 @@ const SignIn = () => {
         body: JSON.stringify(form),
       });
       const data = await res.json();
+      
+      console.log("Response Data:", data); // Debugging the API response
+
       if (res.ok) {
         toast.success(data.message || "Login successful!");
-        // Add email to the URL parameters when redirecting
         router.push(`/components/BuyandSell/Sell?potatoName=${encodeURIComponent(potatoName || "")}&userEmail=${encodeURIComponent(form.email)}`);
       } else {
         setError(data.message || "Invalid credentials. Please try again.");
@@ -47,7 +46,6 @@ const SignIn = () => {
       setPending(false);
     }
   };
-  
 
   return (
     <div className={styles.container}>
@@ -60,7 +58,6 @@ const SignIn = () => {
         {error && <div className={styles.error}>{error}</div>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
-          {/* Hidden potatoName field */}
           {potatoName && (
             <input
               type="hidden"
@@ -99,27 +96,8 @@ const SignIn = () => {
 
         <div className={styles.divider}>or</div>
 
-        {/* <div className={styles.socialButtons}>
-          <button
-            onClick={(e) => handleProvider(e, "google")}
-            className={styles.googleButton}
-            disabled={pending}
-          >
-            <FcGoogle size={20} />
-            Continue with Google
-          </button>
-          <button
-            onClick={(e) => handleProvider(e, "github")}
-            className={styles.githubButton}
-            disabled={pending}
-          >
-            <FaGithub size={20} />
-            Continue with GitHub
-          </button>
-        </div> */}
-
         <p className={styles.footer}>
-          Don t have an account?{" "}
+          Don’t have an account?{" "}
           <Link href={`/Sellsign-up?potatoName=${encodeURIComponent(potatoName || "")}`} className={styles.link}>
             Sign up
           </Link>
