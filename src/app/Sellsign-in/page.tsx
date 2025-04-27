@@ -14,6 +14,7 @@ const SignIn = () => {
   const searchParams = useSearchParams();
   const potatoName = searchParams.get("potatoName");
 
+  // This is to check if we have potatoName in the URL query parameters
   useEffect(() => {
     if (potatoName) {
       console.log("Potato Name:", potatoName); // Debugging or internal use only
@@ -23,18 +24,23 @@ const SignIn = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setPending(true);
+
     try {
+      // Sending the request to the backend API route
       const res = await fetch("/api/Sellsignin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
+
       const data = await res.json();
       
-      console.log("Response Data:", data); // Debugging the API response
+      // Debugging the response data to ensure it's correct
+      console.log("Response Data:", data);
 
       if (res.ok) {
         toast.success(data.message || "Login successful!");
+        // Redirect after successful login, including email and potatoName (if available)
         router.push(`/components/BuyandSell/Sell?potatoName=${encodeURIComponent(potatoName || "")}&userEmail=${encodeURIComponent(form.email)}`);
       } else {
         setError(data.message || "Invalid credentials. Please try again.");
@@ -58,6 +64,7 @@ const SignIn = () => {
         {error && <div className={styles.error}>{error}</div>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
+          {/* Hidden potatoName field */}
           {potatoName && (
             <input
               type="hidden"
