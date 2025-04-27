@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+// import { signIn } from "next-auth/react";
+// import { FcGoogle } from "react-icons/fc";
+// import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
 import styles from "./signin.module.css";
 
-const SignInContent = () => {
+const SignIn = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -16,7 +19,7 @@ const SignInContent = () => {
 
   useEffect(() => {
     if (potatoName) {
-      console.log("Potato Name:", potatoName);
+      console.log("Potato Name:", potatoName); // Debugging or internal use only
     }
   }, [potatoName]);
 
@@ -32,6 +35,7 @@ const SignInContent = () => {
       const data = await res.json();
       if (res.ok) {
         toast.success(data.message || "Login successful!");
+        // Add email to the URL parameters when redirecting
         router.push(`/components/BuyandSell/Sell?potatoName=${encodeURIComponent(potatoName || "")}&userEmail=${encodeURIComponent(form.email)}`);
       } else {
         setError(data.message || "Invalid credentials. Please try again.");
@@ -43,6 +47,7 @@ const SignInContent = () => {
       setPending(false);
     }
   };
+  
 
   return (
     <div className={styles.container}>
@@ -55,7 +60,15 @@ const SignInContent = () => {
         {error && <div className={styles.error}>{error}</div>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
-          {potatoName && <input type="hidden" id="potatoName" value={potatoName} name="potatoName" />}
+          {/* Hidden potatoName field */}
+          {potatoName && (
+            <input
+              type="hidden"
+              id="potatoName"
+              value={potatoName}
+              name="potatoName"
+            />
+          )}
 
           <input
             type="email"
@@ -75,30 +88,44 @@ const SignInContent = () => {
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             required
           />
-          <button type="submit" className={styles.button} disabled={pending}>
+          <button
+            type="submit"
+            className={styles.button}
+            disabled={pending}
+          >
             {pending ? "Signing in..." : "Continue"}
           </button>
         </form>
 
         <div className={styles.divider}>or</div>
-        <p className={styles.footer}>
-  Don’t have an account?{" "}
-  <Link href={`/Sellsign-up?potatoName=${encodeURIComponent(potatoName || "")}`} className={styles.link}>
-    Sign up
-  </Link>
-</p>
 
+        {/* <div className={styles.socialButtons}>
+          <button
+            onClick={(e) => handleProvider(e, "google")}
+            className={styles.googleButton}
+            disabled={pending}
+          >
+            <FcGoogle size={20} />
+            Continue with Google
+          </button>
+          <button
+            onClick={(e) => handleProvider(e, "github")}
+            className={styles.githubButton}
+            disabled={pending}
+          >
+            <FaGithub size={20} />
+            Continue with GitHub
+          </button>
+        </div> */}
+
+        <p className={styles.footer}>
+          Don t have an account?{" "}
+          <Link href={`/Sellsign-up?potatoName=${encodeURIComponent(potatoName || "")}`} className={styles.link}>
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
-  );
-};
-
-// **Wrap the component inside Suspense**
-const SignIn = () => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <SignInContent />
-    </Suspense>
   );
 };
 

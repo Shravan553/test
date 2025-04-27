@@ -124,15 +124,23 @@ const Navbar: React.FC = () => {
               </span>
               {dropdownAgriBusiness && (
                 <ul className={styles.dropdownMenu}>
-                  <li>
-                    <Link
-                      href="/components/AgriBussiness/Supplychain/"
-                      className={styles.dropdownItem}
-                      onClick={() => setClick(false)} // Close menu after navigation
-                    >
-                      Supply Chain
-                    </Link>
-                  </li>
+                                 <li>
+      <Link
+        href="/components/AgriBussiness/Fruits/"
+        className={styles.dropdownItem}
+        onClick={() => setClick(false)}
+      > Fruits
+      </Link>
+    </li>
+    <li>
+      <Link
+        href="/components/AgriBussiness/Vegetables/"
+        className={styles.dropdownItem}
+        onClick={() => setClick(false)}
+      >
+     Vegetables
+      </Link>
+    </li>    
                   <li>
       <Link
         href="/components/AgriBussiness/Potatobyproduct/"
@@ -142,24 +150,7 @@ const Navbar: React.FC = () => {
         Potato By Product
       </Link>
     </li>
-    <li>
-      <Link
-        href="/components/AgriBussiness/Exportexcellence/"
-        className={styles.dropdownItem}
-        onClick={() => setClick(false)}
-      >
-        Export Excellence
-      </Link>
-    </li>
-    <li>
-      <Link
-        href="/components/AgriBussiness/Coldstorage/"
-        className={styles.dropdownItem}
-        onClick={() => setClick(false)}
-      >
-        Cold Storage
-      </Link>
-    </li>
+    
     <li>
       <Link
         href="/components/AgriBussiness/Frozenproducts/"
@@ -169,15 +160,7 @@ const Navbar: React.FC = () => {
         Frozen Products
       </Link>
     </li>
-    <li>
-      <Link
-        href="/components/AgriBussiness/Meetthefarmer/"
-        className={styles.dropdownItem}
-        onClick={() => setClick(false)}
-      >
-        Meet the Farmer
-      </Link>
-    </li>
+  
                   {/* Other dropdown items */}
                 </ul>
               )}
@@ -198,6 +181,33 @@ const Navbar: React.FC = () => {
               </span>
               {dropdownPotatoInsights && (
                 <ul className={styles.dropdownMenu}>
+                    <li>
+                    <Link
+                      href="/components/AgriBussiness/Supplychain/"
+                      className={styles.dropdownItem}
+                      onClick={() => setClick(false)} // Close menu after navigation
+                    >
+                      Supply Chain
+                    </Link>
+                  </li>
+                  <li>
+      <Link
+        href="/components/AgriBussiness/Exportexcellence/"
+        className={styles.dropdownItem}
+        onClick={() => setClick(false)}
+      >
+        Export Excellence
+      </Link>
+    </li>
+    <li>
+      <Link
+        href="/components/AgriBussiness/Coldstorage/"
+        className={styles.dropdownItem}
+        onClick={() => setClick(false)}
+      >
+        Cold Storage
+      </Link>
+    </li>
                   <li>
                     <Link href="/components/Insight/TypesOfPot/" className={styles.dropdownItem}>
                       Types of Potatoes
@@ -223,6 +233,15 @@ const Navbar: React.FC = () => {
                       FAQs
                     </Link>
                   </li>
+                  <li>
+      <Link
+        href="/components/AgriBussiness/Meetthefarmer/"
+        className={styles.dropdownItem}
+        onClick={() => setClick(false)}
+      >
+        Meet the Farmer
+      </Link>
+    </li>
                   {/* Other dropdown items */}
                 </ul>
               )}

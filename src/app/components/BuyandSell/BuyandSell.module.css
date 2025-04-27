@@ -10,6 +10,29 @@
   align-items: center; /* Center the grid container horizontally */
   box-sizing: border-box;
 }
+.subcategorybuttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.subbutton {
+  background-color: #f4a261;
+  color: white;
+  padding: 12px 24px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subbutton:hover {
+  background-color: #4af45e;
+}
+
+
 
 /* Header Image */
 .marketimage {
@@ -243,7 +266,27 @@
   .categorytitle {
     font-size: 14px; /* Smaller font size for mobile */
   }
-
+  .subcategorybutton {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ffffff, #e6e6e6);
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    color: #222;
+    box-shadow: 6px 6px 12px #d1d1d1, -6px -6px 12px #ffffff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .subcategorybutton:hover {
+    background: linear-gradient(135deg, #e0e0e0, #ffffff);
+    box-shadow: 2px 2px 6px #b5b5b5, -2px -2px 6px #ffffff;
+    transform: scale(1.03);
+  }
+  
+  
+  
   .headingpot {
     font-size: 32px; /* Slightly smaller heading */
   }
@@ -257,7 +300,23 @@
   .container {
     flex-direction: column; /* Stack images on top of each other */
   }
-
+  
+    .subcategorybutton {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+  
+    .buybutton,
+    .sellbutton {
+      padding: 10px 14px;
+      font-size: 16px;
+    }
+  
+    .griditem {
+      width: 90%;
+      height: auto;
+    }
+  
   .marketimage {
     width: 100%; /* Make each image take full width */
     margin: 10px 0; /* Adjust margin for spacing */
@@ -284,6 +343,7 @@
   .headingpot {
     font-size: 28px; /* Smaller font size */
   }
+  
 
   .productbuttons {
     flex-direction: column;
@@ -316,4 +376,30 @@
   .marketimage {
     height: 550px;
   }
+  @media (max-width: 480px) {
+    .gridcontainer {
+      grid-template-columns: 2fr;
+      gap: 15px;
+      padding: 20px;
+    }
+  
+    .categoryimages {
+      justify-content: center;
+    }
+  
+    .categoryimage {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .categorytitle {
+      font-size: 12px;
+    }
+  
+    .headingpot {
+      font-size: 24px;
+    }
+  }
+  
+  
 }
