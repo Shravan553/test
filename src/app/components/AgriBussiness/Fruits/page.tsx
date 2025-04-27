@@ -1,6 +1,7 @@
 import React from 'react';
+import Image from 'next/image'; // ✅ Added
 import styles from './FreshDealsPage.module.css';
-import NavbarTYP from '@/app/Navbar/NavbarTYP'; // make sure this path is correct based on your project
+import NavbarTYP from '@/app/Navbar/NavbarTYP'; // ✅ Check your path
 
 const fruits = [
   { name: "Mango", description: "Sweet and juicy, perfect for desserts and drinks.", image: "/assets/mango.png" },
@@ -18,14 +19,20 @@ const fruits = [
 const BrandNow: React.FC = () => {
   return (
     <>
-      <NavbarTYP /> {/* ✅ Navbar at the top */}
+      <NavbarTYP />
       <div className={styles.brandNowPage}>
         <h1 className={styles.title}>🍋 Brand Now – Premium Mango Collection 🥭</h1>
         <p className={styles.subtitle}>Explore our finest selection of mangoes, curated from top regions of India.</p>
         <div className={styles.grid}>
           {fruits.map((fruit, index) => (
             <div key={index} className={styles.card}>
-              <img src={fruit.image} alt={fruit.name} className={styles.image} />
+              <Image
+                src={fruit.image}
+                alt={fruit.name}
+                className={styles.image}
+                width={300} // ✅ Provide width
+                height={200} // ✅ Provide height
+              />
               <div className={styles.cardContent}>
                 <h2 className={styles.name}>{fruit.name}</h2>
                 <p className={styles.description}>{fruit.description}</p>

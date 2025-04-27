@@ -1,15 +1,12 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-// import { signIn } from "next-auth/react";
-// import { FcGoogle } from "react-icons/fc";
-// import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
 import styles from "./sign-up.module.css"; // Importing your custom CSS
 
-const SignUp = () => {
+const SignUpInner = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,7 +20,6 @@ const SignUp = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Extract the "potatoName" from query parameters
     const name = searchParams.get("potatoName");
     if (name) {
       setPotatoName(name);
@@ -62,14 +58,6 @@ const SignUp = () => {
     }
   };
 
-  // const handleProvider = (
-  //   event: React.MouseEvent<HTMLButtonElement>,
-  //   provider: "github" | "google"
-  // ) => {
-  //   event.preventDefault();
-  //   signIn(provider, { callbackUrl: "/" });
-  // };
-
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -83,7 +71,6 @@ const SignUp = () => {
         {error && <div className={styles.error}>{error}</div>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
-          {/* Hidden potatoName field */}
           {potatoName && (
             <input
               type="hidden"
@@ -126,9 +113,7 @@ const SignUp = () => {
             className={styles.input}
             disabled={pending}
             value={form.confirmPassword}
-            onChange={(e) =>
-              setForm({ ...form, confirmPassword: e.target.value })
-            }
+            onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
             required
           />
           <button
@@ -140,33 +125,10 @@ const SignUp = () => {
           </button>
         </form>
 
-        {/* <div className={styles.divider}>or</div>
-
-        <div className={styles.socialButtons}>
-          <button
-            onClick={(e) => handleProvider(e, "google")}
-            className={styles.googleButton}
-            disabled={pending}
-          >
-            <FcGoogle size={20} />
-            Continue with Google
-          </button>
-          <button
-            onClick={(e) => handleProvider(e, "github")}
-            className={styles.githubButton}
-            disabled={pending}
-          >
-            <FaGithub size={20} />
-            Continue with GitHub
-          </button>
-        </div> */}
-
         <p className={styles.footer}>
           Already have an account?{" "}
           <Link
-            href={`/sign-in?potatoName=${encodeURIComponent(
-              potatoName || ""
-            )}`}
+            href={`/sign-in?potatoName=${encodeURIComponent(potatoName || "")}`}
             className={styles.link}
           >
             Sign in
@@ -177,4 +139,11 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+// Outer wrapper to add <Suspense>
+export default function SignUp() {
+  return (
+    <Suspense fallback={<div>Loading SignUp Page...</div>}>
+      <SignUpInner />
+    </Suspense>
+  );
+}

@@ -1,6 +1,7 @@
 import React from 'react';
+import Image from 'next/image'; // ✅ Added
 import styles from './FreshDealsPage1.module.css';
-import NavbarTYP from '@/app/Navbar/NavbarTYP';
+import NavbarTYP from '@/app/Navbar/NavbarTYP'; // ✅ Check your path
 
 const vegetables = [
   { name: "Onion", description: "Essential for most dishes.", image: "/assets/onion.jpg" },
@@ -49,7 +50,13 @@ const FreshVeggiesPage: React.FC = () => {
       <div className={styles.grid}>
         {vegetables.map((veg, index) => (
           <div key={index} className={styles.card}>
-            <img src={veg.image} alt={veg.name} className={styles.image} />
+            <Image
+              src={veg.image}
+              alt={veg.name}
+              className={styles.image}
+              width={300} // ✅ Provide width
+              height={200} // ✅ Provide height
+            />
             <div className={styles.cardContent}>
               <h2 className={styles.name}>{veg.name}</h2>
               <p className={styles.description}>{veg.description}</p>

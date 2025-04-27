@@ -3,9 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-// import { signIn } from "next-auth/react";
-// import { FcGoogle } from "react-icons/fc";
-// import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
 import styles from "./signin.module.css";
 
@@ -84,15 +81,6 @@ const SignIn = () => {
             {pending ? "Signing in..." : "Continue"}
           </button>
         </form>
-
-        {/* <div className={styles.divider}>or</div>
-
-        <button className={styles.googleButton} onClick={() => signIn("google")}> 
-          <FcGoogle size={20} className={styles.icon} /> Continue with Google
-        </button>
-        <button className={styles.githubButton} onClick={() => signIn("github")}> 
-          <FaGithub size={20} className={styles.icon} /> Continue with GitHub
-        </button> */}
 
         <p className={styles.footer}>
           Don’t have an account?{' '}
