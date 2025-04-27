@@ -9,6 +9,7 @@ import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
 import styles from "./sign-up.module.css"; 
 
+<<<<<<< HEAD
 const Input = ({
   type,
   placeholder,
@@ -38,6 +39,8 @@ const Input = ({
   />
 );
 
+=======
+>>>>>>> b9fa186d638a5add49784d413f767902077a198e
 export default function SignUpForm() {
   const [form, setForm] = useState({
     name: "",
@@ -155,7 +158,10 @@ export default function SignUpForm() {
             placeholder="Confirm password"
             value={form.confirmPassword}
             onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
+<<<<<<< HEAD
             disabled={pending}
+=======
+>>>>>>> b9fa186d638a5add49784d413f767902077a198e
             required
             autoComplete="new-password"
           />
