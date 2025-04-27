@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import styles from "./signin.module.css";
 
-const SignIn = () => {
+const SignInContent = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -90,6 +90,14 @@ const SignIn = () => {
         </p>
       </div>
     </div>
+  );
+};
+
+const SignIn = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInContent />
+    </Suspense>
   );
 };
 

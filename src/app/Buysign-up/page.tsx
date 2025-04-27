@@ -1,12 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
-import styles from "./sign-up.module.css"; // Importing your custom CSS
+import PotatoNameFetcher from "./PotatoNameFetcher";
+import styles from "./sign-up.module.css"; 
 
-const SignUpInner = () => {
+const SignUp = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -17,14 +21,6 @@ const SignUpInner = () => {
   const [error, setError] = useState<string | null>(null);
   const [potatoName, setPotatoName] = useState<string | null>(null);
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const name = searchParams.get("potatoName");
-    if (name) {
-      setPotatoName(name);
-    }
-  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +33,7 @@ const SignUpInner = () => {
     }
 
     try {
-      const res = await fetch("/api/signup", {
+      const res = await fetch("/api/Sellsignup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, potatoName }),
@@ -46,7 +42,7 @@ const SignUpInner = () => {
 
       if (res.ok) {
         toast.success(data.message || "Account created successfully!");
-        router.push(`/Buysign-in?potatoName=${encodeURIComponent(potatoName || "")}`);
+        router.push(`/Sellsign-in?potatoName=${encodeURIComponent(potatoName || "")}`);
       } else {
         setError(data.message || "Something went wrong. Please try again.");
       }
@@ -60,25 +56,21 @@ const SignUpInner = () => {
 
   return (
     <div className={styles.container}>
+      {/* Wrap PotatoNameFetcher inside Suspense */}
+      <Suspense fallback={null}>
+        <PotatoNameFetcher setPotatoName={setPotatoName} />
+      </Suspense>
+
       <div className={styles.card}>
         <div className={styles.header}>
           <h2 className={styles.title}>Sign up</h2>
-          <p className={styles.description}>
-            Use email or a service to create an account
-          </p>
+          <p className={styles.description}>Use email or a service to create an account</p>
         </div>
 
         {error && <div className={styles.error}>{error}</div>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
-          {potatoName && (
-            <input
-              type="hidden"
-              id="potatoName"
-              value={potatoName}
-              name="potatoName"
-            />
-          )}
+          {potatoName && <input type="hidden" id="potatoName" value={potatoName} name="potatoName" />}
 
           <input
             type="text"
@@ -116,21 +108,28 @@ const SignUpInner = () => {
             onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
             required
           />
-          <button
-            type="submit"
-            className={styles.button}
-            disabled={pending}
-          >
+          <button type="submit" className={styles.button} disabled={pending}>
             {pending ? "Creating account..." : "Continue"}
           </button>
         </form>
 
+        <div className={styles.divider}>or</div>
+
+        <div className={styles.socialButtons}>
+        <button onClick={() => signIn("google", { callbackUrl: "/" })} className={styles.googleButton} disabled={pending}>
+  <FcGoogle size={20} />
+  Continue with Google
+</button>
+<button onClick={() => signIn("github", { callbackUrl: "/" })} className={styles.githubButton} disabled={pending}>
+  <FaGithub size={20} />
+  Continue with GitHub
+</button>
+
+        </div>
+
         <p className={styles.footer}>
           Already have an account?{" "}
-          <Link
-            href={`/sign-in?potatoName=${encodeURIComponent(potatoName || "")}`}
-            className={styles.link}
-          >
+          <Link href={`/Sellsign-in?potatoName=${encodeURIComponent(potatoName || "")}`} className={styles.link}>
             Sign in
           </Link>
         </p>
@@ -139,11 +138,4 @@ const SignUpInner = () => {
   );
 };
 
-// Outer wrapper to add <Suspense>
-export default function SignUp() {
-  return (
-    <Suspense fallback={<div>Loading SignUp Page...</div>}>
-      <SignUpInner />
-    </Suspense>
-  );
-}
+export default SignUp;
