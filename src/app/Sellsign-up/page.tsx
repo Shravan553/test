@@ -7,9 +7,9 @@ import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { toast } from "sonner";
-import styles from "./sign-up.module.css"; // Importing your custom CSS
+import styles from "./sign-up.module.css"; 
 
-const SignUp = () => {
+export default function SignUpForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,7 +23,6 @@ const SignUp = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Extract the "potatoName" from query parameters
     const name = searchParams.get("potatoName");
     if (name) {
       setPotatoName(name);
@@ -83,7 +82,6 @@ const SignUp = () => {
         {error && <div className={styles.error}>{error}</div>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
-          {/* Hidden potatoName field */}
           {potatoName && (
             <input
               type="hidden"
@@ -126,9 +124,7 @@ const SignUp = () => {
             className={styles.input}
             disabled={pending}
             value={form.confirmPassword}
-            onChange={(e) =>
-              setForm({ ...form, confirmPassword: e.target.value })
-            }
+            onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
             required
           />
           <button
@@ -164,9 +160,7 @@ const SignUp = () => {
         <p className={styles.footer}>
           Already have an account?{" "}
           <Link
-            href={`/Sellsign-in?potatoName=${encodeURIComponent(
-              potatoName || ""
-            )}`}
+            href={`/Sellsign-in?potatoName=${encodeURIComponent(potatoName || "")}`}
             className={styles.link}
           >
             Sign in
@@ -175,6 +169,4 @@ const SignUp = () => {
       </div>
     </div>
   );
-};
-
-export default SignUp;
+}
