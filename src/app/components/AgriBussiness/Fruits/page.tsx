@@ -11,7 +11,7 @@ const fruits = [
   { name: "Thota (Bangalore)", description: "Popular mango variety in Bengaluru.", image: "/assets/thota.jpg" },
   { name: "Bainisha (Baiganpalli)", description: "Known for its size and sweetness.", image: "/assets/bainisha.jpg" },
   { name: "Natti (All varieties)", description: "Local mangoes in different flavors.", image: "/assets/natti mango.jpg" },
-  { name: "Lal Bagh (Rajgere)", description: "From Rajgere, flavorful and juicy.", image: "/assets/Lalbagh.jpg" },
+  { name: "Lal Bagh (Rajgere)", description: "From Rajgere, flavorful and juicy.", image: "/assets/lal.jpg" },
   { name: "Mallika", description: "Hybrid mango with a tangy-sweet flavor.", image: "/assets/mallika.jpg" },
   { name: "Himayat", description: "Also known as Imam Pasand, elite mango.", image: "/assets/hima.jpg" },
 ];
