@@ -17,7 +17,7 @@ const vegetables = [
   { name: "Chilli Green", description: "Adds heat to your dishes.", image: "/assets/greenchil.jpg" },
   { name: "Beans Ring", description: "Tender and tasty, great for curries.", image: "/assets/beanr.jpg" },
   { name: "Broad Beans", description: "Nutritious green pods.", image: "/assets/broad beans.jpg" },
-  { name: "Khol Khol", description: "Crunchy and sweet, also called Kohlrabi.", image: "/assets/kho0555.jpg" },
+  { name: "Khol Khol", description: "Crunchy and sweet, also called Kohlrabi.", image: "/assets/kho56.jpg" },
   { name: "Mint", description: "Fresh herb to elevate your dish.", image: "/assets/mint.jpg" },
   { name: "Sweet Potato", description: "Nutty and sweet root veggie.", image: "/assets/sweetpot.jpg" },
   { name: "Sweet Corn", description: "Golden kernels, great for snacks.", image: "/assets/sweetcor.jpg" },
