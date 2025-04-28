@@ -55,7 +55,7 @@ const BuyandSell: React.FC = () => {
     { name: "Thota (Bangalore)", description: "Popular mango variety in Bengaluru.", image: "/assets/thota.jpg" },
     { name: "Bainisha (Baiganpalli)", description: "Known for its size and sweetness.", image: "/assets/bainisha.jpg" },
     { name: "Natti (All varieties)", description: "Local mangoes in different flavors.", image: "/assets/natti mango.jpg" },
-    { name: "Lal Bagh (Rajgere)", description: "From Rajgere, flavorful and juicy.", image: "/assets/Lalbagh.jpg" },
+    { name: "Lal Bagh (Rajgere)", description: "From Rajgere, flavorful and juicy.", image: "/assets/lal.jpg" },
     { name: "Mallika", description: "Hybrid mango with a tangy-sweet flavor.", image: "/assets/mallika.jpg" },
     { name: "Himayat", description: "Also known as Imam Pasand, elite mango.", image: "/assets/hima.jpg" },
   ];
@@ -70,7 +70,7 @@ const BuyandSell: React.FC = () => {
   const vegetables = [
     { name: "Onion", description: "Essential for most dishes.", image: "/assets/onion.jpg" },
     { name: "Sambar Onion", description: "Small-sized onions ideal for sambar.", image: "/assets/samonion.jpg" },
-    { name: "Tomato", description: "Adds tangy flavor to meals.", image: "/assets/tomato.jpg" },
+    { name: "Tomato", description: "Adds tangy flavor to meals.", image: "/assets/tom666.jpg" },
     { name: "Tomato Local", description: "Locally grown juicy tomatoes.", image: "/assets/tomloc.jpg" },
     { name: "Tomato Hybrid", description: "High-yield hybrid tomato variety.", image: "/assets/tomhyb.jpg" },
     { name: "Carrot", description: "Crunchy and sweet, great for salads.", image: "/assets/carrot.jpg" },
@@ -81,7 +81,7 @@ const BuyandSell: React.FC = () => {
     { name: "Chilli Green", description: "Adds heat to your dishes.", image: "/assets/greenchil.jpg" },
     { name: "Beans Ring", description: "Tender and tasty, great for curries.", image: "/assets/beanr.jpg" },
     { name: "Broad Beans", description: "Nutritious green pods.", image: "/assets/broad beans.jpg" },
-    { name: "Khol Khol", description: "Crunchy and sweet, also called Kohlrabi.", image: "/assets/Khol.jpg" },
+    { name: "Khol Khol", description: "Crunchy and sweet, also called Kohlrabi.", image: "/assets/kho56.jpg" },
     { name: "Mint", description: "Fresh herb to elevate your dish.", image: "/assets/mint.jpg" },
     { name: "Sweet Potato", description: "Nutty and sweet root veggie.", image: "/assets/sweetpot.jpg" },
     { name: "Sweet Corn", description: "Golden kernels, great for snacks.", image: "/assets/sweetcor.jpg" },
