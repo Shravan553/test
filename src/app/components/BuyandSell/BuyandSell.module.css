@@ -1,20 +1,25 @@
 /* Container Styling */
 .container {
   font-family: Arial, sans-serif;
-  padding: 40px;
+  padding: 0; /* No negative padding */
   background-color: #f5f5f5;
   background-image: url('https://www.transparenttextures.com/patterns/diagonal-stripes.png');
-  background-size: 100px 100px;
+  background-size: cover; /* Make the background image cover the whole page */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-position: center; /* Center the background */
+  min-height: 60vh; /* Make sure container takes at least full viewport height */
   display: flex; /* Flexbox for centering content */
   flex-direction: column;
-  align-items: center; /* Center the grid container horizontally */
+  align-items: center;
+  justify-content: center; /* Center vertically */
   box-sizing: border-box;
-}
+} 
+
 .subcategorybuttons {
   text-align: center;
   margin-top: 20px;
 }
-
+ 
 .subbutton {
   background-color: #f4a261;
   color: white;

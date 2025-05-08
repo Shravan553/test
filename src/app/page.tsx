@@ -15,6 +15,8 @@ import HomeEvents from "./HomeEvents/HomeEvents";
 import Footer from "./Footer/Footer";
 import HomeWorld from "./HomeWorld/HomeWorld";
 import HomeAbout from "./HomeAbout/page";
+import HomeTom from "./HomeTom/HomeTomato";
+import HomeOn from "./HomeOn/HomeOn";
 import SC from "./Scroll/scroll";
 
 export default function Home() {
@@ -32,16 +34,22 @@ export default function Home() {
 
         <br />
         <HomeAbout />
+        
 
         <div style={{ margin: '-20px 0' }}></div>
 
         <Title subTitle='Gallery' title='A Visual Journey Through the World of Premium Potato Trading' />
         <div style={{ margin: '-25px 0' }}></div>
         <Campus />
+        <HomeTom/>
+     
 
         {/* <Homehistory /> */}
         <Homepotatotype />
+        
         <Homenutrition />
+        <HomeOn/>
+   
         <br />
         {/* <div style={{ margin: '-25px 0' }}>
           <Title subTitle='Potatoes Recipes' title='Satisfy Your Cravings with These Potato Recipes' />

@@ -1,0 +1,132 @@
+.qualitySection {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(to left, #8e24aa, #ffcc80);
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .qualityImage {
+    flex: 1;
+    min-width: 300px;
+    animation: fadeInRight 1s ease-in-out;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    border: 3px solid #fff;
+  }
+  
+  .image:hover {
+    transform: scale(1.03) rotate(-1deg);
+  }
+  
+  .qualityContent {
+    flex: 2;
+    animation: fadeInLeft 1s ease-in-out;
+  }
+  
+  .subHeading {
+    font-size: 1.2rem;
+    color: #ffa000;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .mainHeading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mainHeading span {
+    color: #ffd54f;
+  }
+  
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .featureBox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+  }
+  
+  .featureBox:hover {
+    transform: translateY(-3px);
+    background: #fff;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    color: #7b1fa2;
+    margin-top: 0.15rem;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* 📱 Mobile Responsive */
+  @media (max-width: 768px) {
+    .qualitySection {
+      flex-direction: column-reverse;
+      padding: 2rem 1rem;
+      gap: 1.5rem;
+    }
+  
+    .qualityImage,
+    .qualityContent {
+      flex: none;
+      width: 100%;
+    }
+  
+    .mainHeading {
+      font-size: 1.6rem;
+    }
+  
+    .subHeading {
+      font-size: 1rem;
+    }
+  
+    .featuresGrid {
+      gap: 0.8rem;
+    }
+  
+    .featureBox {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+    }
+  
+    .icon {
+      font-size: 1.3rem;
+    }
+  }
+  
