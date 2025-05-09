@@ -17,7 +17,7 @@
   
   .image {
     width: 100%;
-    height: auto;
+    height: 470px;
     object-fit: cover;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -36,7 +36,7 @@
   
   .subHeading {
     font-size: 1.2rem;
-    color: #ffa000;
+    color: #0c5200;
     font-weight: 600;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
@@ -124,6 +124,9 @@
       padding: 0.8rem;
       font-size: 0.9rem;
     }
+  .image{
+height: fit-content;
+  }
   
     .icon {
       font-size: 1.3rem;

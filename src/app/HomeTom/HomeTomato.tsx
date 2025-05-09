@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "./tom.module.css";
-import tomatoImage from "/public/assets/to99.jpg"; // Public image access
+import tomatoImage from "/public/assets/to99.jpg";
 
 const QualitySection = () => {
   return (
@@ -18,10 +18,11 @@ const QualitySection = () => {
       </div>
 
       <div className={styles.qualityContent}>
-        <p className={styles.subHeading}>Naturally Healthy</p>
-        <h2 className={styles.mainHeading}>
-          Discover the <span>Power of Fresh Tomatoes</span> in Your Diet
-        </h2>
+        {/* <p className={styles.subHeading}>Naturally Healthy</p> */}
+        <h2 className={styles.subHeading}>
+  Discover the Power of Fresh <span className={styles.redText}>Tomatoes</span> in Your Diet
+</h2>
+
 
         <div className={styles.featuresGrid}>
           <div className={styles.featureBox}>
@@ -56,22 +57,41 @@ const QualitySection = () => {
             </div>
           </div>
 
-          {/* New Feature Box 1 */}
           <div className={styles.featureBox}>
             <span className={styles.icon}>🧑‍🍳</span>
             <div>
               <h3>Versatile Ingredient</h3>
-              <p>Tomatoes are perfect for a wide variety of dishes, from salads to sauces and soups.</p>
+              <p>Perfect for salads, sauces, soups, and more—tomatoes add taste and nutrition to any dish.</p>
             </div>
           </div>
 
-          {/* New Feature Box 2 */}
           <div className={styles.featureBox}>
             <span className={styles.icon}>💧</span>
             <div>
               <h3>Hydration</h3>
-              <p>Tomatoes are made up of 95% water, helping to keep your body hydrated and refreshed.</p>
+              <p>Composed of 95% water, tomatoes help keep you hydrated throughout the day.</p>
             </div>
+          </div>
+        </div>
+
+        {/* NEW SECTION: Tomato Types */}
+        <div className={styles.tomatoTypesSection}>
+          <h2 className={styles.typesHeading}>Types of Tomatoes We Offer</h2>
+
+          <div className={styles.tomatoType}>
+            <h3>🍅 Tomato Hybrid</h3>
+            <p>
+              Our hybrid tomatoes are specially cultivated for improved shelf-life, firmness, and uniform shape. 
+              They're ideal for commercial kitchens, transport, and storage while retaining their delicious flavor.
+            </p>
+          </div>
+
+          <div className={styles.tomatoType}>
+            <h3>🌿 Tomato Local</h3>
+            <p>
+              Grown naturally by local farmers, these tomatoes are juicy, aromatic, and rich in traditional flavor—
+              perfect for everyday home cooking and regional dishes.
+            </p>
           </div>
         </div>
       </div>
