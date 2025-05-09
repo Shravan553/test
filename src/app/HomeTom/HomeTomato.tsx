@@ -81,9 +81,10 @@ const QualitySection = () => {
           <div className={styles.tomatoType}>
             <h3>🍅 Tomato Hybrid</h3>
             <p>
-              Our hybrid tomatoes are specially cultivated for improved shelf-life, firmness, and uniform shape. 
-              They're ideal for commercial kitchens, transport, and storage while retaining their delicious flavor.
-            </p>
+  Our hybrid tomatoes are specially cultivated for improved shelf-life, firmness, and uniform shape. 
+  They&#39;re ideal for commercial kitchens, transport, and storage while retaining their delicious flavor.
+</p>
+
           </div>
 
           <div className={styles.tomatoType}>
