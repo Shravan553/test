@@ -35,9 +35,8 @@ const QualitySection = () => {
           <h2 className={styles.sectionTitle}>
             Discover the Power of <span className={styles.tomatoRed}>Tomatoes</span>
           </h2>
-
-          {/* Tomato-shaped feature cards */}
-          <div className={styles.tomatoFeatures}>
+{/* Tomato-shaped feature cards */}
+<div className={styles.tomatoFeatures}>
             <div className={styles.tomatoCard}>
               <div className={styles.tomatoIcon}>🥗</div>
               <h3>Nutrient Powerhouse</h3>
@@ -59,7 +58,7 @@ const QualitySection = () => {
             <div className={styles.tomatoCard}>
               <div className={styles.tomatoIcon}>🛡️</div>
               <h3>Immunity Boost</h3>
-              <p>Antioxidants strengthen your body's natural defenses.</p>
+              <p>Antioxidants strengthen your body&apos;s natural defenses.</p>
             </div>
 
             <div className={styles.tomatoCard}>
@@ -74,6 +73,7 @@ const QualitySection = () => {
               <p>95% water content helps maintain fluid balance.</p>
             </div>
           </div>
+
 
           {/* Tomato Varieties Section */}
           <div className={styles.varietiesSection}>
