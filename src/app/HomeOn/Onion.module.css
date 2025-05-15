@@ -1,135 +1,265 @@
 .qualitySection {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    gap: 2rem;
-    padding: 3rem 2rem;
-    background: linear-gradient(to left, #8e24aa, #ffcc80);
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .qualityImage {
-    flex: 1;
-    min-width: 300px;
-    animation: fadeInRight 1s ease-in-out;
-  }
-  
-  .image {
-    width: 100%;
-    height: 470px;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    border: 3px solid #fff;
-  }
-  
-  .image:hover {
-    transform: scale(1.03) rotate(-1deg);
-  }
-  
-  .qualityContent {
-    flex: 2;
-    animation: fadeInLeft 1s ease-in-out;
-  }
-  
-  .subHeading {
-    font-size: 1.2rem;
-    color: #0c5200;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-  }
-  
-  .mainHeading {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  }
-  
-  .mainHeading span {
-    color: #ffd54f;
-  }
-  
-  .featuresGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .featureBox {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(4px);
-  }
-  
-  .featureBox:hover {
-    transform: translateY(-3px);
-    background: #fff;
-  }
-  
-  .icon {
-    font-size: 1.5rem;
-    color: #7b1fa2;
-    margin-top: 0.15rem;
-  }
-  
-  /* Animation Keyframes */
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  
-  /* 📱 Mobile Responsive */
-  @media (max-width: 768px) {
-    .qualitySection {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #6a1b9a 0%, #ff9800 100%);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.qualitySection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgba(255,255,255,0.05)"><circle cx="25" cy="25" r="5"/><circle cx="75" cy="25" r="5"/><circle cx="25" cy="75" r="5"/><circle cx="75" cy="75" r="5"/></svg>');
+  background-size: 100px 100px;
+  z-index: 0;
+}
+
+.qualityImage {
+  flex: 1;
+  min-width: 300px;
+  animation: fadeInRight 1s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 4px solid white;
+  position: relative;
+  z-index: 2;
+}
+
+.image:hover {
+  transform: scale(1.03) rotate(-1deg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.qualityContent {
+  flex: 2;
+  animation: fadeInLeft 1s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.subHeading {
+  font-size: 1.2rem;
+  color: #ffeb3b;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.mainHeading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.mainHeading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #ffeb3b;
+  border-radius: 2px;
+}
+
+.mainHeading span {
+  color: #ffeb3b;
+  position: relative;
+}
+
+.mainHeading span::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.mainHeading:hover span::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.featureBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.featureBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.featureBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: #7b1fa2;
+  background: rgba(255, 235, 59, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.featureBox:hover .icon {
+  transform: rotate(15deg) scale(1.1);
+  background: rgba(255, 235, 59, 0.3);
+}
+
+.featureBox h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #4a148c;
+  position: relative;
+  z-index: 1;
+}
+
+.featureBox p {
+  color: #555;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Onion layer effect for feature boxes */
+.featureBox:nth-child(odd)::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 50%;
+}
+
+.featureBox:nth-child(even)::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 60px;
+  height: 60px;
+  background: rgba(106, 27, 154, 0.1);
+  border-radius: 50%;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .qualitySection {
       flex-direction: column-reverse;
       padding: 2rem 1rem;
       gap: 1.5rem;
-    }
-  
-    .qualityImage,
-    .qualityContent {
+  }
+
+  .qualityImage,
+  .qualityContent {
       flex: none;
       width: 100%;
-    }
-  
-    .mainHeading {
-      font-size: 1.6rem;
-    }
-  
-    .subHeading {
+  }
+
+  .mainHeading {
+      font-size: 1.8rem;
+  }
+
+  .mainHeading::after {
+      bottom: -8px;
+      height: 3px;
+  }
+
+  .subHeading {
       font-size: 1rem;
-    }
-  
-    .featuresGrid {
-      gap: 0.8rem;
-    }
-  
-    .featureBox {
-      padding: 0.8rem;
-      font-size: 0.9rem;
-    }
-  .image{
-height: fit-content;
   }
-  
-    .icon {
-      font-size: 1.3rem;
-    }
+
+  .featuresGrid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
   }
-  
+
+  .featureBox {
+      padding: 1.2rem;
+  }
+
+  .image {
+      height: 350px;
+  }
+
+  .icon {
+      width: 45px;
+      height: 45px;
+      font-size: 1.5rem;
+  }
+}
