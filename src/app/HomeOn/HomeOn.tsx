@@ -9,8 +9,8 @@ const QualitySection = () => {
       {/* Hero Section */}
       <div className={styles.heroBanner}>
         <div className={styles.heroContent}>
-          <h1>
-            Nature's <span>Onion</span> Treasures
+        <h1>
+            Nature&apos;s <span>Onion</span> Treasures
           </h1>
           <p>Farm-fresh onions packed with flavor and health benefits</p>
         </div>
