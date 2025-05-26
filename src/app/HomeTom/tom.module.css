@@ -1,308 +1,244 @@
-/* Updated Tomato-themed CSS */
-.qualitySection {
-  background: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.tomatoHero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('/public/assets/to99.jpg') center/cover;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.heroContent {
-  max-width: 800px;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 15px;
-}
-
-.heroTitle {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.tomatoRed {
-  color: #ff4d4d;
-  font-weight: 800;
-}
-
-.heroSubtitle {
-  font-size: 1.5rem;
-  margin-bottom: 0;
-  font-weight: 300;
-}
-
-.tomatoContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  padding: 0 5%;
+/* Modern Tomato CSS */
+.tomatoShowcase {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #333;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.qualityImage {
-  flex: 1;
-  min-width: 300px;
+/* Hero Section */
+.heroBanner {
   position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  aspect-ratio: 1/1; /* Makes the image box square */
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+              url('/public/assets/to99.jpg') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff8f8; /* Light tomato tint background */
+  margin-bottom: 4rem;
 }
 
-.image {
-  width: 100%;
-  height: 100%;
+.heroOverlay {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.heroOverlay h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.heroOverlay h1 span {
+  color: #ff4d4d;
+}
+
+.heroOverlay p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Main Grid Layout */
+.tomatoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+/* Image Section */
+.tomatoVisual {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.tomatoPhoto {
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.image:hover {
-  transform: scale(1.05);
+.tomatoPhoto:hover {
+  transform: scale(1.03);
 }
 
-.qualityContent {
-  flex: 2;
-  min-width: 300px;
+.imageBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #ff4d4d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.sectionTitle {
-  font-size: 2.5rem;
-  color: #2c3e50;
+/* Benefits Section */
+.tomatoBenefits h2 {
+  font-size: 2rem;
   margin-bottom: 2rem;
+  color: #222;
   position: relative;
   padding-bottom: 1rem;
 }
 
-.sectionTitle::after {
+.tomatoBenefits h2::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100px;
+  width: 80px;
   height: 4px;
   background: #ff4d4d;
-  border-radius: 2px;
 }
 
-/* Tomato Features Grid */
-.tomatoFeatures {
+.benefitsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-.tomatoCard {
-  background: rgba(255, 99, 71, 0.1); /* Tomato color with low opacity */
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.benefitCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 99, 71, 0.2);
-  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255,77,77,0.1);
 }
 
-.tomatoCard::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 50px;
-  height: 50px;
-  background: #ff4d4d;
-  border-radius: 50%;
-  opacity: 0.2;
-  transition: all 0.3s ease;
-}
-
-.tomatoCard:hover {
+.benefitCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 99, 71, 0.15); /* Slightly more opaque on hover */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-color: rgba(255,77,77,0.3);
 }
 
-.tomatoCard:hover::before {
-  transform: scale(1.5);
-  opacity: 0.3;
-}
-
-.tomatoIcon {
-  font-size: 2.5rem;
+.benefitIcon {
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: #ff4d4d;
 }
 
-.tomatoCard h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #2c3e50;
+.benefitCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
 }
 
-.tomatoCard p {
-  color: #7f8c8d;
-  line-height: 1.6;
+.benefitCard p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
 /* Varieties Section */
-.varietiesSection {
-  background: rgba(255, 99, 71, 0.05); /* Very light tomato tint */
-  padding: 3rem;
-  border-radius: 15px;
+.varietiesContainer {
+  grid-column: 1 / -1;
   margin-top: 3rem;
-  border: 1px solid rgba(255, 99, 71, 0.1);
 }
 
-.varietiesTitle {
+.varietiesContainer h2 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #2c3e50;
-  position: relative;
+  color: #222;
 }
 
-.varietiesTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: #ff4d4d;
+.varietyTabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-.varietyCard {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
+.varietyPanel {
+  background: white;
+  border-radius: 12px;
   padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 99, 71, 0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-top: 4px solid #ff4d4d;
 }
 
-.varietyBadge {
-  position: absolute;
-  top: 20px;
-  right: -30px;
-  padding: 5px 30px;
-  color: white;
-  font-weight: bold;
-  transform: rotate(45deg);
-  font-size: 0.8rem;
-  width: 120px;
-  text-align: center;
-}
-
-.hybridBadge {
-  background: #3498db;
-}
-
-.localBadge {
-  background: #2ecc71;
-}
-
-.varietyCard h3 {
-  font-size: 1.6rem;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  padding-right: 60px;
-}
-
-.varietyCard p {
-  color: #7f8c8d;
+.varietyPanel h3 {
+  font-size: 1.4rem;
+  color: #ff4d4d;
   margin-bottom: 1.5rem;
 }
 
-.tomatoList {
-  list-style-type: none;
+.varietyPanel ul {
+  list-style: none;
   padding: 0;
 }
 
-.tomatoList li {
+.varietyPanel li {
   padding: 0.5rem 0;
-  padding-left: 2rem;
   position: relative;
-  color: #34495e;
+  padding-left: 1.5rem;
 }
 
-.tomatoList li::before {
-  content: '🍅';
+.varietyPanel li::before {
+  content: '•';
+  color: #ff4d4d;
   position: absolute;
   left: 0;
+  font-weight: bold;
+}
+
+.varietyTag {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #ff4d4d;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .tomatoHero {
-    height: 50vh;
-  }
-  
-  .heroTitle {
-    font-size: 2.5rem;
-  }
-  
-  .heroSubtitle {
-    font-size: 1.2rem;
-  }
-  
-  .tomatoContainer {
-    flex-direction: column;
-    padding: 0 2rem;
-  }
-  
-  .qualityImage {
-    min-height: 300px;
-  }
-  
-  .sectionTitle {
-    font-size: 2rem;
-    text-align: center;
-  }
-  
-  .sectionTitle::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .varietiesSection {
-    padding: 2rem 1rem;
-  }
-  
-  .varietyCard h3 {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .heroTitle {
-    font-size: 2rem;
-  }
-  
-  .tomatoFeatures {
+@media (max-width: 1024px) {
+  .tomatoGrid {
     grid-template-columns: 1fr;
   }
   
-  .tomatoCard {
-    padding: 1.5rem;
+  .heroOverlay h1 {
+    font-size: 2.8rem;
+  }
+  
+  .varietyTabs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBanner {
+    height: 50vh;
+  }
+  
+  .heroOverlay h1 {
+    font-size: 2.2rem;
+  }
+  
+  .heroOverlay p {
+    font-size: 1.2rem;
+  }
+  
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .varietyTabs {
+    grid-template-columns: 1fr;
   }
 }

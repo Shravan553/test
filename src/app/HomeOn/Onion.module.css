@@ -1,265 +1,386 @@
-.qualitySection {
+/* Modern Onion CSS */
+.onionShowcase {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #333;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.heroBanner {
+  position: relative;
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('/assets/onion-field.jpg') center/cover;
   display: flex;
-  flex-wrap: wrap-reverse;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #6a1b9a 0%, #ff9800 100%);
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 4rem;
 }
 
-.qualitySection::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgba(255,255,255,0.05)"><circle cx="25" cy="25" r="5"/><circle cx="75" cy="25" r="5"/><circle cx="25" cy="75" r="5"/><circle cx="75" cy="75" r="5"/></svg>');
-  background-size: 100px 100px;
-  z-index: 0;
-}
-
-.qualityImage {
-  flex: 1;
-  min-width: 300px;
-  animation: fadeInRight 1s ease-in-out;
-  position: relative;
-  z-index: 1;
-}
-
-.image {
-  width: 100%;
-  height: 470px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 4px solid white;
-  position: relative;
-  z-index: 2;
-}
-
-.image:hover {
-  transform: scale(1.03) rotate(-1deg);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-.qualityContent {
-  flex: 2;
-  animation: fadeInLeft 1s ease-in-out;
-  position: relative;
-  z-index: 1;
-}
-
-.subHeading {
-  font-size: 1.2rem;
-  color: #ffeb3b;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-.mainHeading {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
+.heroContent {
+  text-align: center;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  line-height: 1.2;
-  position: relative;
-  display: inline-block;
+  padding: 2rem;
+  max-width: 800px;
 }
 
-.mainHeading::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  background: #ffeb3b;
-  border-radius: 2px;
+.heroContent h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+/* Health Benefits Section */
+.healthBenefits {
+  grid-column: 1 / -1;
+  margin-top: 3rem;
+  background: rgba(139, 195, 74, 0.05);
+  padding: 3rem;
+  border-radius: 16px;
 }
 
-.mainHeading span {
-  color: #ffeb3b;
-  position: relative;
+.healthBenefits h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4e342e;
 }
 
-.mainHeading span::before {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
+.healthIntro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #5d4037;
+  font-size: 1.1rem;
 }
 
-.mainHeading:hover span::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.featuresGrid {
+.healthGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
-.featureBox {
+.healthCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
 
-.featureBox::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
-  z-index: 0;
-}
-
-.featureBox:hover {
+.healthCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.icon {
-  font-size: 1.8rem;
-  color: #7b1fa2;
-  background: rgba(255, 235, 59, 0.2);
-  width: 50px;
-  height: 50px;
+.healthIcon {
+  font-size: 2rem;
+  background: rgba(139, 195, 74, 0.1);
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
+  color: #5d4037;
 }
 
-.featureBox:hover .icon {
-  transform: rotate(15deg) scale(1.1);
-  background: rgba(255, 235, 59, 0.3);
-}
-
-.featureBox h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
+.healthCard h3 {
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #4a148c;
-  position: relative;
-  z-index: 1;
+  color: #4e342e;
 }
 
-.featureBox p {
-  color: #555;
-  line-height: 1.6;
-  position: relative;
-  z-index: 1;
+.healthCard p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-/* Onion layer effect for feature boxes */
-.featureBox:nth-child(odd)::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 152, 0, 0.1);
-  border-radius: 50%;
+.nutritionFacts {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.featureBox:nth-child(even)::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: -10px;
-  width: 60px;
-  height: 60px;
-  background: rgba(106, 27, 154, 0.1);
-  border-radius: 50%;
+.nutritionFacts h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4e342e;
 }
 
-/* Animation Keyframes */
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
+.nutritionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
 }
 
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
+.nutritionItem {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(139, 195, 74, 0.1);
+  border-radius: 8px;
 }
 
-/* 📱 Mobile Responsive */
+.nutritionValue {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5d4037;
+}
+
+.nutritionLabel {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .qualitySection {
-      flex-direction: column-reverse;
-      padding: 2rem 1rem;
-      gap: 1.5rem;
+  .healthBenefits {
+    padding: 2rem 1rem;
   }
-
-  .qualityImage,
-  .qualityContent {
-      flex: none;
-      width: 100%;
+  
+  .healthGrid {
+    grid-template-columns: 1fr;
   }
-
-  .mainHeading {
-      font-size: 1.8rem;
+  
+  .nutritionGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .mainHeading::after {
-      bottom: -8px;
-      height: 3px;
+@media (max-width: 480px) {
+  .nutritionGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+.heroContent h1 span {
+  color: #ffcc80;
+}
 
-  .subHeading {
-      font-size: 1rem;
+.heroContent p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Main Container */
+.onionContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+/* Image Section */
+.visualSection {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  background: #f5f5f5;
+}
+
+.onionImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.onionImage:hover {
+  transform: scale(1.03);
+}
+
+.certificationBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #5d4037;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Benefits Section */
+.benefitsSection h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #4e342e;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.benefitsSection h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #8d6e63;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.benefitCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border-left: 4px solid #8d6e63;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-left-color: #5d4037;
+}
+
+.benefitIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5d4037;
+}
+
+.benefitCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #4e342e;
+}
+
+.benefitCard p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Varieties Section */
+.varietiesSection {
+  grid-column: 1 / -1;
+  margin-top: 3rem;
+}
+
+.varietiesSection h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #4e342e;
+}
+
+.varietyCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.varietyCard {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-top: 4px solid #8d6e63;
+}
+
+.varietyCard h3 {
+  font-size: 1.4rem;
+  color: #5d4037;
+  margin-bottom: 1.5rem;
+}
+
+.varietyCard ul {
+  list-style: none;
+  padding: 0;
+}
+
+.varietyCard li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.varietyCard li::before {
+  content: '•';
+  color: #8d6e63;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.popularTag, .organicTag, .localTag {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.popularTag {
+  background: #ff9800;
+}
+
+.organicTag {
+  background: #4caf50;
+}
+
+.localTag {
+  background: #2196f3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .onionContainer {
+    grid-template-columns: 1fr;
   }
-
-  .featuresGrid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+  
+  .heroContent h1 {
+    font-size: 2.8rem;
   }
-
-  .featureBox {
-      padding: 1.2rem;
+  
+  .varietyCards {
+    grid-template-columns: 1fr 1fr;
   }
+}
 
-  .image {
-      height: 350px;
+@media (max-width: 768px) {
+  .heroBanner {
+    height: 50vh;
   }
-
-  .icon {
-      width: 45px;
-      height: 45px;
-      font-size: 1.5rem;
+  
+  .heroContent h1 {
+    font-size: 2.2rem;
+  }
+  
+  .heroContent p {
+    font-size: 1.2rem;
+  }
+  
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .varietyCards {
+    grid-template-columns: 1fr;
   }
 }
