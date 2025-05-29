@@ -1,16 +1,19 @@
 /* Homenutrition.module.css */
 
-/* Main Section Styles */
 .nutritionSection {
   display: flex;
-  min-height: 600px;
+  min-height: 700px;
   width: 100%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9f5e9 100%);
+  background: linear-gradient(135deg, var(--cream) 0%, rgba(255, 255, 255, 0.9) 100%);
   overflow: hidden;
   position: relative;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  margin: 4rem 0;
 }
 
 .nutritionSection.visible {
@@ -25,6 +28,7 @@
   opacity: 0;
   transform: translateX(-40px);
   transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
 }
 
 .nutritionSection.visible .imageContainer {
@@ -43,7 +47,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .imageOverlay {
@@ -52,11 +56,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 80, 80, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .imageContainer:hover .mainImage {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Content Container */
@@ -77,138 +81,153 @@
 }
 
 .content {
-  max-width: 600px;
+  max-width: 550px;
 }
 
 .sectionTag {
   display: inline-block;
-  background: linear-gradient(90deg, #04D939, #001542);
-  color: white;
-  padding: 0.5rem 1.5rem;
+  background: linear-gradient(90deg, var(--teal-primary), var(--gold-primary));
+  color: var(--light-text);
+  padding: 0.6rem 1.8rem;
   border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.2);
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  color: #03560b;
+  color: var(--teal-dark);
   margin-bottom: 1.5rem;
-  line-height: 1.3;
+  line-height: 1.2;
+  font-family: 'Playfair Display', serif;
 }
 
 .divider {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #04D939, #001542);
-  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--teal-primary), var(--gold-primary));
+  margin-bottom: 2.5rem;
+  border-radius: 2px;
 }
 
 /* Nutrition Facts */
 .nutritionFacts {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .factItem {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }
 
-.factItem:before {
-  content: "";
+.factIcon {
   position: absolute;
   left: 0;
-  top: 0.5em;
-  width: 8px;
-  height: 8px;
-  background: #04D939;
-  border-radius: 50%;
+  top: 0;
+  font-size: 1.5rem;
+  color: var(--gold-primary);
 }
 
 .factTitle {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #001542;
-  margin-bottom: 0.5rem;
+  color: var(--teal-dark);
+  margin-bottom: 0.75rem;
+  font-family: 'Playfair Display', serif;
 }
 
 .factText {
-  color: #333;
+  color: var(--dark-text);
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.8;
+  opacity: 0.9;
 }
 
 /* Buttons */
 .buttonGroup {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 1.5rem;
+  margin-top: 3rem;
 }
 
 .primaryButton, .secondaryButton {
   display: inline-flex;
   align-items: center;
-  padding: 0.9rem 1.8rem;
+  padding: 1rem 2.2rem;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  cursor: pointer;
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #04D939, #001542);
-  color: white;
-  box-shadow: 0 8px 20px rgba(4, 217, 57, 0.3);
+  background: linear-gradient(135deg, var(--teal-primary), var(--teal-dark));
+  color: var(--light-text);
+  box-shadow: 0 10px 25px rgba(0, 128, 128, 0.3);
 }
 
 .secondaryButton {
-  background: white;
-  color: #001542;
-  border: 2px solid #001542;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: var(--teal-dark);
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
 }
 
 .primaryButton:hover {
-  background: linear-gradient(135deg, #001542, #04D939);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(4, 217, 57, 0.4);
+  background: linear-gradient(135deg, var(--teal-dark), var(--teal-primary));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 128, 128, 0.4);
 }
 
 .secondaryButton:hover {
-  background: #001542;
-  color: white;
+  background: var(--gold-primary);
+  color: var(--teal-dark);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+  border-color: transparent;
 }
 
 .buttonIcon {
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
+  margin-left: 0.75rem;
+  transition: transform 0.4s ease;
 }
 
 .primaryButton:hover .buttonIcon,
 .secondaryButton:hover .buttonIcon {
-  transform: translateX(4px);
+  transform: translateX(5px);
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .nutritionSection {
+    min-height: 600px;
+  }
+  
   .contentContainer {
     padding: 3rem;
   }
   
   .title {
-    font-size: 2rem;
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .imageContainer {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   }
   
-  .factText {
-    font-size: 1rem;
+  .factItem {
+    margin-bottom: 2rem;
   }
 }
 
@@ -216,6 +235,7 @@
   .nutritionSection {
     flex-direction: column;
     min-height: auto;
+    border-radius: 12px;
   }
   
   .imageContainer, 
@@ -225,11 +245,17 @@
   }
   
   .imageContainer {
-    min-height: 300px;
+    min-height: 350px;
+    clip-path: none;
+  }
+  
+  .title {
+    font-size: 2rem;
   }
   
   .buttonGroup {
     flex-direction: column;
+    gap: 1rem;
   }
   
   .primaryButton, 
@@ -239,25 +265,33 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .contentContainer {
     padding: 1.5rem;
   }
   
   .title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   
   .sectionTag {
-    font-size: 0.8rem;
-    padding: 0.4rem 1.2rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 1.5rem;
   }
   
   .factTitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
   .factText {
-    font-size: 0.95rem;
+    font-size: 1rem;
+  }
+  
+  .factItem {
+    padding-left: 2rem;
+  }
+  
+  .factIcon {
+    font-size: 1.2rem;
   }
 }

@@ -1,26 +1,58 @@
 "use client";
-
+import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./tom.module.css";
 import tomatoImage from "/public/assets/to99.jpg";
 
 const QualitySection = () => {
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  const staggerContainer = {
+    visible: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
     <div className={styles.tomatoShowcase}>
       {/* Hero Banner */}
-      <div className={styles.heroBanner}>
-        <div className={styles.heroOverlay}>
+      <motion.div 
+        className={styles.heroBanner}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div 
+          className={styles.heroOverlay}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
           <h1>
             Farm Fresh <span>Tomatoes</span>
           </h1>
           <p>Naturally grown, packed with flavor and nutrients</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Main Content */}
-      <div className={styles.tomatoGrid}>
+      <motion.div 
+        className={styles.tomatoGrid}
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {/* Image Section */}
-        <div className={styles.tomatoVisual}>
+        <motion.div 
+          className={styles.tomatoVisual}
+          variants={fadeIn}
+        >
           <div className={styles.imageWrapper}>
             <Image
               src={tomatoImage}
@@ -30,14 +62,20 @@ const QualitySection = () => {
               priority
             />
           </div>
-          <div className={styles.imageBadge}>
+          <motion.div 
+            className={styles.imageBadge}
+            whileHover={{ scale: 1.05 }}
+          >
             <span>100% Organic</span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Benefits Section */}
-        <div className={styles.tomatoBenefits}>
-          <h2>Why Our Tomatoes Stand Out</h2>
+        <motion.div 
+          className={styles.tomatoBenefits}
+          variants={fadeIn}
+        >
+          <h2></h2>
           
           <div className={styles.benefitsGrid}>
             {[
@@ -48,32 +86,51 @@ const QualitySection = () => {
               { icon: "♻️", title: "Sustainable", text: "Eco-friendly farming practices" },
               { icon: "🏆", title: "Award-Winning", text: "Recognized for exceptional quality" }
             ].map((benefit, index) => (
-              <div key={index} className={styles.benefitCard}>
+              <motion.div 
+                key={index} 
+                className={styles.benefitCard}
+                variants={fadeIn}
+                whileHover={{ y: -5 }}
+              >
                 <div className={styles.benefitIcon}>{benefit.icon}</div>
                 <h3>{benefit.title}</h3>
                 <p>{benefit.text}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Varieties Section */}
-        <div className={styles.varietiesContainer}>
+        <motion.div 
+          className={styles.varietiesContainer}
+          variants={fadeIn}
+        >
           <h2>Our Premium Varieties</h2>
           
           <div className={styles.varietyTabs}>
-            <div className={styles.varietyPanel}>
-              <h3> Tomato Local</h3>
+            <motion.div 
+              className={styles.varietyPanel}
+              whileHover={{ y: -10 }}
+            >
+              <h3>Tomato Local</h3>
               <ul>
                 <li>Authentic heritage flavors</li>
                 <li>Unique colors and shapes</li>
                 <li>Slow-ripened for depth</li>
                 <li>Non-GMO seeds</li>
               </ul>
-              <div className={styles.varietyTag}>Local Favorite</div>
-            </div>
+              <motion.div 
+                className={styles.varietyTag}
+                whileHover={{ scale: 1.1 }}
+              >
+                Local Favorite
+              </motion.div>
+            </motion.div>
             
-            <div className={styles.varietyPanel}>
+            <motion.div 
+              className={styles.varietyPanel}
+              whileHover={{ y: -10 }}
+            >
               <h3>Tomato Hybrid</h3>
               <ul>
                 <li>Sweet burst of flavor</li>
@@ -81,13 +138,16 @@ const QualitySection = () => {
                 <li>High antioxidant content</li>
                 <li>Consistent quality</li>
               </ul>
-              <div className={styles.varietyTag}>Best Seller</div>
-            </div>
-            
-           
+              <motion.div 
+                className={styles.varietyTag}
+                whileHover={{ scale: 1.1 }}
+              >
+                Best Seller
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

@@ -17,7 +17,7 @@ const Homenutrition: React.FC = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     const section = sectionRef.current;
@@ -46,43 +46,46 @@ const Homenutrition: React.FC = () => {
 
       <div className={styles.contentContainer}>
         <div className={styles.content}>
-          <span className={styles.sectionTag}>NUTRITIONAL FACTS</span>
-          <h2 className={styles.title}>Potato Nutrition Facts</h2>
+          <span className={styles.sectionTag}>NUTRITIONAL POWER</span>
+          <h2 className={styles.title}>Potato Nutrition Profile</h2>
           <div className={styles.divider}></div>
           
           <div className={styles.nutritionFacts}>
             <div className={styles.factItem}>
+              <div className={styles.factIcon}>⚡</div>
               <h3 className={styles.factTitle}>Energy Boost</h3>
               <p className={styles.factText}>
-                Potatoes are a nutrient-dense powerhouse that provides the energy, potassium, 
-                and vitamin C you need to fuel your day.
+                Potatoes provide complex carbohydrates for sustained energy, along with potassium 
+                and vitamin C to fuel your active lifestyle.
               </p>
             </div>
             
             <div className={styles.factItem}>
+              <div className={styles.factIcon}>🌿</div>
               <h3 className={styles.factTitle}>Vitamin Rich</h3>
               <p className={styles.factText}>
-                More energy-packed than any other popular vegetable, with more potassium 
-                than a banana and excellent vitamin C content.
+                Packed with more potassium than bananas and excellent vitamin C content, 
+                potatoes offer superior nutritional value among staple vegetables.
               </p>
             </div>
             
             <div className={styles.factItem}>
-              <h3 className={styles.factTitle}>Healthy Choice</h3>
+              <div className={styles.factIcon}>❤️</div>
+              <h3 className={styles.factTitle}>Heart Healthy</h3>
               <p className={styles.factText}>
-                Naturally fat-free, cholesterol-free, and sodium-free, with only 
-                110 calories per 5.3-ounce serving.
+                Naturally fat-free, cholesterol-free, and low in sodium, with only 
+                110 calories per serving - a smart choice for balanced nutrition.
               </p>
             </div>
           </div>
 
           <div className={styles.buttonGroup}>
             <Link href="/components/About/" className={styles.primaryButton}>
-              About Us
+              Discover More
               <span className={styles.buttonIcon}>→</span>
             </Link>
             <Link href="/components/Insight/Nutrition/" className={styles.secondaryButton}>
-              Full Nutrition Facts
+              Full Nutrition Data
               <span className={styles.buttonIcon}>→</span>
             </Link>
           </div>

@@ -1,17 +1,19 @@
-/* Modern Tomato CSS */
+/* AGRI_TEAL_GOLD THEME */
 .tomatoShowcase {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #333;
   max-width: 1400px;
   margin: 0 auto;
+  overflow: hidden;
+  background-color: #f9f9f7;
 }
 
 /* Hero Section */
 .heroBanner {
   position: relative;
-  height: 60vh;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-              url('/public/assets/to99.jpg') center/cover;
+  height: 50vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(113, 108, 108, 0.4)), 
+              url('/assets/toi.jpg') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,16 +31,17 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .heroOverlay h1 span {
-  color: #ff4d4d;
+  color: #FFD700;
 }
 
 .heroOverlay p {
   font-size: 1.5rem;
   font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Main Grid Layout */
@@ -47,11 +50,13 @@
   grid-template-columns: 1fr 1.5fr;
   gap: 3rem;
   padding: 0 2rem;
+  margin-top: -5rem;
 }
 
 /* Image Section */
 .tomatoVisual {
   position: relative;
+  perspective: 1000px;
 }
 
 .imageWrapper {
@@ -59,37 +64,39 @@
   aspect-ratio: 3/4;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 25px 50px rgba(0, 95, 96, 0.2);
+  transform-style: preserve-3d;
 }
 
 .tomatoPhoto {
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .tomatoPhoto:hover {
-  transform: scale(1.03);
+  transform: scale(1.05) rotateY(5deg);
 }
 
 .imageBadge {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255,255,255,0.9);
-  padding: 0.5rem 1rem;
+  background: rgba(255, 215, 0, 0.9);
+  padding: 0.5rem 1.5rem;
   border-radius: 50px;
-  font-weight: 600;
-  color: #ff4d4d;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-weight: 700;
+  color: #005F60;
+  box-shadow: 0 8px 20px rgba(0, 95, 96, 0.3);
+  font-size: 0.9rem;
 }
 
 /* Benefits Section */
 .tomatoBenefits h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #222;
+  color: #005F60;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 0rem;
 }
 
 .tomatoBenefits h2::after {
@@ -99,7 +106,7 @@
   left: 0;
   width: 80px;
   height: 4px;
-  background: #ff4d4d;
+  /* background: #FFD700; */
 }
 
 .benefitsGrid {
@@ -111,67 +118,88 @@
 .benefitCard {
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255,77,77,0.1);
+  padding: 1.8rem;
+  box-shadow: 0 8px 30px rgba(0, 95, 96, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-left: 4px solid #FFD700;
 }
 
 .benefitCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  border-color: rgba(255,77,77,0.3);
+  box-shadow: 0 15px 35px rgba(0, 95, 96, 0.15);
 }
 
 .benefitIcon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #ff4d4d;
+  color: #005F60;
 }
 
 .benefitCard h3 {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #222;
+  margin-bottom: 0.8rem;
+  color: #005F60;
 }
 
 .benefitCard p {
-  color: #666;
-  line-height: 1.5;
+  color: #555;
+  line-height: 1.6;
   font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Varieties Section */
 .varietiesContainer {
   grid-column: 1 / -1;
   margin-top: 3rem;
+  background: linear-gradient(to right, #005F60, #003D3D);
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  color: white;
 }
 
 .varietiesContainer h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #222;
+  color: white;
+  position: relative;
+}
+
+.varietiesContainer h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #FFD700;
 }
 
 .varietyTabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
 .varietyPanel {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 2.5rem;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  border-top: 4px solid #ff4d4d;
+  border-top: 4px solid #FFD700;
+  transition: all 0.4s ease;
+}
+
+.varietyPanel:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .varietyPanel h3 {
-  font-size: 1.4rem;
-  color: #ff4d4d;
+  font-size: 1.5rem;
+  color: #FFD700;
   margin-bottom: 1.5rem;
 }
 
@@ -181,35 +209,39 @@
 }
 
 .varietyPanel li {
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.8rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .varietyPanel li::before {
   content: '•';
-  color: #ff4d4d;
+  color: #FFD700;
   position: absolute;
   left: 0;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .varietyTag {
   position: absolute;
   top: -12px;
   right: 20px;
-  background: #ff4d4d;
-  color: white;
-  padding: 0.3rem 1rem;
+  background: #FFD700;
+  color: #005F60;
+  padding: 0.4rem 1.5rem;
   border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .tomatoGrid {
     grid-template-columns: 1fr;
+    margin-top: 0;
   }
   
   .heroOverlay h1 {
@@ -217,13 +249,14 @@
   }
   
   .varietyTabs {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
   .heroBanner {
-    height: 50vh;
+    height: 60vh;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
   }
   
   .heroOverlay h1 {
@@ -238,7 +271,17 @@
     grid-template-columns: 1fr;
   }
   
-  .varietyTabs {
-    grid-template-columns: 1fr;
+  .varietiesContainer {
+    padding: 3rem 1.5rem;
   }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
 }

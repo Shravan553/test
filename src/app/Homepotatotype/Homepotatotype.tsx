@@ -1,91 +1,112 @@
 "use client";
-
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./Homepotatotype.module.css";
-import Link from "next/link";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import styles from "./Homepotatotype.module.css";
 
-const Homepotatotype: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const currentRef = sectionRef.current;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
-
-    if (currentRef) {
-      observer.observe(currentRef);
+const Homepotatotype = () => {
+  const variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
     }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
+  };
 
   return (
-    <section 
-      className={`${styles.section} ${isVisible ? styles.visible : ""}`}
-      ref={sectionRef}
-    >
+    <section className={styles.section}>
+      {/* Decorative elements */}
+      <div className={styles.backgroundPattern}></div>
+      <div className={styles.leafAccent}></div>
+      
       <div className={styles.container}>
-        <div className={`${styles.imageContainer} ${isVisible ? styles.visible : ""}`}>
-          <div className={styles.circleWrapper}>
-            <div className={styles.circleBackground}></div>
-            <div className={styles.cloudAnimation}></div>
-            <div className={styles.cloudAnimation2}></div>
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/assets/tyimage1.jpg"
-                alt="Types of Potatoes"
-                width={800}
-                height={800}
-                className={styles.circleImage}
-                priority
-              />
-            </div>
+        {/* Image with organic frame */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={variants}
+          className={styles.imageContainer}
+        >
+          <div className={styles.organicFrame}>
+            <Image
+              src="/assets/tyimage1.jpg"
+              alt="Premium potato varieties"
+              width={500}
+              height={500}
+              className={styles.potatoImage}
+              priority
+            />
+            <div className={styles.imageOverlay}></div>
           </div>
-        </div>
-        
-        <div className={`${styles.content} ${isVisible ? styles.visible : ""}`}>
-          <span className={styles.sectionTag}>TYPES OF POTATOES</span>
-          <h2 className={styles.title}>Explore Our Premium Potato Varieties</h2>
+        </motion.div>
+
+        {/* Content */}
+        <motion.div 
+          className={styles.content}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={variants}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span 
+            className={styles.sectionTag}
+            whileHover={{ scale: 1.05 }}
+          >
+            POTATO GENETICS
+          </motion.span>
+          
+          <h2 className={styles.title}>
+            Cultivating <span>Excellence</span> in Every Variety
+          </h2>
           
           <div className={styles.textContainer}>
-            <p className={styles.text}>
-              AGPOTATO offers a variety of premium potato types suited for all
-              needs. Our <strong>3797</strong> variety is prized for its high yield
-              and adaptability across regions. The <strong>302 Hybrid</strong> is
-              known for its disease resistance and ideal chip-making quality.{" "}
-              <strong>Chipsona 2001</strong> is specially cultivated for producing
-              crispy, golden chips with minimal oil absorption.
-            </p>
-            <p className={styles.text}>
-              The <strong>Mohan</strong> and <strong>Kyathi</strong> varieties are
-              versatile, with excellent texture for boiling, frying, or baking.{" "}
-              <strong>Jyothi</strong> and <strong>Hasan Potatoes</strong> are
-              favored for their smooth texture and delicious flavor, perfect for a
-              range of culinary applications.
-            </p>
+            <motion.p 
+              className={styles.text}
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              Our <strong>3797 variety</strong> delivers exceptional yield with 
+              <em> climate adaptability</em>, thriving across diverse growing conditions.
+            </motion.p>
+            
+            <motion.p 
+              className={styles.text}
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              The <strong>302 Hybrid</strong> features enhanced 
+              <em> disease resistance</em> and perfect dry matter content for 
+              premium processing quality.
+            </motion.p>
+            
+            <motion.p 
+              className={styles.text}
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <strong>Chipsona 2001</strong> is engineered for 
+              <em> superior crispness</em> with 30% lower oil absorption than 
+              standard varieties.
+            </motion.p>
           </div>
           
-          <Link href="/components/Insight/TypesOfPot/" className={styles.ctaButton}>
-            Discover All Varieties
-            <span className={styles.arrow}>&rarr;</span>
-          </Link>
-        </div>
+          <motion.button
+            className={styles.ctaButton}
+            whileHover={{ 
+              y: -3,
+              boxShadow: "0 10px 20px rgba(0, 95, 96, 0.3)"
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Explore Varieties
+            <span className={styles.buttonArrow}></span>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Homepotatotype;
-

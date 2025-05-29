@@ -1,306 +1,185 @@
-/* ===== Hero Section Styles ===== */
+/* Modern Hero Slider Styles */
 .webHero {
-  width: 100%;
-  height: 84vh;
-  max-height: 800px;
   position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
   overflow: hidden;
-  background-color: #F4F4F4;
-  margin-top: 2px;
 }
 
 .webHeroSlider {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
-/* ===== Slide Styles ===== */
 .webHeroSlide {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .webHeroSlide.webActive {
   opacity: 1;
-  visibility: visible;
 }
 
-.webHeroSlide.img4Active {
-  justify-content: flex-end;
-  background-color: #070707;
+.webHeroSlide.transitioning {
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* ===== Slide Image Styling (added) ===== */
-.webHeroSlide img {
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fills the area without distortion */
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
 }
 
-/* ===== Slide Content Styles ===== */
+.slideImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.webHeroContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .webHeroText {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 30px 40px;
-  border-radius: 12px;
-  max-width: 650px;
-  font-family: 'popins';
-  margin: 0 50px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   transform: translateY(30px);
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  transition: all 0.5s ease 0.3s;
+  max-width: 600px;
 }
 
-.webActive .webHeroText {
+.webHeroText.visible {
   transform: translateY(0);
   opacity: 1;
 }
 
-.webHeroText h1 {
-  font-size: 2.5rem;
+.heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
-  margin-bottom: 20px;
-  color: #fff;
-  font-family: 'popins';
   line-height: 1.2;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-  transform: translateX(-50px);
-  opacity: 0;
-  transition: all 0.6s ease-out 0.4s;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.webActive .webHeroText h1 {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.webHeroText p {
-  font-size: 1.1rem;
+.description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 2rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 25px;
-  font-family: 'popins';
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.6s ease-out 0.6s;
+  max-width: 80%;
 }
 
-.webActive .webHeroText p {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* ===== CTA Button Styles ===== */
-.discoverButton {
-  position: absolute;
-  bottom: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  padding: 12px 28px;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: 700;
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background-color: #4CAF50;
+  color: white;
   border-radius: 50px;
-  cursor: pointer;
-  background: linear-gradient(135deg, #04D939, #001542);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  transform: translate(-50%, 20px);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  width: fit-content;
 }
 
-.webActive .discoverButton {
-  opacity: 1;
-  transform: translate(-50%, 0);
+.ctaButton:hover {
+  background-color: transparent;
+  border-color: #4CAF50;
+  transform: translateY(-2px);
 }
 
-.discoverButton:hover {
-  background: linear-gradient(135deg, #001542, #04D939);
-  transform: translate(-50%, -3px) scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+.ctaButton svg {
+  transition: transform 0.3s ease;
 }
 
-/* ===== Slider Controls ===== */
+.ctaButton:hover svg {
+  transform: translateX(5px);
+}
+
 .webSliderControls {
   position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
   display: flex;
-  gap: 12px;
-  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 3;
+}
+
+.prevButton, .nextButton {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.prevButton:hover, .nextButton:hover {
+  background: rgba(255,255,255,0.4);
+  transform: scale(1.1);
+}
+
+.dotsContainer {
+  display: flex;
+  gap: 0.75rem;
 }
 
 .webSliderDot {
-  width: 14px;
-  height: 14px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 2px solid #04D939;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.webSliderDot:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0;
 }
 
 .webSliderDot.webActive {
-  background-color: #fff;
+  background: white;
   transform: scale(1.2);
-  opacity: 1;
 }
 
-/* ===== Mobile Responsive Styles ===== */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .webHero {
-    height: 60vh;
-    min-height: 400px;
+    height: 80vh;
   }
-
-  .webHeroSlider {
-    height: 100%;
+  
+  .description {
+    max-width: 100%;
   }
-
-  .webHeroSlide {
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 20vh;
-  }
-
-  .webHeroSlide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .webHeroText {
-    width: 90%;
-    max-width: none;
-    padding: 20px;
-    margin: 0 auto;
-    position: static;
-    transform: none;
-    backdrop-filter: blur(5px);
-  }
-
-  .webHeroText h1 {
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-    text-align: center;
-    transform: none;
-    opacity: 1;
-  }
-
-  .webHeroText p {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    text-align: center;
-    transform: none;
-    opacity: 1;
-  }
-
-  .discoverButton {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    font-size: 1rem;
-    padding: 10px 24px;
-    margin-top: 15px;
-    opacity: 1;
-  }
-
-  .webSliderControls {
-    bottom: 30px;
-    gap: 8px;
-  }
-
-  .webSliderDot {
-    width: 10px;
-    height: 10px;
-    border-width: 1px;
-  }
-}
-
-@media (max-width: 480px) {
-  .webHero {
-    height: 55vh;
-    min-height: 350px;
-  }
-
-  .webHeroSlide {
-    padding-top: 15vh;
-  }
-
-  .webHeroSlide img {
-    width: 100%;
-    height: auto;
-  }
-
-  .webHeroText {
-    width: 92%;
-    padding: 16px;
-  }
-
-  .webHeroText h1 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-
-  .webHeroText p {
-    font-size: 0.85rem;
-    margin-bottom: 16px;
-  }
-
-  .discoverButton {
-    font-size: 0.9rem;
-    padding: 8px 20px;
-    margin-top: 12px;
-  }
-
-  .webSliderControls {
-    bottom: 25px;
-  }
-
-  .webSliderDot {
-    width: 8px;
-    height: 8px;
-  }
-}
-
-/* Special adjustments for very small screens */
-@media (max-width: 360px) {
-  .webHero {
-    height: 50vh;
-    min-height: 300px;
-  }
-
-  .webHeroText h1 {
-    font-size: 1.3rem;
-  }
-
-  .webHeroText p {
-    font-size: 0.8rem;
-  }
-
-  .discoverButton {
-    font-size: 0.85rem;
+  
+  .prevButton, .nextButton {
+    width: 40px;
+    height: 40px;
   }
 }

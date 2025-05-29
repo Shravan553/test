@@ -10,8 +10,8 @@
 .heroBanner {
   position: relative;
   height: 60vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-              url('/assets/onion-field.jpg') center/cover;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(113, 108, 108, 0.4)), 
+              url('/assets/onionfield.jpg') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,6 +146,7 @@
 @media (max-width: 768px) {
   .healthBenefits {
     padding: 2rem 1rem;
+    display: none;
   }
   
   .healthGrid {

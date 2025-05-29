@@ -4,12 +4,12 @@ import styles from "./Programs.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-// Define program data types
+
 interface ProgramData {
   src: string;
   title: string;
   link: string;
-  alt: string; // New field for alt text
+  alt: string;
 }
 
 const programs: ProgramData[] = [
@@ -52,11 +52,14 @@ const programs: ProgramData[] = [
 ];
 
 const Programs: React.FC = () => {
-  // Correctly type and initialize programRefs
   const programRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Initialize ref array safely
   useEffect(() => {
-    // Create a local copy of programRefs.current to avoid the warning
-    const refsCopy = programRefs.current;
+    programRefs.current = programs.map((_, i) => programRefs.current[i] ?? null);
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -66,57 +69,57 @@ const Programs: React.FC = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
-    // Observe each ref from the copied array
-    refsCopy.forEach((program) => {
-      if (program) observer.observe(program);
-    });
+
+    const currentRefs = programRefs.current;
+    currentRefs.forEach(ref => ref && observer.observe(ref));
+
     return () => {
-      // Cleanup observers using the copied array
-      refsCopy.forEach((program) => {
-        if (program) observer.unobserve(program);
-      });
+      currentRefs.forEach(ref => ref && observer.unobserve(ref));
     };
-  }, []); // Empty dependency array to only run on mount/unmount
+  }, []);
+
   return (
     <div className={styles.programs}>
       <Head>
         <title>Our Programs - AGPotato</title>
         <meta
           name="description"
-          content="Explore AGPotato's various programs including Supply Chain, Potato By Product, Export Excellence, Cold Storage, Frozen Products, and Meet the Farmer."
+          content="Explore AGPotato's agricultural programs including Supply Chain, Potato By Products, and more"
         />
-        <meta
-          name="keywords"
-          content="AGPotato, supply chain, potato by product, export excellence, cold storage, frozen products, meet the farmer, agricultural programs"
-        />
-        <meta name="robots" content="index, follow" />
       </Head>
+      
       {programs.map((program, index) => (
         <div
           key={index}
           className={styles.program}
           ref={(el) => {
-            programRefs.current[index] = el as HTMLDivElement | null; // Explicit type assertion
+            if (el) programRefs.current[index] = el;
           }}
         >
-          <Link href={program.link} passHref>
-            
-            <Image
-  src={program.src}
-  alt={program.alt} // Use the custom alt text
-  width={400} // Adjust as needed
-  height={300} // Adjust as needed
-  className={styles.programImage}
-/>
+          <Link href={program.link} passHref legacyBehavior>
+            <a className={styles.programLink}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={program.src}
+                  alt={program.alt}
+                  width={300}
+                  height={200}
+                  className={styles.programImage}
+                  priority={index < 3} // Optimize loading for first 3 images
+                />
+                <div className={styles.imageOverlay}></div>
+              </div>
+              <div className={styles.caption}>
+                <h3 className={styles.programTitle}>{program.title}</h3>
+              </div>
+            </a>
           </Link>
-          <div className={styles.caption}>
-            <h2 className={styles.programTitle}>{program.title}</h2>
-          </div>
         </div>
       ))}
     </div>
   );
 };
+
 export default Programs;
